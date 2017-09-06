@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>张掖双创示范基地</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<script type="text/javascript">
+        var pageObj = {
+                pano_id:'31',
+                pano_json_url:'pano/data/autoplay/data.json',
+                base_xml_url:'//data.taagoo.com/pano/base-xml.html?code=20170803364836',
+                login_id:'',
+                login_url:'',
+                login_avatar:'',
+                is_praise:''
+            };
+		</script>
+	<script language="JavaScript" type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/bootstrap.min.js"></script>
+     <script language="JavaScript" type="text/javascript" src="js/UtoVRPlayerGuide.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/common.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/vrshow-auto.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/tour.js"></script>
+	</head>
+	<body>
+		<!--<div id="fullscreenid" style="position:relative;width:100%; height:100%;">-->
+			<div id="pano" style="width:100%; height:100%;position: absolute;"></div>
+		<!--<img style="display:block;position: absolute;left: 0;right: 0;top: 0;bottom: 0;" src="images/pano-bg.jpg"/>-->
+		<div class="manu-box-r">
+			<img class="manu-r-btn" src="images/manu-right.png" alt="菜单" style="display: none;"/>
+			<div class="collapse">
+				<img src="images/vr.png" alt="vr" onClick="showWebVR()"/>
+				<img src="images/music.png" alt="音乐"onClick="pauseSpeech(this)" />
+				<!--<img src="images/video.png" alt="视频"/>-->
+				<img src="images/gravity-close.png" alt="陀螺仪" onClick="rotateEx(this)"/>
+				<!--<img src="images/rotate.png" alt="旋转"/>-->
+				<!--<a id="map-link" href="http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:39.938930,116.394130;title:庆云楼;addr:北京市西城区前海东沿22号&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp">
+					<img src="images/point.png" alt="定位"/>
+				</a>-->
+				<img class="introduction-btn" src="images/zhengce.png" alt="政策"/>
+				<img class="jishu-btn" src="images/jishu.png" alt="技术"/>
+			</div>
+		</div>
+		<a class="back" href="manu-page.html"></a>
+		<img class="manu-left" src="images/manu-left.png"/>
+		<img id="yuanpan-btn" src="images/changjing.png"/>
+		
+		<div class="pano-box manu-left-hide-first">
+			<div>
+				<ul class="pano-ls">
+					<li><a  href="vr-player.html?id=20170803334843&name=gaotaixian" target="_blank"><img src="images/gaotai.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803359371&name=heximinsu" target="_blank"><img src="images/hexixueyuan.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803325884&name=zhiyaochang" target="_blank"><img src="images/hexizhiyao.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803330209&name=chuangfu" target="_blank"><img src="images/caifu.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803326109&name=ganzhou" target="_blank"><img src="images/ganzhou.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803332816&name=qichecheng" target="_blank"><img src="images/zhangyeqiche.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803333557&name=fuhuayuan" target="_blank"><img src="images/zhangyefuhua.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803328849&name=shandanxian" target="_blank"><img src="images/shandan.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803329643&name=minlexian" target="_blank"><img src="images/minle.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803327148&name=linzexian" target="_blank"><img src="images/linze.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803335515&name=yushuiyuan" target="_blank"><img src="images/yushui.png"/></a></li>
+					<li><a  href="vr-player.html?id=20170803358747&name=danxia" target="_blank"><img src="images/danxia.png"/></a></li>
+					<li class="tips">双创基地VR动景展示</li>
+				</ul>
+			</div>
+		</div>
+		<div class="modal-box">
+			<div class="modal-b-content modal-down-content">
+				<p class="modal-head">张掖市政策汇编<img class="close-modal" src="images/modal-close.png"/></p>
+				<div class="section-list">
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录一：</b><span class="flex1">张掖市实施创新驱动发展战略推动大众创业万众创新工作启动方案</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/1%E5%BC%A0%E6%8E%96%E5%B8%82%E5%AE%9E%E6%96%BD%E5%88%9B%E6%96%B0%E9%A9%B1%E5%8A%A8%E5%8F%91%E5%B1%95%E6%88%98%E7%95%A5%E6%8E%A8%E5%8A%A8%E5%A4%A7%E4%BC%97%E5%88%9B%E4%B8%9A%E4%B8%87%E4%BC%97%E5%88%9B%E6%96%B0%E5%B7%A5%E4%BD%9C%E5%90%AF%E5%8A%A8%E6%96%B9%E6%A1%88.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录二：</b><span class="flex1">张掖市小微企业创业创新若干扶持办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/2%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E5%88%9B%E4%B8%9A%E5%88%9B%E6%96%B0%E8%8B%A5%E5%B9%B2%E6%89%B6%E6%8C%81%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录三：</b><span class="flex1">张掖市小微企业两创示范基地建设扶持办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/3%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E4%B8%A4%E5%88%9B%E7%A4%BA%E8%8C%83%E5%9F%BA%E5%9C%B0%E5%BB%BA%E8%AE%BE%E6%89%B6%E6%8C%81%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录四：</b><span class="flex1">张掖市小微企业创业创新若干扶持办法实施细则</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/4%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E5%88%9B%E4%B8%9A%E5%88%9B%E6%96%B0%E8%8B%A5%E5%B9%B2%E6%89%B6%E6%8C%81%E5%8A%9E%E6%B3%95%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录五：</b><span class="flex1">张掖市小微企业两创示范基地建设扶持办法实施细则</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/5%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E4%B8%A4%E5%88%9B%E7%A4%BA%E8%8C%83%E5%9F%BA%E5%9C%B0%E5%BB%BA%E8%AE%BE%E6%89%B6%E6%8C%81%E5%8A%9E%E6%B3%95%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor  flex-box" > <img src="images/mulu.png"/><b>目录六：</b><span class="flex1">张掖市小微企业创业创新基地城市示范专项资金管理暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/6%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E5%88%9B%E4%B8%9A%E5%88%9B%E6%96%B0%E5%9F%BA%E5%9C%B0%E5%9F%8E%E5%B8%82%E7%A4%BA%E8%8C%83%E4%B8%93%E9%A1%B9%E8%B5%84%E9%87%91%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor  flex-box" > <img src="images/mulu.png"/><b>目录七：</b><span class="flex1">张掖市创新创业扶持基金管理暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/7%E5%BC%A0%E6%8E%96%E5%B8%82%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E6%89%B6%E6%8C%81%E5%9F%BA%E9%87%91%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor  flex-box" > <img src="images/mulu.png"/><b>目录八：</b><span class="flex1">张掖市个人创业就业贴息贷款担保基金管理办法（试行）</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/8%E5%BC%A0%E6%8E%96%E5%B8%82%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%B8%9A%E5%B0%B1%E4%B8%9A%E8%B4%B4%E6%81%AF%E8%B4%B7%E6%AC%BE%E6%8B%85%E4%BF%9D%E5%9F%BA%E9%87%91%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录九：</b><span class="flex1">张掖市小微企业“助创贷”业务管理暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/9%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E2%80%9C%E5%8A%A9%E5%88%9B%E8%B4%B7%E2%80%9D%E4%B8%9A%E5%8A%A1%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录十：</b><span class="flex1">张掖市小微企业“助保贷”业务管理暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/10%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E2%80%9C%E5%8A%A9%E4%BF%9D%E8%B4%B7%E2%80%9D%E4%B8%9A%E5%8A%A1%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="border-bottom: 10px solid #f2f2f3;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录十一：</b><span class="flex1">张掖市小微企业创业券管理暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/11%E5%BC%A0%E6%8E%96%E5%B8%82%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E5%88%9B%E4%B8%9A%E5%88%B8%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	<div class="modal-section-box" style="padding-bottom: 20px;">
+						<p class="zhengce-infor flex-box" > <img src="images/mulu.png"/><b>目录十二：</b><span class="flex1">张掖市中小微企业创业创新基地认定暂行办法</span></p>
+						<a class="down-btn" href="http://pano.taagoo.com/panos/zhangye/zhangYePc/word/12%E5%BC%A0%E6%8E%96%E5%B8%82%E4%B8%AD%E5%B0%8F%E5%BE%AE%E4%BC%81%E4%B8%9A%E5%88%9B%E4%B8%9A%E5%88%9B%E6%96%B0%E5%9F%BA%E5%9C%B0%E8%AE%A4%E5%AE%9A%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.docx"></a>
+	                </div>
+                	
+                </div>
+			</div>
+			
+		</div>
+		<div class="modal-jishu-box">
+			<div class="modal-b-content" style="background: none;">
+				<p class="modal-head" style="background: rgba(255,255,255,0.72);">技术支持<img class="close-jishu-modal" src="images/modal-close.png"/></p>
+				<div class="modal-section-box" style="border-bottom: 0.59rem solid #f2f2f3;">
+					<img src="images/jishu-1.png"/>
+					<a href="tel:010-88122992"></a>
+				</div>
+				<div class="modal-section-box" style="border-bottom-right-radius: 0.65rem; border-bottom-left-radius: 0.65rem;">
+					<img src="images/jishu-2.png"/>
+					<a href="tel:15393610952"></a>
+				</div>
+			</div>
+			
+		</div>
+		<!--<video src="/i/movie.ogg" controls="controls">
+			</video>-->
+		<script type="text/javascript">
+			var zhangYe={
+				init:function(){this.bind();},
+				bind:function(){
+						document.getElementById("yuanpan-btn").onclick=function(){
+							var manuLfetBox=document.getElementsByClassName('pano-box')[0];
+							if(manuLfetBox.className == "pano-box manu-left-hide-first" || manuLfetBox.className =="pano-box manu-left-hide-animation" ){
+								manuLfetBox.className="pano-box manu-left-show-animation";
+								document.getElementsByClassName('collapse')[0].className="collapse collapse-hide";
+								var krpano = document.getElementById('krpanoSWFObject');
+								krpano.call('skin_showthumbs(false)');
+								$(this).attr("src","images/changjingsel.png")
+							}else{
+								manuLfetBox.className="pano-box manu-left-hide-animation";
+								var krpano = document.getElementById('krpanoSWFObject');
+								krpano.call('skin_showthumbs(true)');
+								$(this).attr("src","images/changjing.png")
+							}
+						};
+						document.getElementsByClassName("manu-left")[0].onclick=function(){
+							var krpano = document.getElementById('krpanoSWFObject');
+								krpano.call('skin_showthumbs()');
+								var manuLfetBox=document.getElementsByClassName('pano-box')[0];
+						        	manuLfetBox.className="pano-box manu-left-hide-animation";
+						        	$('#yuanpan-btn').attr("src","images/changjing.png");
+
+						};
+						document.getElementsByClassName("manu-r-btn")[0].onclick=function(){
+							var manuLfetBox=document.getElementsByClassName('collapse')[0];
+							if(manuLfetBox.className == "collapse" ){
+								manuLfetBox.className="collapse collapse-hide";
+							}else{
+								manuLfetBox.className="collapse";
+//								document.getElementsByClassName('pano-box')[0].className="pano-box manu-left-hide-animation";
+								var newClass=document.getElementsByClassName('pano-box')[0].className;
+								console.log(newClass);
+								if(newClass == "pano-box manu-left-show-animation") {
+									document.getElementsByClassName('pano-box')[0].className="pano-box manu-left-hide-animation";
+								}
+							}
+						};
+//						document.getElementsByClassName("close-modal")[0].onclick=function(){
+//							document.getElementsByClassName("modal-box")[0].className="modal-box";
+//						};
+//						document.getElementsByClassName("introduction-btn")[0].onclick=function(){
+//							document.getElementsByClassName("modal-box")[0].className="modal-box modal-show";
+//						};
+						document.getElementsByClassName("close-modal")[0].onclick=function(){
+							document.getElementsByClassName("modal-box")[0].style.display="none";
+						};
+						document.getElementsByClassName("close-jishu-modal")[0].onclick=function(){
+							document.getElementsByClassName("modal-jishu-box")[0].style.display="none";
+						};
+						document.getElementsByClassName("introduction-btn")[0].onclick=function(){
+							var krpano = document.getElementById('krpanoSWFObject');
+								krpano.call('skin_showthumbs(false)');
+								var manuLfetBox=document.getElementsByClassName('pano-box')[0];
+						        	manuLfetBox.className="pano-box manu-left-hide-animation";
+						        	$('#yuanpan-btn').attr("src","images/changjing.png");
+				        	document.getElementsByClassName("modal-jishu-box")[0].style.display="none";
+							document.getElementsByClassName("modal-box")[0].style.display="block";
+							
+						};
+						document.getElementsByClassName("jishu-btn")[0].onclick=function(){
+							document.getElementsByClassName("modal-jishu-box")[0].style.display="block";
+							var krpano = document.getElementById('krpanoSWFObject');
+								krpano.call('skin_showthumbs(false)');
+						};
+					},
+			}
+			window.onload=function(){
+				zhangYe.init();
+			}
+			$(function(){
+                plugins_init_function.push(bgvoice_init);
+            });
+            function bgvoice_init(data,settings){
+                var speechObj = (undefined!=data.global_commentary&&data.global_commentary.mediaUrl)?data.global_commentary:null;
+                if(speechObj){
+                    settings["onstart"] += "playsound(bgspeech, '"+data.global_commentary.mediaUrl+"', 0);";
+                }else{
+                    if(undefined!=data.scene_commentary) {
+
+                        for(var scene_name in data.scene_commentary){
+                            var objOne = data.scene_commentary[scene_name];
+                            if (objOne.mediaUrl) {
+                                settings['scene[scene_'+objOne.sceneID+'].bgspeech'] = objOne.mediaUrl;
+                            }
+                        }
+                    }
+                }
+                settings["events[skin_events].onloadcomplete"]+="js(toggleSpeechBtn(get(xml.scene)));";
+            }
+            function toggleSpeechBtn(sceneName){
+                var panoData = $("body").data("panoData");
+                if(undefined!=panoData.global_commentary&&panoData.global_commentary.mediaUrl){
+                    $('.btn_music,.btn_music_off').show();
+                }else if(undefined!=panoData.scene_commentary&& undefined!=panoData.scene_commentary[sceneName] && panoData.scene_commentary[sceneName].mediaUrl){
+                    $('.btn_music,.btn_music_off').show();
+                }else{
+                    $('.btn_music,.btn_music_off').hide();
+                }
+            }
+			function pauseSpeech(el){
+                    var krpano = document.getElementById('krpanoSWFObject');
+                    krpano.call("pausesoundtoggle(bgspeech);pausesoundtoggle(bgs);");
+                     if($(el).attr("src").indexOf("off") == -1){
+		        	$(el).attr("src","images/music-btn-off.png");
+			        }else{
+			        	$(el).attr("src","images/music.png");
+			        }
+                }
+		    function showWebVR(){
+		        var krpano = document.getElementById('krpanoSWFObject');
+		        var webvr = krpano.get("webvr");
+		        webvr.onentervr=function(){
+		        	$(".back,.collapse,.manu-left ,#yuanpan-btn").hide();
+		        	if($("#yuanpan-btn").attr("src").indexOf("sel") ==-1){
+		        		
+		        	}else{
+		        		$("#yuanpan-btn").click();
+		        	}
+		        	krpano.call('skin_showthumbs(false)');
+		        }
+		        webvr.onexitvr=function(){
+		        	$(".back,.collapse,.manu-left ,#yuanpan-btn").show();
+		        }
+		        webvr.entervr();
+		    }
+		
+		    function rotateEx(obj) {
+		    	if($(obj).attr('src').indexOf("close") == -1){
+		    		$(obj).attr('src',"images/gravity-close.png");
+		    	}else{
+		    		$(obj).attr('src',"images/gravity.png");
+		    	}
+		        var krpano = document.getElementById('krpanoSWFObject');
+//		        krpano.call('set(skin_gyro.enabled,true)');
+//		        alert(krpano.get('skin_gyro.enabled'));
+		        krpano.call("switch(plugin[skin_gyro].enabled); if(plugin[skin_gyro].enabled, skin_showmap(false))")
+		    }
+//		    function rotateEx() {
+//		    	alert(1);
+//		        var krpano = document.getElementById('krpanoSWFObject');
+//		        var now_value = krpano.get('autorotate.enabled');
+//		        now_value = !now_value;
+//		        krpano.call('set(autorotate.enabled,'+now_value+')');
+//		    }
+		    function pause_bgMusic(el) {
+		        var krpano = document.getElementById('krpanoSWFObject');
+		        krpano.call("pausesoundtoggle(bgmusic);pausesoundtoggle(bgm);");
+		        if($(el).attr("src").indexOf("off") == -1){
+		        	$(el).attr("src","images/music-btn-off.png");
+		        }else{
+		        	$(el).attr("src","images/music.png");
+		        }
+//		        toggleMusic(el);
+		    }
+		    function toggleMusic(el) {
+		        if ($(el).atr) {
+		            $(el).removeClass("btn_bgmusic");
+		            $(el).addClass("btn_bgmusic_off");
+		        } else {
+		            $(el).removeClass("btn_bgmusic_off");
+		            $(el).addClass("btn_bgmusic");
+		        }
+		    }
+		    
+		   
+		   var localData={
+		   	"chuangfu":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.965450,100.423900;title:张掖创富中心;addr:甘肃省张掖市甘州区玉水街84号&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"zhiyaochang":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.937760,100.473830;title:河西制药厂;addr:肃省张掖市甘州区张火公路与三一二国道交叉处向东100米路南&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"fuhuayuan":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.937770,100.396280;title:农业创新孵化园;addr:甘肃省张掖市甘州区新墩镇发展大道&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"shandanxian":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.784760,101.088580;title:山丹县;addr:甘肃省张掖市山丹县&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"minlexian":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.430790,100.812860;title:民乐县;addr:甘肃省张掖市民乐县&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"linzexian":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:39.152240,100.164360;title:临泽县;addr:甘肃省张掖市临泽县县府街169&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"yushuiyuan":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.974210,100.427450;title:玉水苑;addr:甘肃省张掖市甘州区312国道&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"danxia":{
+		   		"url": "http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.975000,100.073230;title:丹霞七彩镇;addr:甘肃省张掖市肃南裕固族自治县倪家营镇七彩镇(万象桃园假日宾馆西)&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"gaotaixian":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:39.377730,99.819320;title:高台县;addr:甘肃省张掖市高台县&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"heximinsu":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.951050,100.441860;title:河西民俗文化博览园;addr:甘肃省张掖市甘州区北环路846号&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"ganzhou":{
+		   		"url":"http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.954420,100.483897;title:甘州区经开区;addr:甘肃省张掖市甘州区北二路&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	},
+		   	"qichecheng":{
+		   		"url": "http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:38.932350,100.399530;title:金张掖汽车城;addr:甘肃省张掖市甘州区新墩镇南华三社西三环路西350米&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp",
+		   		"detail":""
+		   	}
+		   }
+//		   $("#map-link").attr("href",localData[request.name].url);
+//		   if(localData[request.name].detail) {
+//			   	$(".modal-inf-box p").text(localData[request.name].detail)
+//		   }
+		   
+		</script>
+
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script>
+			var protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+
+		    //判断是否为微信
+		    function isWeiXin(){
+		        var ua = window.navigator.userAgent.toLowerCase();
+		        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+		            return true;
+		        }else{
+		            return false;
+		        }
+		    }
+
+		    var shareData = {
+		        'title': '张掖双创示范基地',
+		        'link': 'http://pano.taagoo.com/panos/zhangye/zhangYePhone/index.html',
+		        'desc': '张掖双创示范基地欢迎您',
+		        'imgUrl': protocol+"pano.taagoo.com/panos/zhangye/zhangYePhone/images/1%E5%88%9B%E5%AF%8C%E4%B8%AD%E5%BF%83-188.jpg", // 分享图标
+		        success: function () {
+		            alert('分享成功');
+		        },
+		        cancel: function () {
+		            alert('您取消了分享');
+		        }
+		    };
+
+		    //是微信才会执行分享信息
+		    if(isWeiXin()){
+			    setTimeout(function(){
+					var oHead = document.getElementsByTagName('HEAD').item(0);
+			        var oScript= document.createElement("script");
+			        oScript.type = "text/javascript";
+			        oScript.src=protocol+"data.taagoo.com/weixin/js-share.html?url="+encodeURIComponent(encodeURIComponent(window.location.href.split("#")[0]))+"&js_callback=weixinCallback";
+			        oHead.appendChild( oScript);
+		    	},3000);
+		        
+		    }
+		    //微信回调
+		    function weixinCallback(obj){
+		        wx.config(obj);
+		        wx.ready(function() {
+		            wx.onMenuShareTimeline(shareData);
+		            wx.onMenuShareAppMessage(shareData);
+		            wx.onMenuShareQQ(shareData);
+		            wx.onMenuShareWeibo(shareData);
+		        });
+		        wx.error(function(res){
+		            //alert("wx.error"+res.errMsg);
+		        });
+		    }
+		</script>
+	</body>
+</html>

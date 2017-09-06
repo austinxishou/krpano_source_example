@@ -1,0 +1,347 @@
+{
+	"status": 1,
+	"data": {
+		"id": 3325,
+		"name": "河西制药厂",
+		"directory_id": 3066,
+		"lng": "100.480414",
+		"lat": "38.943688",
+		"address": "甘肃省张掖市甘州区G312(金城路)",
+		"play_rules": 1,
+		"thumbs_opened": 1,
+		"autorotate": 1,
+		"sand_table": {
+			"isOpen": false,
+			"sandTables": []
+		},
+		"scene_group": {
+			"sceneGroups": [
+				{
+					"iconType": "system",
+					"imgPath": "//pano.taagoo.com/static/player/1.19-pr6/system-icon/menu.png",
+					"iconID": 101,
+					"groupName": "场景选择",
+					"groupID": 2072,
+					"sort": 0,
+					"scenes": [
+						{
+							"sceneName": "scene_57792",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/340599694f71e641/thumb.jpg",
+							"sceneTitle": "01-河西制药有限公司"
+						}, {
+							"sceneName": "scene_57794",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/622599695a073f54/thumb.jpg",
+							"sceneTitle": "02-产品展示区"
+						}, {
+							"sceneName": "scene_57782",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/1159969226f27ef/thumb.jpg",
+							"sceneTitle": "03-仪器室"
+						}, {
+							"sceneName": "scene_57784",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/449599692d6d40f9/thumb.jpg",
+							"sceneTitle": "04-河西制药厂楼内"
+						}, {
+							"sceneName": "scene_57786",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/857599693441b135/thumb.jpg",
+							"sceneTitle": "05-制药车间"
+						}, {
+							"sceneName": "scene_57788",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/641599693ccc0a5f/thumb.jpg",
+							"sceneTitle": "06-包装车间"
+						}, {
+							"sceneName": "scene_57790",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/18/408599694784113d/thumb.jpg",
+							"sceneTitle": "07-河西制药厂园区院内"
+						}
+					]
+				}
+			]
+		},
+		"angle_of_view": [
+			{
+				"sceneName": "scene_57792",
+				"hlookat": 228.943,
+				"vlookat": -10.6513,
+				"fov": 127,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57794",
+				"hlookat": -290.539,
+				"vlookat": 12.8794,
+				"fov": 135,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57782",
+				"hlookat": -359.83,
+				"vlookat": 19.398,
+				"fov": 108,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57784",
+				"hlookat": 337.656,
+				"vlookat": 7.97106,
+				"fov": 105,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57786",
+				"hlookat": -140.589,
+				"vlookat": 10.3065,
+				"fov": 117,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57788",
+				"hlookat": -47.9179,
+				"vlookat": 16.5848,
+				"fov": 119,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}, {
+				"sceneName": "scene_57790",
+				"hlookat": -547.447,
+				"vlookat": -5.18858,
+				"fov": 117,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}
+		],
+		"hotspot": {
+			"scene_57792": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57794": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57782": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57784": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57786": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57788": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			},
+			"scene_57790": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			}
+		},
+		"sky_land_shade": {
+			"isWhole": 1,
+			"shadeSetting": {
+				"useShade": 0,
+				"type": 1,
+				"size": 0
+			}
+		},
+		"show_logo": 1,
+		"scene_list": [
+			{
+				"id": 42027,
+				"sceneName": "scene_57792",
+				"scene_id": 57792,
+				"scene_title": "01-河西制药有限公司",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/340599694f71e641/thumb.jpg"
+			}, {
+				"id": 42026,
+				"sceneName": "scene_57794",
+				"scene_id": 57794,
+				"scene_title": "02-产品展示区",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/622599695a073f54/thumb.jpg"
+			}, {
+				"id": 42032,
+				"sceneName": "scene_57782",
+				"scene_id": 57782,
+				"scene_title": "03-仪器室",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/1159969226f27ef/thumb.jpg"
+			}, {
+				"id": 42031,
+				"sceneName": "scene_57784",
+				"scene_id": 57784,
+				"scene_title": "04-河西制药厂楼内",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/449599692d6d40f9/thumb.jpg"
+			}, {
+				"id": 42030,
+				"sceneName": "scene_57786",
+				"scene_id": 57786,
+				"scene_title": "05-制药车间",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/857599693441b135/thumb.jpg"
+			}, {
+				"id": 42029,
+				"sceneName": "scene_57788",
+				"scene_id": 57788,
+				"scene_title": "06-包装车间",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/641599693ccc0a5f/thumb.jpg"
+			}, {
+				"id": 42028,
+				"sceneName": "scene_57790",
+				"scene_id": 57790,
+				"scene_title": "07-河西制药厂园区院内",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/18/408599694784113d/thumb.jpg"
+			}
+		],
+		"special_effects": {
+			"effectSettings": [
+				{
+					"sceneName": "scene_57792",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57794",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57782",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57784",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57786",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57788",
+					"effectId": 0
+				}, {
+					"sceneName": "scene_57790",
+					"effectId": 0
+				}
+			]
+		},
+		"scene_bg_music": {
+			"scene_57792": {
+				"mediaID": 0,
+				"sceneID": 57792
+			},
+			"scene_57794": {
+				"mediaID": 0,
+				"sceneID": 57794
+			},
+			"scene_57782": {
+				"mediaID": 0,
+				"sceneID": 57782
+			},
+			"scene_57784": {
+				"mediaID": 0,
+				"sceneID": 57784
+			},
+			"scene_57786": {
+				"mediaID": 0,
+				"sceneID": 57786
+			},
+			"scene_57788": {
+				"mediaID": 0,
+				"sceneID": 57788
+			},
+			"scene_57790": {
+				"mediaID": 0,
+				"sceneID": 57790
+			}
+		},
+		"scene_commentary": {
+			"scene_57792": {
+				"mediaID": 0,
+				"sceneID": 57792
+			},
+			"scene_57794": {
+				"mediaID": 0,
+				"sceneID": 57794
+			},
+			"scene_57782": {
+				"mediaID": 0,
+				"sceneID": 57782
+			},
+			"scene_57784": {
+				"mediaID": 0,
+				"sceneID": 57784
+			},
+			"scene_57786": {
+				"mediaID": 0,
+				"sceneID": 57786
+			},
+			"scene_57788": {
+				"mediaID": 0,
+				"sceneID": 57788
+			},
+			"scene_57790": {
+				"mediaID": 0,
+				"sceneID": 57790
+			}
+		},
+		"icon_list": []
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"status": 1,
+	"data": {
+		"id": 3363,
+		"name": "背景图",
+		"directory_id": 3074,
+		"lng": "100.456503",
+		"lat": "38.932045",
+		"address": "甘肃省张掖市甘州区南环路679",
+		"play_rules": 1,
+		"thumbs_opened": 1,
+		"autorotate": 1,
+		"sand_table": {
+			"isOpen": false,
+			"sandTables": []
+		},
+		"scene_group": {
+			"sceneGroups": [
+				{
+					"iconType": "system",
+					"imgPath": "//pano.taagoo.com/static/player/1.19-pr6/system-icon/menu.png",
+					"iconID": 101,
+					"groupName": "场景选择",
+					"groupID": 2227,
+					"sort": 0,
+					"scenes": [
+						{
+							"sceneName": "scene_58012",
+							"imgPath": "//pano.taagoo.com/normal/2017/08/23/122599d3972d9d9b/thumb.jpg",
+							"sceneTitle": "1"
+						}
+					]
+				}
+			]
+		},
+		"angle_of_view": [
+			{
+				"sceneName": "scene_58012",
+				"hlookat": -392.616,
+				"vlookat": 6.2846,
+				"fov": 119,
+				"fovmin": 69,
+				"fovmax": 140,
+				"vlookatmin": -90,
+				"vlookatmax": 90,
+				"keepView": 0,
+				"hlookatmin": -180,
+				"hlookatmax": 180
+			}
+		],
+		"hotspot": {
+			"scene_58012": {
+				"voice": [],
+				"video": [],
+				"scene": [],
+				"image": [],
+				"text": [],
+				"link": []
+			}
+		},
+		"sky_land_shade": {
+			"isWhole": 1,
+			"shadeSetting": {
+				"useShade": 0,
+				"type": 1,
+				"size": 0
+			}
+		},
+		"show_logo": 1,
+		"scene_list": [
+			{
+				"id": 43417,
+				"sceneName": "scene_58012",
+				"scene_id": 58012,
+				"scene_title": "1",
+				"thumbPath": "//pano.taagoo.com/normal/2017/08/23/122599d3972d9d9b/thumb.jpg"
+			}
+		],
+		"special_effects": {
+			"effectSettings": [
+				{
+					"sceneName": "scene_58012",
+					"effectId": 0
+				}
+			]
+		},
+		"scene_bg_music": {
+			"scene_58012": {
+				"mediaID": 0,
+				"sceneID": 58012
+			}
+		},
+		"scene_commentary": {
+			"scene_58012": {
+				"mediaID": 0,
+				"sceneID": 58012
+			}
+		},
+		"icon_list": []
+	}
+}

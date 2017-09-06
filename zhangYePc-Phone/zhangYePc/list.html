@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<title>张掖双创示范基地</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/zy.css" />
+	<script>
+		 var pageObj = {
+                    pano_id:'31',
+                    pano_json_url:'pano/listPage.json',
+                    base_xml_url:'//data.taagoo.com/pano/base-xml.html?code=20170803363933',
+                    login_id:'',
+                    login_url:'',
+                    login_avatar:'',
+                    is_praise:''
+                };
+	</script>
+	<style>
+		a,a:hover,a:active,a:focus,a:visited{color: inherit;text-decoration: none;}
+		#panoZy{
+			width: 100%;
+			height: 100%;
+			background: url(images/list.jpg) no-repeat center/100% 100%;
+		}
+		/*#homepage .img{
+			position: absolute;
+			top: 0;
+			left: 16%;
+		}*/
+		.ul{
+			position: absolute;
+			left: 50%;
+			top: 35.67%;
+			transform: translate(-50%);
+			padding: 0;
+			width: 864px;
+			height: 400px;
+			font-size: 0;
+		}
+		 .list-item{
+			/*display: inline-block;*/
+			float: left;
+			list-style: none;
+			margin: 0 0 33px;
+			width: 144px;
+			height: 165px;
+			text-align: center;
+			font-size: 18px;
+			color: #676666;
+		}
+		.list-item a{
+			display: block;
+		}
+		#panoZy .img{
+			margin-bottom: 25px;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+
+		}
+		.list-title {
+			display: block;
+			width: 579px;
+			position: absolute;
+			left: 50%;
+			top: 14.67%;
+			margin-left: -284px;
+		}
+		.clearfix {
+	
+		}
+		.clearfix:before,
+		.clearfix:after {
+			display: table;
+		  content: " ";
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.img-box {
+			width: 116px;
+			height: 116px;
+			border: 4px solid #fff;
+			border-radius: 50%;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+		.list-text {
+			margin-top: 27px;
+			font-size: 20px;
+			color: #fff;
+			text-align: center;
+			margin-bottom: 0;
+		}
+		.index-bottom {
+			position: absolute;
+			bottom: 42px;
+			width: 100%;
+		}
+		.index-bottom p{
+			width: 370px;
+			margin: 0 auto;
+			text-align: center;
+			color: #cfcdcd;
+			font-size: 18px;
+		}
+		.index-bottom a:nth-child(1){
+			position: absolute;
+			left: 50%;
+			top: -65px;
+			/*left: 50%;*/
+			/*top: 50%;*/
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			/*text-align: center;*/
+		}
+		.index-bottom a:nth-child(1) p{
+			
+			width: 250px;
+			display: inline-block;border: 1px solid #fff;
+			padding: 10px 4px;
+			border-radius: 24px;
+			font-size: 15px;
+		}
+		.index-bottom p:first-child {
+			margin-bottom: 15px;
+		}
+		.ul .active .img-box,
+		.ul li:hover .img-box{
+			border: 4px solid #5595f7;
+		}
+		.ul .active .list-text,
+		.ul li:hover  .list-text{
+			color: #5595f7;
+		}
+	</style>
+</head>
+<body>
+	<div id="pano" style="width:100%; height:100%;"></div>
+	<div id="panoZy">
+		<img class="list-title" src="images/list-title.png"/>
+		<ul class="ul clearfix">
+			<li class="list-item">
+				<a href="pano.html?id=20170803330209&name=chuangfu" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/1创富中心-188.jpg" alt="">
+					</div>
+					<p class="list-text">创富中心</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803326109&name=ganzhou" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/2张掖市经开区（2）-188.jpg" alt="">
+					</div>
+					<p class="list-text">张掖市经开区</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803332816&name=qichecheng" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/3金张掖汽车城-188.jpg" alt="">
+					</div>
+					<p class="list-text">金张掖汽车城</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803333557&name=fuhuayuan" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/4金张掖孵化园-188.jpg" alt="">
+					</div>
+					<p class="list-text">农业创新孵化园</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803328849&name=shandanxian" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/5山丹县-188.jpg" alt="">
+					</div>
+					<p class="list-text">山丹县</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803329643&name=minlexian" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/6民乐县-188.jpg" alt="">
+					</div>
+					<p class="list-text">民乐县</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803327148&name=linzexian" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/7临泽县（2）-188.jpg" alt="">
+					</div>
+					<p class="list-text">临泽县</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803335515&name=yushuiyuan" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/8玉水苑-188.jpg" alt="">
+					</div>
+					<p class="list-text">玉水苑</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803358747&name=danxia" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/9丹霞七彩镇-188.jpg" alt="">
+					</div>
+					<p class="list-text">丹霞七彩镇</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803334843&name=gaotaixian" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/10高台县-188.jpg" alt="">
+					</div>
+					<p class="list-text">高台县</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803359371&name=heximinsu" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/11河西民俗博览园-188.jpg" alt="">
+					</div>
+					<p class="list-text">河西民俗文化博览园</p>
+				</a>
+			</li>
+			<li class="list-item">
+				<a href="pano.html?id=20170803325884&name=zhiyaochang" target="_blank">
+					<div class="img-box">
+						<img class="img" src="images/12河西制药-188.jpg" alt="">
+					</div>
+					<p class="list-text">河西制药厂</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="index-bottom">
+		<a href="autoplay.html"><p>自动浏览模式</p></a>
+		<p>技术支持:北京大国慧谷科技股份有限公司</p>
+		<p>服务热线:010-88122992</p>
+	</div>
+	<script language="JavaScript" type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <!--<script language="JavaScript" type="text/javascript" src="js/bootstrap.min.js"></script>-->
+     <!--<script language="JavaScript" type="text/javascript" src="js/UtoVRPlayerGuide.js"></script>-->
+     <!--负责加载-->
+    <script language="JavaScript" type="text/javascript" src="js/common.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/vrshow.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/tour.js"></script>
+	<script type="text/javascript">
+		$(".ul").on('click','li',function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+		
+//		
+	</script>
+</body>
+</html>

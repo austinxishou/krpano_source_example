@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if (navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://www.","http://m.") ;
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title>walk around</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="js/common/html5shiv.min.js?v=40bd440d29"></script>
+	  <script src="js/common/respond.min.js?v=afc1984a3d"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="../css/common/bootstrap.min.css?v=ec3bb52a00">
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+	<link rel="stylesheet" type="text/css" href="../css/common/common.css?v=2f6ec1bc56">
+	<link rel="stylesheet" type="text/css" href="../css/look.css?v=39ac8ba69e">
+</head>
+<body>
+
+</body>
+
+	<script type="text/html" id="body_tpl">
+
+	<div style="position: fixed;width: 100%;height: 33.33%;top: 0;left: 0;z-index: -1;">
+	
+	<header class="wrapper header">
+		<div class="container">
+		  	<a href="../index.html"><h1 class="logo">百见 VR</h1></a>
+			<p class="logo-text">Travel Easier, Better and Happier</p>
+			<input id="input-text" class="input-text" type="text" placeholder="country／city"> 
+			<input id="input-search" class="input-search" type="button" value="Search">
+			<div class="search"></div>
+			<div class="destination"><div class="destination-icon"></div></div>
+			<p id="language" class="language">中文</p>
+		</div>
+	</header>
+
+	<div id="myCarousel" class="carousel slide">
+	    <ol class="carousel-indicators">
+	    	{{each header val i}}
+	        <li data-target="#myCarousel" data-slide-to="{{i}}" {{if i==0}} class="active" {{/if}}></li>
+	        {{/each}}
+	    </ol>
+	    <div class="carousel-inner">
+	    	{{each header val i}}
+	    	
+	        <div class="item {{if i==0}} active {{/if}} ">
+	        
+	            <a href="{{val['a-href']}}">
+	            	<img src="{{val.img}}" alt="First slide">
+	            	<div class="carousel-caption">{{val.title}}<br /><span>{{val.text}}</span></div>
+	        	</a>
+	        </div>
+	        
+	        {{/each}}
+	    </div>
+	</div>
+	
+	</div>
+
+	<section id="navigation">
+		<input type="text" placeholder="country／city"/>
+		<ul class="nav-bar">
+			{{each navigation val}}
+			<li>{{val.name}}</li>
+			{{/each}}
+		</ul>
+		<ul class="nav-item">
+			{{each navigation val}}
+			<li>
+				{{each val.item value}}
+				<span>{{value}}</span>
+				{{/each}}
+			</li>
+			{{/each}}
+		</ul>
+		<div class="nav-close">X</div>
+	</section>
+
+	<div style="width: 100%;margin-top: 33.33%;position: absolute;top: 0;left: 0;">
+	
+	<section class="country">
+		<h2>世界风光，百闻不如一见</h2>
+		<p>我们将会为您勾画出一个不太一样的世界，大海和湖泊，落日和星空，细节和色彩，强光和阴影······旅行中的微小情节，都可一一窥探，变成直抵内心的难忘瞬间。</p>
+		<div>
+			{{each country val i}}
+			{{if i==0}}
+			<a href="{{val['a-href']}}">
+				<div class="left" style="background-image: url({{val.img}});">
+					<p>{{val.name}}</p>
+				</div>
+			</a>
+			{{/if}}
+			{{/each}}
+			<div class="middle">
+				{{each country val i}}
+				{{if i==1||i==2}}
+				<a href="{{val['a-href']}}">
+					<div class="{{i==1?'top':'bottom'}}" style="background-image: url({{val.img}});">
+						<p>{{val.name}}</p>
+					</div>
+				</a>
+				{{/if}}
+				{{/each}}
+			</div>
+			<div class="right">
+				{{each country val i}}
+				{{if i==3||i==4}}
+				<a href="{{val['a-href']}}">
+					<div class="{{i==3?'top':'bottom'}}" style="background-image: url({{val.img}});">
+						<p>{{val.name}}</p>
+					</div>
+				</a>
+				{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	</section>
+
+	<section class="itinerary">
+		<h2>推荐行程</h2>
+		<p>这里有最权威的旅游官方资讯，这里有世界各地实地走访的旅者最宝贵的行程经验，这里有当地居民最中肯的路线建议，百见为您每一次旅行质量保驾护航，只为给您最与众不同的出行体验。</p>
+		<div>
+			<div class="icon left"></div>
+			{{each itinerary val i}}
+			<div class="middle {{if i==0}}current{{/if}}">
+				<div class="img" style="background: url({{val.img}});"></div>
+				<div class="text">
+					<h3>{{val.title}}</h3>
+					<p class="place">{{val.country}}</p>
+					<p class="content">{{val.content}}</p>
+					<p class="cost">总费用：<span>{{val.cost}}</span>&nbsp起</p>
+					<a class="detail" href="{{val['a-href']}}">行程详情</a>
+				</div>
+			</div>
+			{{/each}}
+			<div class="icon right"></div>
+		</div>
+	</section>
+
+	<section id="service-content">
+		<div class="service-content-img">
+		</div>
+	</section>
+
+	<footer>
+		<section class="left">
+			<div class="logo"></div>
+			<p>Beejeen the VRversion of Lonely Planet, is a VR + Travel Content platform that connects travelers to destinations. <br />Unlike the traditional third person perspective content,Beejeen offers visualized first person perspective content that inspires people to travel, to appreciate and to experience life elsewhere and enables them to plan their trip and make their most informed travel decisions.</p>
+			<p>Copyright2017 beejeen.com </p>
+		</section>
+		<section class="right">
+			<h2>Meet Us</h2>
+			<p>LinkedIN：Beejeen <br />Facebook：Beejeen VR Travel <br />Instagram: Beejeen <br />Youtube：Beejeen</p>
+			<a href="https://www.linkedin.com/company/beejeen"><div class="linkin"></div></a>
+			<a href="https://www.facebook.com/BeejeenVRTravel/"><div class="facebook"></div></a>
+			<a href="mailto:media@beejeen.com"><div class="e-mail"></div></a>
+		</section>
+	</footer>
+
+	</div>
+	
+	</script>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/common/bootstrap.min.js?v=5869c96cc8"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/common/common-cn.js?v=0578f1531a"></script>
+	<script src="../js/look-en.js?v=927f49d16e"></script>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title>百见-创建行程</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="js/common/html5shiv.min.js?v=40bd440d29"></script>
+	  <script src="js/common/respond.min.js?v=afc1984a3d"></script>
+	<![endif]-->
+	<style type="text/css">
+		.icon {
+		   width: 1em; height: 1em;
+		   vertical-align: -0.15em;
+		   fill: currentColor;
+		   overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+	<link rel="stylesheet" type="text/css" href="../css/buildItinerary2.css?v=8006afe7c8">
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../css/icon/iconfont.js?v=c725edd8e2"></script>
+	<script src="../js/buildItinerary2.js?v=abe3a71a25"></script>
+</head>
+<body>
+	<header>
+		<h1>行程标题</h1>
+		<a>发布</a>
+		<button>保存</button>
+	</header>
+	
+	<main>
+		<nav>
+			<h2>总行程</h2>
+			<ul>
+				<li class="current"><p><em>D1</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D2</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D3</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D4</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D5</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D6</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D7</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><p><em>D8</em><br />2017/07/12 <br /><span>暂未添加</span></p></li>
+				<li><div>+</div></li>
+			</ul>
+		</nav>
+		
+		<section class="dayEdit">
+			<div>
+				<i class="iconfont icon-search"></i>
+				<input type="text" placeholder="添加想去的城市" value="">
+			</div>
+			<h3>请选择目的地</h3>
+			<!--国家列表-->
+			<ul id="country_list">
+				<li data-id="city_China">
+					<img src="../images/China.png" alt="" />
+					<span>中国&nbsp;China</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li data-id="city_UnitedKingdom">
+					<img src="../images/China.png" alt="" />
+					<span>英国&nbsp;United Kingdom</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li data-id="city_Korea">
+					<img src="../images/China.png" alt="" />
+					<span>韩国&nbsp;Korea</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li data-id="city_Thailand">
+					<img src="../images/China.png" alt="" />
+					<span>泰国&nbsp;Thailand</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li>
+					<img src="../images/China.png" alt="" />
+					<span>法国&nbsp;France</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li>
+					<img src="../images/China.png" alt="" />
+					<span>法国&nbsp;France</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li>
+					<img src="../images/China.png" alt="" />
+					<span>法国&nbsp;France</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+				<li>
+					<img src="../images/China.png" alt="" />
+					<span>法国&nbsp;France</span>
+					<i class="iconfont icon-right"></i>
+				</li>
+			</ul>
+			<!--城市列表-->
+			<ul class="city-list" id="city_China" style="display: none;">
+				<li>
+					<span>深圳&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>上海&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>杭州&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+			</ul>
+			<ul class="city-list" id="city_UnitedKingdom" style="display: none;">
+				<li>
+					<span>伦敦&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>伯明翰&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>本布里奇&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+			</ul>
+			<ul class="city-list" id="city_Korea" style="display: none;">
+				<li>
+					<span>首尔&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>釜山&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>仁川&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+			</ul>
+			<ul class="city-list" id="city_Thailand" style="display: none;">
+				<li>
+					<span>曼谷&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>清迈&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+				<li>
+					<span>武里南&nbsp;France</span>
+					<i class="iconfont icon-plus2"></i>
+				</li>
+			</ul>
+			<p>完成</p>
+		</section>
+		
+		<aside>
+			<p><i class="iconfont icon-cover"></i></p>
+			<p><i class="iconfont icon-lists"></i></p>
+			<p><i class="iconfont icon-position"></i></p>
+		</aside>
+		
+		<div id="googleMap"></div>
+		
+		<script>
+			function initialize()
+			{
+			    var mapProp = {
+			        center:new google.maps.LatLng(51.508742,-0.120850),
+			        zoom:5,
+			        mapTypeId:google.maps.MapTypeId.ROADMAP
+			    };
+			    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+			}
+			
+			function loadScript()
+			{
+			  var script = document.createElement("script");
+			  script.type = "text/javascript";
+			  script.src = "http://www.google.cn/maps/api/js?key=AIzaSyBzE9xAESye6Kde-3hT-6B90nfwUkcS8Yw&sensor=false&callback=initialize";
+			  document.body.appendChild(script);
+			}
+			 
+			window.onload = loadScript;
+		</script>
+		
+	</main>
+</body>
+</html>

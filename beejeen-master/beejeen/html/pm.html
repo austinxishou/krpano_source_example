@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  		<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+		<title>pm</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="js/common/html5shiv.min.js?v=40bd440d29"></script>
+		  <script src="js/common/respond.min.js?v=afc1984a3d"></script>
+		<![endif]-->
+		<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+		<link rel="stylesheet" type="text/css" href="../css/pm.css?v=27dcffc359">
+		
+	</head>
+	<body>
+		<!--顶部栏-->
+		<header>
+			<img src="../images/BeejeenVR.png" alt="" />
+			<h2 class="fr">Lucky</h2>
+		</header>
+		<!--侧边栏-->
+		<aside>
+			<h2 class="active">POI上传</h2>
+			<h2>POI管理</h2>
+		</aside>
+		<!--主内容区-->
+		<main>
+			<h2><span>POI上传</span></h2>
+			<section class="select-country">
+				<div>
+					<h3>选择国家<span>*</span></h3>
+					<select id="country_list">
+					  <option >未选择</option>
+					</select>
+				</div>
+				<div>
+					<h3>选择城市<span>*</span></h3>
+					<select id="city_list">
+					  <option>未选择</option>
+					</select>
+				</div>
+				<div class="text">
+					<h3>标题<span>*</span></h3> 
+					<input id="name" type="text" /><br />
+					<h3 class="text-title">介绍<span>*</span></h3>
+					<textarea id="intro"></textarea><br />
+					<h3>属性<span>*</span></h3>
+					<label><input name="type" type="radio" value="Sight"/>&nbsp;景点</label>
+					<label><input name="type" type="radio" value="Hotel" />&nbsp;酒店</label>
+					<label><input name="type" type="radio" value="Activity" />&nbsp;活动</label>
+					<label><input name="type" type="radio" value="Restaurant" />&nbsp;餐厅</label>
+				</div>
+			</section>
+			<!--点击单选按钮显示的不同类型内容-->
+			<section class="type">
+				<span>营业开始</span><input type="text" />
+				<span>营业结束</span><input type="text" />
+				<span>票价</span><input type="text" /> 
+				<br />
+				<span>电话</span><input type="text" />
+				<span>网址</span><input type="text" /> 
+				<br />
+				<span>地址</span><input type="text" style="width: 485px;"/>
+				<br />
+				<span class="service" >设施/服务</span>
+				<div class="fl" style="width: 860px;margin: 40px 0 10px 6px;">
+					<label><input name="service" type="checkbox" value="礼宾服务">礼宾服务</label>
+					<label><input name="service" type="checkbox" value="机场班车">机场班车</label>
+					<label><input name="service" type="checkbox" value="免费WI-FI">免费WI-FI</label>
+					<label><input name="service" type="checkbox" value="免费停车">免费停车</label>
+					<label><input name="service" type="checkbox" value="餐厅">餐厅</label>
+					<label><input name="service" type="checkbox" value="泳池">泳池</label>
+					<label><input name="service" type="checkbox" value="康体设施">康体设施</label>
+					<label><input name="service" type="checkbox" value="儿童看护">儿童看护</label>
+					<label><input name="service" type="checkbox" value="清洁服务">清洁服务</label>
+					<label><input name="service" type="checkbox" value="商务设施">商务设施</label>
+					<label><input name="service" type="checkbox" value="禁烟客房">禁烟客房</label>
+					<label><input name="service" type="checkbox" value="户外">户外</label>
+					<label><input name="service" type="checkbox" value="酒吧">酒吧</label>
+				</div>
+				<div style="clear: both;"></div>
+			</section>
+			<!--上传的媒体文件，图片、视频-->
+			<section class="media">
+				<div class="small-img">
+					<h3>缩略图<span>*</span></h3> 
+					<input id="thumb" type="file" />
+					<img src=""/>
+				</div>
+				<div class="title">
+					<h3>上传POI<span>*</span></h3>
+					<label><input id="check-img" name="media" type="radio" value="0"/>VR全景图</label>
+					<label><input id="check-video" name="media" type="radio" value="1"/>视频</label>
+				</div>
+				<div class="image-box">
+					<div><input class="image-upload" type="file" /></div>
+					<p id="add" class="add">+</p>
+					<h3>音乐：</h3><input id="music" type="file" />
+				</div>
+				<div class="video-box">
+					<h3>视频：</h3><input id="video" type="file" />
+				</div>
+			</section>
+			<button id="submit" class="submit">保存</button>
+		</main>
+	</body>
+		<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+		<script src="../js/plugins/template-web.js?v=942783db05"></script>
+		<script src="../js/pm.js?v=f23fedf109"></script>
+</html>

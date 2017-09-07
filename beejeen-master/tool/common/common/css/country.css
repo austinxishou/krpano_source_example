@@ -1,0 +1,266 @@
+/*navigation*/
+#navigation{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: none;
+	padding: 30px 0px 40px;
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+    background: #fff;
+    z-index: 1010;
+}
+#navigation>input{
+	background: #f4f4f4;
+	border: 1px solid #dbdbdb;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 46px;
+	border-radius: 23px;
+	outline: none;
+	text-indent: 2em;
+	font-size: 12px;
+}
+#navigation>.nav-bar{
+	border-bottom: 1px solid #e5e5e5;
+}
+#navigation>ul.nav-bar>li{
+	font-size: 18px;
+	color: #333;
+	display: inline-block;
+	width: 80px;
+	height: 46px;
+	line-height: 46px;
+	margin-right: 60px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+#navigation>ul.nav-bar>li.current{
+	border-bottom: 1px solid #ff2925;
+}
+#navigation>ul.nav-item{
+	margin-top: 20px;
+}
+#navigation>ul.nav-item>li{
+	display: none;
+	cursor: pointer;
+}
+#navigation>ul.nav-item>li.current{
+	display: block;
+}
+#navigation>ul.nav-item>li>span{
+	font-size: 14px;
+	color: #666;
+	display: inline-block;
+	width: 196px;
+	height: 70px;
+	line-height: 70px;
+	/*margin-right: 116px;*/
+	/*text-align: center;*/
+}
+#navigation>.nav-close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 30px;
+	cursor: pointer;
+}
+/*-----------------国家介绍---------------------*/
+.country-description{
+	height: 220px;
+	width: 100%;
+	padding: 0px 72px;
+	position: relative;
+	background: #fff;
+}
+.country-description>p{
+	height: 220px;
+	font-size: 14px;
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 30px;
+	color: #4d4d4d;
+	width: 600px;
+}
+.country-description .open-iframe{
+    font-size: 12px;
+    color: #FF5500;
+    border: 0px;
+}
+.country-description>.display-title{
+	width: 660px;
+	height: 220px;
+	line-height: 220px;
+	font-size: 40px;
+	text-align: center;
+	/*font-family: "microsoft yahei";*/
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*main*/
+.main{
+	background: #fff;
+}
+.main-row{
+	width: 100%;
+}
+.main-cell{
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	margin-bottom: 2px;
+	position: relative;
+    overflow: hidden;
+}
+.main-cell-imgBox{
+	width: 100%;
+	overflow: hidden;
+}
+.main-cell-img{
+	display: inline-block;
+	width: 100%;
+	border: none;
+}
+.main-cell:hover .main-cell-textBox{
+	background-color:rgba(255,85,0,0.9);
+}
+.main-cell:hover .main-cell-title{
+	color: #212121;
+}
+.main-cell-textBox{
+	padding-top: 55%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .8s ease;
+	overflow: hidden;
+}
+.main-cell-textBox:hover{
+	padding-top: 10%;
+}
+.main-cell-title{
+	font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+.main-cell-text{
+	color: #39321e;
+	line-height: 19px;
+	padding: 8%;
+	font-size: 14px;
+}
+
+/*-----------------推荐行程---------------------*/
+.itinerary{
+	padding: 0 20px 120px;
+	background: #fff;
+}
+.itinerary>h2{
+	font-size: 40px;
+	height: 190px;
+	line-height: 190px;
+	width: 100%;
+	text-align: center;
+}
+.itinerary-append{
+	width: 100%;
+	color: #fff;
+}
+.itinerary-append>a>div{
+	width: 50%;
+	float: left;
+	padding:0 6px 12px;
+	box-sizing: border-box;
+	color: #fff;
+}
+.itinerary-append>a>div>div{
+	width: 100%; 
+	height: 0px; 
+	overflow: hidden; 
+	padding-bottom: 55%;
+	position: relative;
+	background-size: cover;
+}
+.itinerary-append>a>div>div>div{
+	position: absolute;
+	bottom: 0px;
+	padding: 0px 36px 20px;
+	background: linear-gradient( rgba(0,0,0,0) , rgba(0,0,0,.9) );
+}
+/*旅行时间和国家*/
+.itinerary-append .time{
+	font-size: 18px;
+}
+.itinerary-append .time>span{
+	font-size: 44px;
+}
+/*目的地*/
+.itinerary-append h3{
+	font-size: 26px;
+	line-height: 26px;
+	padding-bottom: 12px;
+	color: #fff;
+}
+/*类型*/
+.itinerary-append .type{
+	height: 22px; 
+	color: #fff;
+	
+}
+.itinerary-append .type>p{
+	height: 22px; 
+	width: 50px;
+	border-radius: 11px;
+	float: left;
+	border: 1px solid #fff;
+	text-align: center;
+	font-size: 12px;
+	margin-right: 10px;
+	color: #fff;
+}
+/*目的地介绍*/
+.itinerary-append .text{
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	text-shadow: 0 0 2px rgba(0,0,0,.5);
+	color: #fff;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	height: 48px;
+}
+/*图标区*/
+.itinerary-append .icon{
+	height: 20px;
+	line-height: 20px;
+	font-size: 16px;
+}
+.itinerary-append .icon>i{
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+}
+.itinerary-append .icon>p{
+	display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 8px;
+    padding-right: 30px;
+    font-size: 16px;
+}

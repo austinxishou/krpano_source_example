@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if ( !navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://m.","http://www.") ;
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="Beejeen the VRversion of Lonely Planet, is a VR + Travel Content platform that connects travelers to destinations. Unlike the traditional third person perspective content,Beejeen offers visualized first person perspective content that inspires people to travel, to appreciate and to experience life elsewhere and enables them to plan their trip and make their most informed travel decisions.">
+	<title></title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script type="text/javascript">
+		!(function(doc, win) {
+		    var docEle = doc.documentElement,
+		        evt = "onorientationchange" in window ? "orientationchange" : "resize",
+		        fn = function() {
+		            var width = docEle.clientWidth;
+		            width && (docEle.style.fontSize = 100 * (width / 750) + "px");
+		        };
+		     
+		    win.addEventListener(evt, fn, false);
+		    doc.addEventListener("DOMContentLoaded", fn, false);
+		 
+		}(document, window));
+	</script>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104">
+	<link rel="stylesheet" type="text/css" href="../css/country.css?v=c4207a34b9">
+</head>
+<body>
+	
+</body>
+	<script type="text/html" id="body_tpl">
+		<header>
+			<div class="logo"><img src="../images/BeejeenVR.png"/></div>
+			<p class="language">中</p>
+			<section>
+				<h2>{{country.name}}</h2>
+				<p>{{country.text}}</p>
+				<a href="tour.html?{{country.iframe_type}}&key={{country.name}}" target="_blank">more</a>
+			</section>
+			<iframe src="{{country['iframe_link']}}" frameborder="0">
+			</iframe>
+			<div class="icon">
+				<i class="iconfont icon-up"></i>
+			</div>
+		</header>
+	
+		<main>
+			
+			<section class="search">
+				<i class="iconfont icon-search"></i> 
+				<input type="search" id="input-text" placeholder="country／city"/>  
+			</section>
+			
+			<section class="main">
+				{{ each display_append val i }}
+				<a href="city-cn.html?{{val.name}}">
+					<div style="background-image: url({{val.img}});">
+						<h3>{{val.name}}</h3>
+					</div>
+				</a>
+				{{/each}}
+				<section style="clear: both;"></section>
+			</section>
+		</main>
+		
+		<section class="itinerary">
+			<h2>Itinerary Recommended</h2>
+			{{ each itinerary val i }}
+			<a href="itinerary.html?{{val.name}}">
+				<img src="{{val.img}}"/>
+				<h3>{{val.name}}</h3>
+				<div>COST： <em>{{val.cost}}</em> +</div>
+				<p>{{@val.intro}}</p>
+			</a>
+			{{/each}}
+		</section>
+		
+		<section class="service-content">
+			<div>
+				<img src="../images/pc.png" alt="" />
+				<p>PC</p>
+			</div>
+			<div>
+				<img src="../images/phone.png" alt="" />
+				<p>Mobile</p>
+			</div>
+			<div>
+				<img src="../images/cardboard.png" alt="" />
+				<p>Cardboard</p>
+			</div>
+			<div>
+				<img src="../images/MHD.png" alt="" />
+				<p>MHD</p>
+			</div>
+			<div>
+				<img src="../images/vr.png" alt="" />
+				<p>PC-VR</p>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="logo"></div>
+			<p>LinkedIN：Beejeen <br />
+				Facebook：Beejeen VR Travel<br />
+				Instagram: Beejeen<br /> 
+				Youtube：Beejeen</p>
+			<p class="copy-right">Copyright©2017&nbsp;beejeen.com </p>
+		</footer>
+	</script>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/common/common-en.js?v=059df960a6"></script>
+	<script src="../js/country-en.js?v=cae6893afe"></script>
+</html>

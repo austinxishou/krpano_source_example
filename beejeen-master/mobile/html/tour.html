@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		if ( !navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://m.","http://www.") ;
+		}
+	</script>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<script type="text/javascript">
+		!(function(doc, win) {
+		    var docEle = doc.documentElement,
+		        evt = "onorientationchange" in window ? "orientationchange" : "resize",
+		        fn = function() {
+		            var width = docEle.clientWidth;
+		            width && (docEle.style.fontSize = 100 * (width / 750) + "px");
+		        };
+		     
+		    win.addEventListener(evt, fn, false);
+		    doc.addEventListener("DOMContentLoaded", fn, false);
+		 
+		}(document, window));
+	</script>
+	<link rel="stylesheet" href="../css/icon/iconfont.css?v=823ff7e104" />
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="../css/tour.css?v=3d233e7c68"/>
+</head>
+<body>
+	<div class="logo"><img src="../images/BeejeenVR.png"/></div>
+	
+	<iframe id="iframe" width="100%" height="100%" src="" frameborder="0"></iframe>
+	
+	<div class="icon-box">
+		
+		<!--语言-->
+		<p id="language"><i class="iconfont icon-en"></i></p>
+		
+		<!-- 音乐 -->
+		<div id="music"><div></div></div>
+		
+		<!-- 分享 -->
+		<div id="share"><i class="iconfont icon-share"></i></div>
+		
+		<!--点赞-->
+		<div id="like"><i class="iconfont icon-like-click"></i></div>
+		
+		<!--简介-->
+		<div id="introduction-icon"><i class="iconfont icon-introduction"></i></div>
+		
+	</div>
+	
+	<!--简介内容-->
+	<div id="introduction-content">
+		
+	</div>
+	
+	<audio id="mp3" autoplay="autoplay" loop="loop"></audio>
+
+</body>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/tour.js?v=30ed66b38c"></script>
+
+
+
+	<script type="text/javascript">
+	
+	  var urlding = location.href;
+	  var iframesrc = $('#iframe').attr('src');
+	
+	  $('#iframe').on('load',function(){
+	   var iframenode = document.getElementById('iframe').contentWindow;
+	   iframenode.postMessage(urlding,'*'); 
+	
+	  });
+	
+	 window.addEventListener('message',function(e){
+	 var color=e.data;
+	 console.log(e);
+	   if(e.data.act == 'backto'){
+	   location.href= e.data.dizhi;
+	   }
+	 },false);  
+	
+	
+	 </script>
+	
+
+
+
+</html>

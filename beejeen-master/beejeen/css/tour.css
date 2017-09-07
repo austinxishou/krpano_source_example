@@ -1,0 +1,320 @@
+@-ms-viewport { width:device-width; }
+@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+html { height:100%; }
+body { height:100%; overflow:hidden; background: #000; }
+h1.logo {
+    height: 27px;
+    width: 230px;
+    text-indent: -9999px;
+    background: url(../images/BeejeenVR.png);
+    top: 14px;
+    left: 30px;
+    position: absolute;
+}
+.icon-box{
+	width: 106px;
+	height: 34px;
+	position: absolute;
+	top: 28px;
+	right: 140px;
+}
+.icon-box .iconfont{
+	font-size: 16px;
+}
+.icon-box2{
+	width: 140px;
+	height: 34px;
+	position: absolute;
+	top: 28px;
+	right: 0px;
+}
+.icon-box2 .iconfont{
+	font-size: 16px;
+}
+/*音乐*/
+#music{
+	float: left;
+	width: 64px;
+	height: 34px;
+	background: rgba(0,0,0,.7);
+	cursor: pointer;
+}
+#music>div{
+	width: 64px;
+	height: 34px;
+	background: url(../images/music.gif) no-repeat center;
+}
+#music.clicked>div{
+	background: url(../images/music-clicked.png) no-repeat center;
+}
+
+#mp3{
+	display: none;
+}
+/*分享*/
+#share{
+	width: 34px;
+	height: 34px;
+	float: left;
+	margin-left: 8px;
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+	color:#ffffff;
+	text-align:center;
+	line-height:34px;
+	font-size:12px;
+}
+/*分享弹窗*/
+#share-content{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: 50%;
+	top: 20%;
+	margin-left: -150px;
+	padding: 20px;
+	background: #fff;
+	cursor: pointer;
+	display: none;
+	z-index: 1001;
+}
+#share-content-text{
+	color: #666;
+	font-size: 16px;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+}
+#share-content-qrcode{
+	width: 256px;
+	height: 256px;
+	margin: 0 auto;
+}
+#share-content-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+	font-size: 20px;
+}
+/*语言切换按钮*/
+#language{
+	width: 34px;
+	height: 34px;
+	float: left;
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+	color:#ffffff;
+	text-align:center;
+	line-height:34px;
+	font-size:12px;
+}
+/*评论*/
+#comment{
+	width: 34px;
+	height: 34px;
+	float: left;
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+	color:#ffffff;
+	text-align:center;
+	line-height:34px;
+	font-size:12px;
+}
+/*点赞*/
+#like{
+	width: 34px;
+	height: 34px;
+	float: left;
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+	color:#ffffff;
+	text-align:center;
+	line-height:34px;
+	font-size:12px;
+}
+/*全屏按钮*/
+#full-screen{
+	width: 34px;
+	height: 34px;
+	float: left;
+	margin-left: 8px;
+	cursor: pointer;
+	background: rgba(0,0,0,.7);
+	color:#ffffff;
+	text-align:center;
+	line-height:34px;
+	font-size:12px;
+}
+/*介绍图标的盒子*/
+#introduction{
+	position: absolute;
+	right: -86%;
+	top: 12%;
+	z-index: 999;
+	width: 86%;
+	height: 76%;
+	transition: all .6s ease;
+	background: #fff;
+	box-sizing: border-box;
+	box-shadow: 0 0 6px rgba(0,0,0,.4);
+}
+#introduction.clicked{
+	right: 0;
+}
+#introduction-detail{
+	position: absolute;
+    width: 100%;
+    height: 96%;
+    padding: 40px 100px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+#introduction-icon{
+	width: 119px;
+	height: 70px;
+	content: url(../images/intro.png);
+	position: absolute;
+	left: -119px;
+	top: 50%;
+	margin-top: -35px;
+	cursor: pointer;
+}
+#introduction-icon.clicked{
+	content: url(../images/intro-close.png);
+}
+#introduction-detail::-webkit-scrollbar {
+    width: 8px;
+}
+#introduction-detail::-webkit-scrollbar-button{
+	height: 10px;
+}
+#introduction-detail::-webkit-scrollbar-track {
+	display: none;
+}
+
+#introduction-detail::-webkit-scrollbar-thumb{
+    width: 8px;
+    background-color: #d8d8d8;
+    -webkit-border-radius: 4px;
+}
+#introduction-detail>.top{
+	padding-bottom: 6px;
+}
+#introduction-detail>.top>.title{
+	font-size: 36px;
+	color: #555;
+	height: 36px;
+	line-height: 36px;
+}
+#introduction-detail>.top>.address{
+	font-size: 16px;
+	line-height: 25px;
+	padding-top: 10px;
+	color: #7f7f7f;
+	margin-bottom: 20px;
+}
+#introduction-detail>.top>.icon-box{
+	width: 100%;
+	height: 40px;
+}
+#introduction-detail>.top>.views{
+	background: url(../images/view.png) no-repeat center;
+	width: 21px;
+	height: 16px;
+	margin-top: 15px;
+	float: right;
+}
+#introduction-detail>.top>.views-num{
+	color: #7f7f7f;
+	float: left;
+	margin-top: 15px;
+	margin-left: 5px;
+	margin-right: 20px;
+	font-size: 16px;
+	height: 16px;
+	line-height: 16px;
+	float: right;
+}
+#introduction-detail>.top>.likes{
+	background: url(../images/like.png) no-repeat center;
+	width: 15px;
+	height: 14px;
+	margin-top: 16px;
+	margin-right: 4px;
+	float: right;
+}
+#introduction-detail>.top>.likes-num{
+	color: #7f7f7f;
+	margin-top: 15px;
+	margin-left: 5px;
+	margin-right: 20px;
+	font-size: 16px;
+	height: 16px;
+	line-height: 16px;
+	float: right;
+}
+#introduction-detail>.middle{
+	width: 100%;
+	height: 100px;
+	padding-top: 24px;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+#introduction-detail>.middle>div{
+	width: 184px;
+	float: left;
+	display: table-cell;
+	text-align: center;
+}
+#introduction-detail>.middle>div>div{
+	background: url(../images/tour-middle.png);
+	width: 48px;
+	height: 48px;
+	display: inline-block;
+	background-position: 0px 100px;
+}
+#introduction-detail>.middle>div>div.star{
+	background-position: 0px 0px;
+}
+#introduction-detail>.middle>div>div.room{
+	background-position: 0px -100px;
+}
+#introduction-detail>.middle>div>div.score{
+	background-position: 0px -200px;
+}
+#introduction-detail>.middle>div>div.price{
+	background-position: 0px -300px;
+}
+#introduction-detail>.middle>div>div.rank{
+	background-position: 0px -400px;
+}
+#introduction-detail>.middle>div>div.time{
+	background-position: 0px -500px;
+}
+#introduction-detail>.middle>div>p{
+	font-size: 18px;
+	color: #777;
+}
+#introduction-detail>.bottom>h2{
+	font-size: 20px;
+	color: #555;
+	height: 70px;
+	line-height: 70px;
+}
+#introduction-detail>.bottom>h3{
+	font-size: 16px;
+	line-height: 20px;
+	color: #777;
+	margin-bottom: 25px;
+	font-weight: normal;
+}
+#introduction-detail>.bottom>p{
+	font-size: 16px;
+	line-height: 20px;
+	color: #777;
+}

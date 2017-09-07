@@ -1,0 +1,51 @@
+html{
+	height: 100%;
+}
+body{
+	background: url(../images/login-background.jpg) no-repeat center;
+	background-size: cover;
+}
+form{
+	width: 540px;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 30px 70px 40px;
+	box-shadow: 0 0 4px rgba(0,0,0,.6);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -160px 0 0 -270px;
+}
+form>h1{
+	font-size: 24px;
+	color: #333;
+	text-align: center;
+	margin: 0 auto 20px;
+}
+form input.form-control{
+	height: 46px;
+	border-radius: 23px;
+	border: 1px solid #bbb;
+	margin-bottom: 20px;
+	text-indent: 1em;
+	color: #373737;
+}
+form>button#submit{
+	width: 100%;
+	height: 48px;
+	background-color: #ff2925;
+	border-radius: 24px;
+	border: none;
+	outline: none;
+	margin-top: 8px;
+}
+.img{
+	position: absolute;
+	margin: 0 auto;
+	margin-top: -80px;
+	width: 400px;
+	text-align: center;
+}
+#warning{
+	display: none;
+}

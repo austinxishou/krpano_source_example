@@ -1,0 +1,100 @@
+﻿/*首页*/
+html{
+	font-family:  Microsoft YaHei;
+}
+.language{
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	background: rgba(0,0,0,.6);
+	text-align: center;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
+	top: 16px;
+	right: 16px;
+	position: absolute;
+}
+.logo{
+	position: absolute;
+	width: 54%;
+	top: 30%;
+	left: 23%;
+}
+.input-text{
+	position: absolute;
+	width: 90%;
+	top: 38%;
+	left: 5%;
+	height: 38px;
+	font-size: 14px;
+	border-radius: 19px;
+	border: 1px solid #ccc;
+	outline: none;
+	text-indent: 1em;
+	box-shadow: 0px 0px 4px #333;
+}
+.input-text:hover{
+	opacity: 1;
+	border: 1px solid #ff2925;
+}
+.input-search{
+	position: absolute;
+	height: 38px;
+	width: 160px;
+	left: 50%;
+	top: 44%;
+	line-height: 38px;
+	margin-left: -80px;
+	margin-top: 66px;
+	-webkit-appearance: none;
+	font-size: 14px;
+	background-color: #ff2925;
+	box-shadow: 0px 0px 8px #333;
+	color: #fff;
+	border: 0px;
+	border-radius: 19px;
+	cursor: pointer;
+	outline: none;
+}
+.main>p.tips{
+	position: absolute;
+	left: 5%;
+	top: 44%;
+	margin-top: 8px;
+	width: 90%;
+    text-indent: 1em;
+	font-size: 12px;
+	text-shadow: 0px 0px 4px #333;
+	color: #fff;
+	cursor: pointer;
+	text-align: left;
+}
+.main>a{
+	position: absolute;
+	height: 38px;
+	width: 160px;
+	left: 50%;
+	top: 44%;
+	line-height: 38px;
+	margin-left: -80px;
+	margin-top: 130px;
+	-webkit-appearance: none;
+	font-size: 14px;
+	background-color: #ff2925;
+	box-shadow: 0px 0px 8px #333;
+	color: #fff;
+	border: 0px;
+	border-radius: 19px;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+}
+.logo-bottom{
+    width: 160px;
+    bottom: 14px;
+    left: 20px;
+    position: absolute;
+}
+

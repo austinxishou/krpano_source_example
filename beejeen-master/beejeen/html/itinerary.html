@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if (navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://www.","http://m.") ;
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title>百见-行程</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="js/common/html5shiv.min.js?v=40bd440d29"></script>
+	  <script src="js/common/respond.min.js?v=afc1984a3d"></script>
+	<![endif]-->
+	<style type="text/css">
+		.icon {
+		   width: 1em; height: 1em;
+		   vertical-align: -0.15em;
+		   fill: currentColor;
+		   overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+	<link rel="stylesheet" type="text/css" href="../css/itinerary.css?v=59a326f16e">
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/plugins/jquery.dotdotdot.js?v=e1f84ae292"></script>
+	<script src="../js/itinerary.js?v=e5c1063b56"></script>
+</head>
+<body>
+	<script type="text/html" id="body_tpl">
+		
+		<header>
+			<h1>{{name}}</h1>
+			<p>总费用：{{cost}}</p>
+		</header>
+		
+		<nav>
+			<div class="up"><i class="iconfont icon-up"></i></div>
+			<section>
+				<ul>
+					<li class="current">
+						<div>
+							<h2>行程<br />总览</h2>
+						</div>
+					</li>
+					{{each content v i}}
+					{{if i>0}}
+					<li>
+						<div>
+							<h3>{{v.left[0]}}</h3>
+							<p>{{v.left[1]}}</p>
+							<p>{{v.left[2]}}</p>
+						</div>
+					</li>
+					{{/if}}
+					{{/each}}
+				</ul>
+			</section>
+			<div class="down"><i class="iconfont icon-down"></i></div>
+		</nav>
+		
+		<main>
+			{{each content v i}}
+			{{if i==0}}
+			<div class="current" >
+			{{else}}
+			<div style="display: none;" >
+			{{/if}}
+
+				<section class="left">
+					{{each v.middle value index }}
+					<svg class="icon" aria-hidden="true">
+					  <use xlink:href="#icon-{{value.icon}}"></use>
+					</svg>
+					{{if index==0}}
+					<p class="current">{{value.text}}</p>
+					{{else}}
+					<p>{{value.text}}</p>
+					{{/if}}
+					{{/each}}
+				</section>
+				
+				<section class="right">
+					{{each v.right value index }}
+					{{if value.text }}
+					{{if index==0}}
+					<div class="text">
+					{{else}}
+					<div class="text" style="display: none;">
+					{{/if}}
+						<h2>{{value.text.title}}</h2>
+						<p>{{@value.text.content}}</p>
+					</div>
+					{{else if value.sight}}
+					<div class="sight" style="display: none;">
+						<img src="{{value.sight.img}}" alt="" />
+						<h3>{{value.sight.name}}</h3>
+						<p class="dot-ellipsis dot-height-60 dot-resize-update">{{value.sight.intro}}</p>
+						{{if value.sight.href}}
+						<a href="{{value.sight.href}}" target="_blank">观看VR全景</a>
+						{{/if}}
+					</div>
+					{{else if value.flight}}
+					<div class="flight"  style="display: none;">
+						<div style="background: url(../images/flight.png) no-repeat;">
+							<h5 class="fl">{{value.flight.from}}</h5>
+							<h5 class="fr">{{value.flight.to}}</h5>
+							<div style="width: 100%;margin-top: 46px;text-align: center;color: #999da0;font-size: 12px;">
+								<p class="fl" style="width: 160px;text-align: center;">{{value.flight.from_time}}</p>
+								<p class="fr"  style="width: 160px;text-align: center;">{{value.flight.to_time}}</p>
+								<p>{{value.flight.duration}}</p>
+							</div>
+							<div style="padding-top: 44px;font-size: 14px;padding-left: 70px;color: #6f8288;line-height: 31px;">
+								<p>{{value.flight.begin_place}}</p>
+								<p>{{value.flight.begin_time}}</p>
+							</div>
+						</div>
+					</div>
+					{{else if value.car}}
+					<div class="car"  style="display: none;">
+						<div style="background: url(../images/car.png) no-repeat;">
+							<h5 class="fl">{{value.car.from}}</h5>
+							<h5 class="fr">{{value.car.to}}</h5>
+							<div style="width: 100%;margin-top: 46px;text-align: center;color: #999da0;font-size: 12px;">
+								<p class="fl" style="width: 160px;text-align: center;">{{value.car.from_time}}</p>
+								<p class="fr"  style="width: 160px;text-align: center;">{{value.car.to_time}}</p>
+								<p>{{value.car.duration}}</p>
+							</div>
+							<div style="padding-top: 44px;font-size: 14px;padding-left: 70px;color: #6f8288;line-height: 31px;">
+								<p>{{value.car.begin_place}}</p>
+								<p>{{value.car.begin_time}}</p>
+							</div>
+						</div>
+					</div>
+					{{/if}}
+					{{/each}}
+				</section>
+			</div>
+			{{/each}}
+		</main>
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,26 @@
+<krpano version="1.19" >
+
+
+<layer name="dm" url="plugins/dm_message.js?version=1.3" keep="true" preload="true" 
+			key="3a87ec7454da6e15a0d9cd1185c20198" 
+			total="15"
+			auto_hide="true"
+			auto_hide_area_h="0.2"
+			auto_hide_area_v="0.2"
+			placeholder1="先登录,再唠嗑"
+			placeholder2="登录成功，随便说点什么吧!"
+			placeholder3="拖动到你需要标注的地方"
+			badwordprompt=""   
+            onbadword="" 
+	
+	
+	/> 
+
+	<layer name="btn" url="icon-tour.png" crop="0|350|14|14" keep="true" 
+			x="140" y="28" width.normal="14" width.mobile="14" height="prop" align="topright"
+			onclick="layer[dm].show_message_win();"
+			enabled="true">
+	</layer>	
+			
+
+</krpano>

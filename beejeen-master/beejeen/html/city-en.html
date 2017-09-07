@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if (navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://www.","http://m.") ;
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title></title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" href="../css/common/bootstrap.min.css?v=ec3bb52a00">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="js/common/html5shiv.min.js?v=40bd440d29"></script>
+	  <script src="js/common/respond.min.js?v=afc1984a3d"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+	<link rel="stylesheet" type="text/css" href="../css/common/common.css?v=2f6ec1bc56">
+	<link rel="stylesheet" type="text/css" href="../css/city.css?v=a53cb5d8ec">
+</head>
+<body>
+	<!--header-->
+	<header class="wrapper header">
+		<div class="container">
+		  	<a href="../index.html"><h1 class="logo">百见 VR</h1></a>
+			<p class="logo-text">Travel Easier, Better and Happier</p>
+			<input id="input-text" class="input-text" type="text" placeholder="country／city"> 
+			<input id="input-search" class="input-search" type="button" value="Search">
+			<div class="search"></div>
+			<div class="destination"><div class="destination-icon"></div></div>
+			<p id="language" class="language">中文</p>
+		</div>
+	</header>
+	
+	<iframe id="iframe-top" class="iframe-top" src="" width="100%" frameborder="0">
+	</iframe>
+
+	<div style="width: 100%;position: absolute;top: 80%;left: 0;z-index: 99;">
+
+	<div class="city-description" id="city-description">
+		<h2 id="display-title" class="display-title" ></h2>
+		<div style="float: right;height: 220px;max-width: 600px;">
+			<p><span></span><br /><a id="open-iframe" class="open-iframe" href="javascript:void(0)" target="_blank">MORE>></a></p>
+		</div>
+	</div>
+	
+	<!--按钮筛选-->
+	<section class="main">
+		
+		<ul id="tab-nav-en" class="tab-nav">
+			<li class="current" data-type = "hot">Hot</li>
+			<li data-type = "sight">Sight</li>
+			<li data-type = "hotel">Hotel</li>
+			<li data-type = "activity">Activity</li>
+			<li data-type = "restaurant">Restaurant</li>
+		</ul>
+		
+		<!-- 内容展示区 -->
+		<div class="display-content container-fluid">
+			<div class="row" id="display_append">
+				
+			</div>
+		</div>
+	</section>
+	
+	<section id="service-content">
+		<div class="service-content-img">
+		</div>
+	</section>
+	
+	<footer>
+		<section class="left">
+			<div class="logo"></div>
+			<p>Beejeen the VRversion of Lonely Planet, is a VR + Travel Content platform that connects travelers to destinations. <br />Unlike the traditional third person perspective content,Beejeen offers visualized first person perspective content that inspires people to travel, to appreciate and to experience life elsewhere and enables them to plan their trip and make their most informed travel decisions.</p>
+			<p>Copyright2017 beejeen.com </p>
+		</section>
+		<section class="right">
+			<h2>Meet Us</h2>
+			<p>LinkedIN：Beejeen <br />Facebook：Beejeen VR Travel <br />Instagram: Beejeen <br />Youtube：Beejeen</p>
+			<a href="https://www.linkedin.com/company/beejeen"><div class="linkin"></div></a>
+			<a href="https://www.facebook.com/BeejeenVRTravel/"><div class="facebook"></div></a>
+			<a href="mailto:media@beejeen.com"><div class="e-mail"></div></a>
+		</section>
+	</footer>
+	
+	</div>
+	
+</body>
+	<script type="text/html" id="nav_tpl">
+		<iframe id="iframe-top" class="iframe-top" src="{{city.iframe_link}}" width="100%" frameborder="0">
+		</iframe>
+		
+		<section id="navigation">
+			<input type="text" placeholder="国家／城市"/>
+			<ul class="nav-bar">
+				{{each navigation val}}
+				<li>{{val.name}}</li>
+				{{/each}}
+			</ul>
+			<ul class="nav-item">
+				{{each navigation val}}
+				<li>
+					{{each val.item value}}
+					<span>{{value}}</span>
+					{{/each}}
+				</li>
+				{{/each}}
+			</ul>
+			<div class="nav-close">X</div>
+		</section>
+	</script>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/jquery.dotdotdot.js?v=e1f84ae292"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/common/bootstrap.min.js?v=5869c96cc8"></script>
+	<script src="../js/common/common-cn.js?v=0578f1531a"></script>
+	<script src="../js/city-en.js?v=553bbf4756"></script>
+</html>

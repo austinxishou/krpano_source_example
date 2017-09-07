@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="百见VR,VR航拍,VR旅游,海外旅游,海外旅行,VR360,百见科技,全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司,志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+  	<title>百见</title>
+	<script type="text/javascript">
+		if (!navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.replace("http://www.beejeen.com") 
+		}
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="css/common/common.css?v=46ac495cc1">
+	<link rel="stylesheet" type="text/css" href="css/index.css?v=01df290a6c">
+	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+	</style>
+</head>
+<body>
+
+<script src="index/tour.js?v=30ed66b38c"></script>
+
+<div id="pano" style="width:100%;height:100%;">
+	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+	<script>
+		embedpano({swf:"index/tour.swf", xml:"index/tour.xml", target:"pano", html5:"prefer", mobilescale:1.0, passQueryParameters:true});
+	</script>
+</div>
+	
+	<div id="main_cn" class="main" style="display: none;">
+		<p id="language" class="language">EN</p>
+		
+		<img class="logo" src="images/beejeen.png"/>
+		
+		<input class="input-text" type="text" placeholder="国家／城市"> 
+		
+		<p class="tips">支持搜索斯里兰卡、泰国、克罗地亚、巴厘岛、波黑</p>
+		
+		<button class="input-search" >百见一下</button>
+			
+		<a href="html/look-cn.html">逛一逛</a>
+			
+		<img class="logo-bottom" src="images/BeejeenVR.png"/>
+	</div>
+	
+	<div id="main_en" class="main" style="display: none;">
+		<p class="language">中</p>
+		
+		<img class="logo" src="images/beejeen.png"/>
+		
+		<input class="input-text" type="text" placeholder="country／city"> 
+		
+		<p class="tips">Support search for Sri Lanka, Thailand, Croatia, Bali, Bosnia and Herzegovina</p>
+		
+		<button class="input-search" >Beejeen Search</button>
+			
+		<a href="html/look-en.html">Walk Around</a>
+			
+		<img class="logo-bottom" src="images/BeejeenVR.png"/>
+	</div>
+
+</body>
+	<script src="js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3" type="text/javascript"></script>
+	<script src="js/index.js?v=7e2ac74621" type="text/javascript"></script>
+</html>

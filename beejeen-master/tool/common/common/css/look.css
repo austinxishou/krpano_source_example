@@ -1,0 +1,341 @@
+html.fixed{
+	height: 100%;
+	overflow: hidden;
+}
+body{
+	background: #fff;
+}
+/*-----------------轮播图---------------------*/
+.carousel{
+	
+}
+.carousel-indicators li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 10px;
+}
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    background-color: #ff2925;
+}
+.carousel-caption {
+    position: absolute;
+    right: 30px;
+    font-size: 20px;
+    bottom: 20px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0 1px 4px rgba(0,0,0,.6);
+}
+.carousel-caption>span{
+    font-size: 14px;
+}
+.carousel-inner>.item>a>img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/*-----------------国家介绍---------------------*/
+.country{
+	width: 100%;
+	text-align: center;
+	padding-bottom: 40px;
+	background: #fff;
+}
+.country>h2{
+	font-size: 30px;
+	padding-top: 70px;
+}
+.country>p{
+	padding-top: 20px;
+	padding-bottom: 56px;
+	font-size: 14px;
+}
+.country>div{
+	width: 100%; 
+	height: 0px; 
+	overflow: hidden; 
+	padding-bottom: 40%;
+	position: relative;
+}
+.country>div>div{
+	width:32%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.country>div>a>.left{
+	width:32%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 1%;
+	background-size: cover;
+}
+.country>div>a>.left>p{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	color: #fff;
+	font-size: 30px;
+	padding-left: 26px;
+}
+.country>div>div>a>div>p{
+	width: 100%;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    color: #fff;
+    font-size: 30px;
+    padding-left: 26px;
+}
+.country>div>.middle{
+	left: 34%;
+}
+.country>div>.middle>a>.top{
+	width: 100%;
+	height: 48.6%;
+	position: absolute;
+	top: 0;
+	background-size: cover;
+}
+.country>div>.middle>a>.bottom{
+	width: 100%;
+	height: 48.6%;
+	position: absolute;
+	bottom: 0;
+	background-size: cover;
+}
+.country>div>.right{
+	left: 67%;
+}
+.country>div>.right>a>.top{
+	width: 100%;
+	height: 48.6%;
+	position: absolute;
+	top: 0;
+	background-size: cover;
+}
+.country>div>.right>a>.bottom{
+	width: 100%;
+	height: 48.6%;
+	position: absolute;
+	bottom: 0;
+	background-size: cover;
+}
+
+/*itinerary*/
+.itinerary{
+	background: url(../images/10.jpg) center center;
+	height: 800px;
+	/*background-size: cover;*/
+	position: relative;
+}
+.itinerary>h2{
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	padding-top: 60px;
+}
+.itinerary>p{
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	padding-top: 20px;
+}
+.itinerary>div{
+	width: 1200px;
+	height: 480px;
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+	margin-top: 90px;
+}
+.itinerary>div>.icon{
+	height: 480px;
+	width: 100px;
+	float: left;
+	cursor: pointer;
+	opacity: 0.7;
+	transition: opacity .2s;
+}
+.itinerary>div>.icon:hover{
+	opacity: 1;
+}
+.itinerary>div>.left{
+	height: 480px;
+	width: 100px;
+	float: left;
+	background: url(../images/look-left.png) no-repeat center;
+}
+.itinerary>div>.right{
+	height: 480px;
+	width: 100px;
+	float: right;
+	background: url(../images/look-right.png) no-repeat center;
+}
+.itinerary>div>.middle{
+	height: 480px;
+	width: 1000px;
+	position: absolute;
+	left: 100px;
+	top: 0;
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	transition: transform .6s ease-in-out;
+	transform: translateX(2800px);
+}
+.itinerary>div>.middle.current{
+	transform: translateX(0px);
+}
+.itinerary>div>.middle.previous{
+	transform: translateX(-2800px);
+}
+.itinerary>div>.middle>.img{
+	height: 480px;
+	width: 700px;
+	float: left;
+	background-position: center;
+	background-size: 700px 480px;
+}
+.itinerary>div>.middle>.text{
+	height: 480px;
+	width: 300px;
+	background: #fff;
+	float: left;
+}
+.itinerary>div>.middle>.text>h3{
+	font-size: 24px;
+	text-align: center;
+	padding-top: 40px;
+	color: #333;
+}
+.itinerary>div>.middle>.text>p{
+	font-size: 14px;
+	text-align: center;
+}
+.itinerary>div>.middle>.text>p>span{
+	color: #ff2925;
+}
+.itinerary>div>.middle>.text>p.place{
+	font-size: 14px;
+	color: #9e9e9e;
+	padding-top: 10px;
+}
+.itinerary>div>.middle>.text>p.content{
+	font-size: 12px;
+	line-height: 20px;
+	margin: 40px 30px;
+	text-align: left;
+	color: #808080;
+	height: 140px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 7;
+	overflow: hidden;
+}
+.itinerary>div>.middle>.text>p.cost{
+	padding-top: 10px;
+	color: #797979;
+}
+.itinerary>div>.middle>.text>a.detail{
+	display: block;
+	background: #ff2925;
+	height: 40px;
+	width: 140px;
+	color: #fff;
+	line-height: 40px;
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+/*navigation*/
+#navigation{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: none;
+	padding: 30px 0px 40px;
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+    background: #fff;
+    z-index: 1010;
+}
+#navigation>input{
+	background: #f4f4f4;
+	border: 1px solid #dbdbdb;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 46px;
+	border-radius: 23px;
+	outline: none;
+	text-indent: 2em;
+	font-size: 12px;
+}
+#navigation>.nav-bar{
+	border-bottom: 1px solid #e5e5e5;
+}
+#navigation>ul.nav-bar>li{
+	font-size: 18px;
+	color: #333;
+	display: inline-block;
+	width: 80px;
+	height: 46px;
+	line-height: 46px;
+	margin-right: 60px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+#navigation>ul.nav-bar>li.current{
+	border-bottom: 1px solid #ff2925;
+}
+#navigation>ul.nav-item{
+	margin-top: 20px;
+}
+#navigation>ul.nav-item>li{
+	display: none;
+	cursor: pointer;
+}
+#navigation>ul.nav-item>li.current{
+	display: block;
+}
+#navigation>ul.nav-item>li>span{
+	font-size: 14px;
+	color: #666;
+	display: inline-block;
+	width: 196px;
+	height: 70px;
+	line-height: 70px;
+	/*margin-right: 116px;*/
+	/*text-align: center;*/
+}
+#navigation>.nav-close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 30px;
+	cursor: pointer;
+}

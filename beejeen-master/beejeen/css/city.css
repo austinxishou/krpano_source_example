@@ -1,0 +1,271 @@
+/*非公用*/
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+/*navigation*/
+#navigation{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: none;
+	padding: 30px 0px 40px;
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+    background: #fff;
+    z-index: 1010;
+}
+#navigation>input{
+	background: #f4f4f4;
+	border: 1px solid #dbdbdb;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 46px;
+	border-radius: 23px;
+	outline: none;
+	text-indent: 2em;
+	font-size: 12px;
+}
+#navigation>.nav-bar{
+	border-bottom: 1px solid #e5e5e5;
+}
+#navigation>ul.nav-bar>li{
+	font-size: 18px;
+	color: #333;
+	display: inline-block;
+	width: 80px;
+	height: 46px;
+	line-height: 46px;
+	margin-right: 60px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+#navigation>ul.nav-bar>li.current{
+	border-bottom: 1px solid #ff2925;
+}
+#navigation>ul.nav-item{
+	margin-top: 20px;
+}
+#navigation>ul.nav-item>li{
+	display: none;
+	cursor: pointer;
+}
+#navigation>ul.nav-item>li.current{
+	display: block;
+}
+#navigation>ul.nav-item>li>span{
+	font-size: 14px;
+	color: #666;
+	display: inline-block;
+	width: 196px;
+	height: 70px;
+	line-height: 70px;
+	/*margin-right: 116px;*/
+	/*text-align: center;*/
+}
+#navigation>.nav-close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 30px;
+	cursor: pointer;
+}
+/*-----------------城市介绍---------------------*/
+.city-description{
+	height: 220px;
+	width: 100%;
+	padding: 0px 72px;
+	position: relative;
+	background: #fff;
+	
+}
+.city-description>div>p{
+	height: 220px;
+	font-size: 14px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	line-height: 30px;
+	color: #4d4d4d;
+}
+.city-description .open-iframe{
+    font-size: 12px;
+    color: #FF5500;
+    border: 0px;
+}
+.city-description>.display-title{
+	width: 500px;
+	height: 220px;
+	text-align: left;
+	line-height: 220px;
+	font-size: 40px;
+	/*font-family: "microsoft yahei";*/
+	position: absolute;
+	top: 0;
+	left: 74px;
+}
+
+
+/*btn-box*/
+.main{
+	background-color: #fff;
+}
+.main>.display-title{
+	margin: 0 auto;
+	padding-top: 40px;
+	width: 300px;
+	font-size: 34px;
+	text-align: center;
+}
+.main>.tab-nav{
+	width: 100%;
+	/*margin: 60px auto 40px;*/
+	border-top: 1px solid #e3e5ea;
+	border-bottom: 1px solid #e3e5ea;
+}
+.main>.tab-nav>li{
+	display: table-cell;
+	text-align: center;
+	width: 180px;
+	border-bottom: 1px solid transparent;
+	border-right: 1px solid #e3e5ea;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.main>.tab-nav>li.current{
+	color: #666;
+	background: #eee;
+	border-bottom: 2px solid #ff5500;
+}
+#display_append{
+	min-height: 25%;
+	min-height: 300px;
+}
+.main-row{
+	width: 100%;
+}
+.main-cell{
+	float: left;
+	width: 100%;
+	background: #fff;
+    overflow: hidden;
+}
+.main-cell-imgBox{
+	width: 100%;
+	overflow: hidden;
+}
+.main-cell-img{
+	display: inline-block;
+	width: 100%;
+	border: none;
+}
+.main-cell:hover .main-cell-img{
+	opacity: 0.6;
+}
+.main-cell-textBox{
+	width: 100%;
+	height: 76px;
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-right: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    position: relative;
+}
+.main-cell:hover .main-cell-textBox{
+	background: rgb(255,85,0,0.9);
+}
+.main-cell-iconBox{
+	width: 100%;
+	height: 35px;
+}
+/*浏览量*/
+.icon-views{
+	width: 17px;
+	height: 100%;
+	background: url(../images/view.png) no-repeat center;
+	background-size: 17px 13px;
+	float: left;
+}
+.main-views-num{
+	display: block;
+	height: 100%;
+	width: 80px;
+	font-size: 12px;
+	line-height: 35px;
+	color: #777;
+    float: left;
+    padding-left: 4px;
+}
+.main-cell:hover .main-views-num{
+	color: #000;
+}
+/*点赞*/
+.icon-likes{
+	width: 14px;
+	height: 100%;
+	background: url(../images/like.png) no-repeat center;
+	background-size: 14px 12px;
+	float: left;
+}
+.main-likes-num{
+	display: block;
+	height: 100%;
+	line-height: 35px;
+	font-size: 12px;
+	color: #777;
+    float: left;
+    padding-left: 4px;
+}
+.main-cell:hover .main-likes-num{
+	color: #000;
+}
+/*地点*/
+.main-cell-name{
+	font-size: 16px;
+	color: #333;
+}
+.main-cell:hover .main-cell-name{
+	color: #000;
+}
+.main-cell-text{
+	height: 35px;
+	line-height: 20px;
+	color: #afafaf;
+	overflow: hidden;
+}
+.main-cell:hover .main-cell-text{
+	color: #000;
+}
+.main-cell-type{
+	position: absolute;
+	top: -40px;
+	left: 20px;
+	width: 45px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	background: #fff;
+	border-radius: 4px;
+	font-weight: bold;
+	color: #616161;
+	font-size: 14px;
+}
+.person-head-icon{
+	position: absolute;
+	top: -20px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: url(../images/head.png);
+}

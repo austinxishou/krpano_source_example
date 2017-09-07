@@ -1,0 +1,109 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1501468688534'); /* IE9*/
+  src: url('iconfont.eot?t=1501468688534#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501468688534') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501468688534') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501468688534#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fullScreen:before { content: "\e604"; }
+
+.icon-plus:before { content: "\e629"; }
+
+.icon-contact-us:before { content: "\e671"; }
+
+.icon-itinerary-up:before { content: "\e607"; }
+
+.icon-like-click:before { content: "\e61b"; }
+
+.icon-plus2:before { content: "\e64c"; }
+
+.icon-share:before { content: "\e68b"; }
+
+.icon-comment:before { content: "\e630"; }
+
+.icon-exitFullScreen:before { content: "\e613"; }
+
+.icon-like:before { content: "\e65d"; }
+
+.icon-view:before { content: "\e65e"; }
+
+.icon-up:before { content: "\e665"; }
+
+.icon-down:before { content: "\e666"; }
+
+.icon-tips:before { content: "\e667"; }
+
+.icon-sight:before { content: "\e668"; }
+
+.icon-restaurant:before { content: "\e669"; }
+
+.icon-list:before { content: "\e66a"; }
+
+.icon-hotel:before { content: "\e66b"; }
+
+.icon-visa:before { content: "\e66c"; }
+
+.icon-flight:before { content: "\e66d"; }
+
+.icon-activity:before { content: "\e66e"; }
+
+.icon-surprise:before { content: "\e66f"; }
+
+.icon-highlight:before { content: "\e670"; }
+
+.icon-itinerary:before { content: "\e673"; }
+
+.icon-hangcheng:before { content: "\e672"; }
+
+.icon-upBig:before { content: "\e675"; }
+
+.icon-search:before { content: "\e674"; }
+
+.icon-qCode:before { content: "\e677"; }
+
+.icon-edit:before { content: "\e678"; }
+
+.icon-cover:before { content: "\e679"; }
+
+.icon-true:before { content: "\e67a"; }
+
+.icon-position:before { content: "\e67b"; }
+
+.icon-close:before { content: "\e67c"; }
+
+.icon-minus:before { content: "\e67d"; }
+
+.icon-minus-circle:before { content: "\e67e"; }
+
+.icon-PC:before { content: "\e67f"; }
+
+.icon-downTriangle:before { content: "\e680"; }
+
+.icon-add:before { content: "\e681"; }
+
+.icon-right:before { content: "\e682"; }
+
+.icon-lists:before { content: "\e683"; }
+
+.icon-delete:before { content: "\e684"; }
+
+.icon-time:before { content: "\e685"; }
+
+.icon-introduction:before { content: "\e687"; }
+
+.icon-like-clicked:before { content: "\e689"; }
+
+.icon-en:before { content: "\e68e"; }
+
+.icon-cn:before { content: "\e68f"; }
+

@@ -1,0 +1,2 @@
+create table Restaurant (id int, name_eng varchar(50), name_cn nvarchar(50), address varchar(100), openDate varchar(15), openTime varchar(20), cuisine varchar(50), knownFor_eng varchar(200), knownFor_cn nvarchar(200), intro_eng varchar(500), intro_cn nvarchar(500), telephone varchar(30), website varchar(80), price varchar(15), rank int, point float, view int, adore int, cityid int, countryid int, thumb_link varchar(300), img_link varchar(300), video_link varchar(300), music_link varchar(300), ad_cost int, primary key(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

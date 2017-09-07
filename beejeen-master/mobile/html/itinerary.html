@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if ( !navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://m.","http://www.") ;
+		}
+	</script>
+	<title>行程</title>
+	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script type="text/javascript">
+		!(function(doc, win) {
+		    var docEle = doc.documentElement,
+		        evt = "onorientationchange" in window ? "orientationchange" : "resize",
+		        fn = function() {
+		            var width = docEle.clientWidth;
+		            width && (docEle.style.fontSize = 100 * (width / 750) + "px");
+		        };
+		     
+		    win.addEventListener(evt, fn, false);
+		    doc.addEventListener("DOMContentLoaded", fn, false);
+		 
+		}(document, window));
+	</script>
+	<script src="../css/icon/iconfont.js?v=d8d8ba08f3" type="text/javascript"></script>
+	<style type="text/css">
+		.icon {
+		   width: 1em; height: 1em;
+		   vertical-align: -0.15em;
+		   fill: currentColor;
+		   overflow: hidden;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104"/>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="../css/common/common.css?v=46ac495cc1">
+	<link rel="stylesheet" type="text/css" href="../css/itinerary.css?v=f698204227">
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/plugins/jweixin-1.2.0.js?v=3167c23e94"></script>
+	<script src="../js/itinerary.js?v=a0f6a8975f"></script>
+</head>
+<body>
+	
+</body>
+	<script type="text/html" id="body_tpl">
+		<header>
+			<img src="{{img}}" alt="" />
+			<h1>{{name}}</h1>
+			<img class="share" src="../images/share.png" alt="" />
+		</header>
+		
+		<nav>
+			{{each content[0].middle val i}}
+			<div class="{{val.icon}}">
+				<svg class="icon" aria-hidden="true">
+				  <use xlink:href="#icon-{{val.icon}}"></use>
+				</svg>
+				<p>{{val.text}}</p>
+			</div>
+			{{/each}}
+		</nav>
+		
+		<div class="aside-btn">
+			<div><i class="iconfont icon-itinerary"></i></div>
+			<p>总行程</p>
+		</div>
+		
+		<aside>
+			<h2>总行程</h2>
+			{{each content val i}}
+			{{if i>0}}
+				<p>{{val.left[0]}}&nbsp;{{val.left[1]}}&nbsp;{{val.left[2]}}</p>
+			{{/if}}
+			{{/each}}
+			<h3>返回行程</h3>
+		</aside>
+		
+		<main>
+		{{each content val i}}
+		{{if i>0}}
+			
+			<h2>
+				<em>{{val.left[0]}}</em>{{val.left[1]}}&nbsp;&nbsp;{{val.left[2]}}
+			</h2>
+			{{each val.right value index}}
+			<section>
+				<svg class="icon" aria-hidden="true">
+				  <use xlink:href="#icon-{{val.middle[index].icon}}"></use>
+				</svg>
+				<h3>{{val.middle[index].text}}</h3>
+				{{if value.flight}}
+				<p>{{value.flight.from_time}}&nbsp;{{value.flight.from}}-{{value.flight.to_time}} {{value.flight.to}}<br />{{value.flight.duration}}</p>
+				{{else if value.sight}}
+				<p>{{value.sight.intro}}</p>
+				{{if value.sight.href}}
+				<a href="{{value.sight.href}}">
+					<img src="{{value.sight.img}}" alt="" />
+					<div>VR全景</div>
+				</a>	
+				{{else}}
+				<img src="{{value.sight.img}}" alt="" />
+				{{/if}}
+				{{else if value.car}}
+				<p>{{value.car.from_time}}&nbsp;{{value.car.from}}-{{value.car.to_time}} {{value.car.to}}<br />{{value.car.duration}}</p>
+				{{else if value.text}}
+				<p>{{@value.text.content}}</p>
+				{{/if}}
+			</section>
+			{{/each}}
+		{{/if}}
+		{{/each}}
+			
+		</main>
+		
+		<section class="cost">
+			<div class="top">参考费用</div>
+			<div class="close">X</div>
+			<p>{{@cost_detail}}</p>
+		</section>
+		
+		<footer>
+			<div class="left">
+				<p>参考费用&nbsp;</p>
+				<p><em>{{cost}}</em></p>
+				<p>&nbsp;起&nbsp;<i class="iconfont icon-itinerary-up"></i></p>
+			</div>
+			<p class="right"><i class="iconfont icon-contact-us"></i>&nbsp;参团咨询</p>
+		</footer>
+		
+		{{each content[0].middle val i}}
+		<section class="layer {{val.icon}}">
+			<div class="header">
+				<h1>{{val.text}}</h1>
+			</div>
+			
+			<main>
+				<p>{{@content[0].right[i].text.content}}</p>
+			</main>
+			
+			<div class="footer">
+				<h1>返回行程</h1>	
+			</div>
+		</section>
+		{{/each}}
+		
+	</script>
+</html>

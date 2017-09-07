@@ -1,0 +1,109 @@
+<krpano version="1.19" showerrors="false" title="Virtual Tour">
+
+
+	<action name="startup" autorun="onstart">
+		set(stagescale,1);
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	<include url="dm.xml"/>
+
+
+
+
+		<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin_round.png"
+	               design_bgcolor="0xC71585"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	
+
+
+	<!-- skin_hotspotstyle - style for the hotspots -->
+	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" scale="0.5" edge="top" distorted="true"
+	       tooltip=""
+	       onclick="if(linkedscene, set(enabled,false); skin_hidetooltips(); tween(depth|alpha|oy|rx, 4000|0.0|-50|-60, 0.5, default, loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); ); );"
+	       onover="tween(scale,0.55);"
+	       onout="tween(scale,0.5);"
+	       onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+	       />
+
+	 <scene name="scene_achilleion-hof-unten" title="Achilleion - Garden" onstart="" thumburl="panos/achilleion-hof-unten.tiles/thumb.jpg" lat="39.563340" lng="19.904324" heading="0.0">
+
+		<view hlookat="-50" vlookat="11" fovtype="MFOV" fov="120" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/achilleion-hof-unten.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/achilleion-hof-unten.tiles/mobile_%s.jpg" />
+		</image>
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-84.547" atv="10.822" linkedscene="scene_canaldemure5" />
+
+	</scene>
+
+	<scene name="scene_canaldemure5" title="Canal d&#180;Amour 2" onstart="" thumburl="panos/canaldemure5.tiles/thumb.jpg" lat="39.796233694" lng="19.70181763" heading="0.0">
+
+		<view hlookat="-118" vlookat="4" fovtype="MFOV" fov="132" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/canaldemure5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/canaldemure5.tiles/mobile_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="84.258" atv="5.712" linkedscene="scene_achilleion-hof-unten" />
+
+	</scene>       
+
+
+</krpano>

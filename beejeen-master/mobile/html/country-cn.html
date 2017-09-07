@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title></title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script type="text/javascript">
+		!(function(doc, win) {
+		    var docEle = doc.documentElement,
+		        evt = "onorientationchange" in window ? "orientationchange" : "resize",
+		        fn = function() {
+		            var width = docEle.clientWidth;
+		            width && (docEle.style.fontSize = 100 * (width / 750) + "px");
+		        };
+		     
+		    win.addEventListener(evt, fn, false);
+		    doc.addEventListener("DOMContentLoaded", fn, false);
+		 
+		}(document, window));
+	</script>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104">
+	<link rel="stylesheet" type="text/css" href="../css/country.css?v=c4207a34b9">
+</head>
+<body>
+	
+</body>
+	<script type="text/html" id="body_tpl">
+		<header>
+			<div class="logo"><img src="../images/BeejeenVR.png"/></div>
+			<p class="language">EN</p>
+			<section>
+				<h2>{{country.name}}</h2>
+				<p>{{country.text}}</p>
+				<a href="tour.html?{{country.iframe_type}}&key={{country.name}}" target="_blank">了解更多</a>
+			</section>
+			<iframe src="{{country['iframe_link']}}" frameborder="0">
+			</iframe>
+			<div class="icon">
+				<i class="iconfont icon-up"></i>
+			</div>
+		</header>
+	
+		<main>
+			
+			<section class="search">
+				<i class="iconfont icon-search"></i> 
+				<input type="search" id="input-text" placeholder="国家／城市"/>  
+			</section>
+			
+			<h2>热门城市</h2>
+			
+			<section class="main">
+				{{ each display_append val i }}
+				<a href="city-cn.html?{{val.name}}">
+					<div style="background-image: url({{val.img}});">
+						<h3>{{val.name}}</h3>
+					</div>
+				</a>
+				{{/each}}
+				<section style="clear: both;"></section>
+			</section>
+		</main>
+		
+		<section class="itinerary">
+			<h2>行程推荐</h2>
+			{{ each itinerary val i }}
+			<a href="itinerary.html?{{val.name}}">
+				<img src="{{val.img}}"/>
+				<h3>{{val.name}}</h3>
+				<div>总费用： <em>{{val.cost}}</em> 起</div>
+				<p>{{@val.intro}}</p>
+			</a>
+			{{/each}}
+		</section>
+		
+		<section class="service-content">
+			<div>
+				<img src="../images/pc.png" alt="" />
+				<p>PC</p>
+			</div>
+			<div>
+				<img src="../images/phone.png" alt="" />
+				<p>Mobile</p>
+			</div>
+			<div>
+				<img src="../images/cardboard.png" alt="" />
+				<p>Cardboard</p>
+			</div>
+			<div>
+				<img src="../images/MHD.png" alt="" />
+				<p>MHD</p>
+			</div>
+			<div>
+				<img src="../images/vr.png" alt="" />
+				<p>PC-VR</p>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="logo"></div>
+			<p>百见Beejeen,志在打造一个海外旅行吃喝玩乐住行VR视觉化内容,便于国人出行更好的做行前决策。<br />希望百见会实现您的一些愿望，凝思自己的内心和自己的亲密关系；回顾过往的梦想历程，看到未来不同的生活；跟你爱的人们，玩好每一段珍贵的旅途。</p>
+			<p class="copy-right">Copyright©2017&nbsp;beejeen.com <br />深圳百见信息科技有限公司 粤ICP备16082136号</p>
+		</footer>
+	</script>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/common/common-cn.js?v=556f386932"></script>
+	<script src="../js/country-cn.js?v=added9a54c"></script>
+</html>

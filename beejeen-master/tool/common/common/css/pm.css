@@ -1,0 +1,201 @@
+html{
+	/*font-family: "microsoft yahei";*/
+}
+header{
+	height: 50px;
+	background: #373d41;
+	padding: 0 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	box-sizing: border-box;
+}
+header>img{
+	margin-top: 11px;
+}
+header>h2{
+	line-height: 50px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal;
+}
+/*侧边栏*/
+aside{
+	position: fixed;
+	width: 240px;
+	background-color: #929ca2;
+	z-index: 9;
+	top: 50px;
+	left: 0;
+	bottom: 0;
+}
+aside>h2{
+	height: 70px;
+	line-height: 70px;
+	font-size: 18px;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+}
+aside>h2.active{
+	background-color: #fff;
+	color: #3a3a3a;
+}
+/*主内容区*/
+main{
+	margin-left: 240px;
+	margin-top: 50px;
+	margin-bottom: 200px;
+}
+main>h2{
+	font-size: 18px;
+	color: #3a3a3a;
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #dcdcdc;
+	margin: 0 20px;
+}
+main>h2>span{
+	padding-left: 10px;
+	border-left: 2px solid #4085de;
+}
+main>.select-country{
+	padding: 0 70px;
+}
+main>.select-country>div{
+	border-bottom: 1px dashed #DCDCDC;
+}
+main>.select-country>div>h3{
+	padding: 34px 0;
+	font-size: 14px;
+	display: inline-block;
+	margin-right: 10px;
+}
+main>.select-country>div>h3>span{
+	color: #FF5C00;
+	padding-left: 6px;
+	vertical-align: middle;
+}
+main>.select-country>div>select{
+	width: 170px;
+	height: 30px;
+	background-color: #f5f4f5;
+	border-radius: 4px;
+}
+main>.select-country>div.text{
+	margin-left: 50px;
+	border-bottom: none;
+}
+main>.select-country>div.text>input[type=text]{
+	height: 30px;
+	width: 400px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	text-indent: 4px;
+}
+main>.select-country>div.text>textarea{
+	height: 160px;
+	width: 800px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	text-indent: 4px;
+}
+main>.select-country>div.text>.text-title{
+	display: block;
+	float: left;
+	padding: 0;
+	margin-right: 15px;
+}
+main>.select-country>div.text>label{
+	margin-right: 50px;
+	font-size: 14px;
+}
+main>.select-country>div.text>label>input{
+	vertical-align: middle;
+}
+/*点击单选按钮显示的不同类型内容*/
+main>.type{
+	background-color: #ececec;
+	padding: 20px 70px 10px;
+}
+main>.type>input[type=text]{
+	height: 24px;
+	width: 180px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	text-indent: 4px;
+	margin: 20px 20px 0;
+}
+main>.type>span{
+	font-size: 14px;
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+main>.type>.service{
+	margin-top: 40px;
+	font-weight: bold;
+	margin-right: 16px;
+	float: left;
+	display: block;
+}
+main>.type label{
+	font-size: 14px;
+	width: 140px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+main>.type label>input{
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: -2px;
+}
+main>.media>div>h3 {
+    padding: 34px 0;
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 10px;
+}
+main>.media>div>h3>span {
+    color: #FF5C00;
+    padding-left: 6px;
+    vertical-align: middle;
+}
+main>.media>.file{
+    background-color: #ececec;
+    padding: 20px 174px 10px;
+}
+main>.media>.small-img{
+    padding: 20px 100px 10px;
+    border-bottom: 1px dashed #DCDCDC;
+}
+main>.media>.title{
+    padding: 10px 90px 0px;
+}
+main>.media>.title>h3{
+    padding: 20px 0;
+}
+main>.media>div.title>label{
+    margin-right: 50px;
+    font-size: 14px;
+}
+main>.media>div.title>label>input{
+    margin-right: 10px;
+    vertical-align: middle;
+}
+main>.submit{
+	border: 1px solid #FF5C00;
+	outline: none;
+	height: 34px;
+	width: 130px;
+	background: #fff;
+	color: #FF5C00;
+	border-radius: 4px;
+	margin-right: 65px;
+	margin-top: 50px;
+	float: right;
+}

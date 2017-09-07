@@ -1,0 +1,1370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>krpano - Arrowtown</title>
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<link rel="stylesheet" href="ZZZZZZZ/comment/static/css/zui.min.css" />
+	<link rel="stylesheet" type="text/css" href="ZZZZZZZ/css/icon/iconfont.css?v=823ff7e104">
+
+
+	<script type="text/javascript" src="ZZZZZZZ/js/plugins/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		var outliang;
+	　　window.addEventListener('message',function(e){
+	　　　　outliang=e.data;
+			var outlfflag = outliang.indexOf('user');
+			if(outlfflag != -1){
+				(function(){
+					var urlflaging = outliang.indexOf('&user')+1;
+					var tiaoback = outliang.substring(0,urlflaging-1);				
+						var str = outliang.substring(urlflaging);
+						var userid;
+						var name;
+						var profile;
+						strs = str.split("&");
+						for (var i = 0; i < strs.length; i++) {
+							if(strs[i].split("=")[0] == 'userid'){
+								userid = strs[i].split("=")[1];
+							}
+							if(strs[i].split("=")[0] == 'name'){
+								name = strs[i].split("=")[1];
+							}
+							if(strs[i].split("=")[0] == 'profile'){
+								profile = strs[i].split("=")[1];
+							}
+							
+						}
+						$.cookie('logintype', JSON.stringify({
+							userid: userid,
+							name: name,
+							profile: profile
+						}), {
+							path: "/"
+						});	
+						var tiaochuan = {
+							act: 'backto',
+							dizhi: tiaoback
+						}
+						window.parent.postMessage(tiaochuan,'*');		
+					
+
+				})();
+			}
+	　　　
+	　　},false);
+
+		
+
+		(function(){
+			"use strict";
+			 
+			jQuery.base64 = ( function( $ ) {
+			  
+			  var _PADCHAR = "=",
+			    _ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZAAAAdefghijklmnopqrstuvwxyz0123456789+/",
+			    _VERSION = "1.0";
+
+
+			  function _getbyte64( s, i ) {
+			    // This is oddly fast, except on Chrome/V8.
+			    // Minimal or no improvement in performance by using a
+			    // object with properties mapping chars to value (eg. 'A': 0)
+
+			    var idx = _ALPHA.indexOf( s.charAt( i ) );
+
+			    if ( idx === -1 ) {
+			      throw "Cannot decode base64";
+			    }
+
+			    return idx;
+			  }
+			  
+			  
+			  function _decode( s ) {
+			    var pads = 0,
+			      i,
+			      b10,
+			      imax = s.length,
+			      x = [];
+
+			    s = String( s );
+			    
+			    if ( imax === 0 ) {
+			      return s;
+			    }
+
+			    if ( imax % 4 !== 0 ) {
+			      throw "Cannot decode base64";
+			    }
+
+			    if ( s.charAt( imax - 1 ) === _PADCHAR ) {
+			      pads = 1;
+
+			      if ( s.charAt( imax - 2 ) === _PADCHAR ) {
+			        pads = 2;
+			      }
+
+			      // either way, we want to ignore this last block
+			      imax -= 4;
+			    }
+
+			    for ( i = 0; i < imax; i += 4 ) {
+			      b10 = ( _getbyte64( s, i ) << 18 ) | ( _getbyte64( s, i + 1 ) << 12 ) | ( _getbyte64( s, i + 2 ) << 6 ) | _getbyte64( s, i + 3 );
+			      x.push( String.fromCharCode( b10 >> 16, ( b10 >> 8 ) & 0xff, b10 & 0xff ) );
+			    }
+
+			    switch ( pads ) {
+			      case 1:
+			        b10 = ( _getbyte64( s, i ) << 18 ) | ( _getbyte64( s, i + 1 ) << 12 ) | ( _getbyte64( s, i + 2 ) << 6 );
+			        x.push( String.fromCharCode( b10 >> 16, ( b10 >> 8 ) & 0xff ) );
+			        break;
+
+			      case 2:
+			        b10 = ( _getbyte64( s, i ) << 18) | ( _getbyte64( s, i + 1 ) << 12 );
+			        x.push( String.fromCharCode( b10 >> 16 ) );
+			        break;
+			    }
+
+			    return x.join( "" );
+			  }
+			  
+			  
+			  function _getbyte( s, i ) {
+			    var x = s.charCodeAt( i );
+
+			    if ( x > 255 ) {
+			      throw "INVALID_CHARACTER_ERR: DOM Exception 5";
+			    }
+			    
+			    return x;
+			  }
+
+
+			  function _encode( s ) {
+			    if ( arguments.length !== 1 ) {
+			      throw "SyntaxError: exactly one argument required";
+			    }
+
+			    s = String( s );
+
+			    var i,
+			      b10,
+			      x = [],
+			      imax = s.length - s.length % 3;
+
+			    if ( s.length === 0 ) {
+			      return s;
+			    }
+
+			    for ( i = 0; i < imax; i += 3 ) {
+			      b10 = ( _getbyte( s, i ) << 16 ) | ( _getbyte( s, i + 1 ) << 8 ) | _getbyte( s, i + 2 );
+			      x.push( _ALPHA.charAt( b10 >> 18 ) );
+			      x.push( _ALPHA.charAt( ( b10 >> 12 ) & 0x3F ) );
+			      x.push( _ALPHA.charAt( ( b10 >> 6 ) & 0x3f ) );
+			      x.push( _ALPHA.charAt( b10 & 0x3f ) );
+			    }
+
+			    switch ( s.length - imax ) {
+			      case 1:
+			        b10 = _getbyte( s, i ) << 16;
+			        x.push( _ALPHA.charAt( b10 >> 18 ) + _ALPHA.charAt( ( b10 >> 12 ) & 0x3F ) + _PADCHAR + _PADCHAR );
+			        break;
+
+			      case 2:
+			        b10 = ( _getbyte( s, i ) << 16 ) | ( _getbyte( s, i + 1 ) << 8 );
+			        x.push( _ALPHA.charAt( b10 >> 18 ) + _ALPHA.charAt( ( b10 >> 12 ) & 0x3F ) + _ALPHA.charAt( ( b10 >> 6 ) & 0x3f ) + _PADCHAR );
+			        break;
+			    }
+
+			    return x.join( "" );
+			  }
+
+
+			  return {
+			    decode: _decode,
+			    encode: _encode,
+			    VERSION: _VERSION
+			  };
+			      
+			}( jQuery ) );
+
+
+		})();
+
+		(function(){
+
+			(function (factory) {
+				if (typeof define === 'function' && define.amd) {
+					// AMD
+					define(['jquery'], factory);
+				} else if (typeof exports === 'object') {
+					// CommonJS
+					factory(require('jquery'));
+				} else {
+					// Browser globals
+					factory(jQuery);
+				}
+			}(function ($) {
+
+				var pluses = /\+/g;
+
+				function encode(s) {
+					return config.raw ? s : encodeURIComponent(s);
+				}
+
+				function decode(s) {
+					return config.raw ? s : decodeURIComponent(s);
+				}
+
+				function stringifyCookieValue(value) {
+					return encode(config.json ? JSON.stringify(value) : String(value));
+				}
+
+				function parseCookieValue(s) {
+					if (s.indexOf('"') === 0) {
+						// This is a quoted cookie as according to RFC2068, unescape...
+						s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+					}
+
+					try {
+						// Replace server-side written pluses with spaces.
+						// If we can't decode the cookie, ignore it, it's unusable.
+						// If we can't parse the cookie, ignore it, it's unusable.
+						s = decodeURIComponent(s.replace(pluses, ' '));
+						return config.json ? JSON.parse(s) : s;
+					} catch(e) {}
+				}
+
+				function read(s, converter) {
+					var value = config.raw ? s : parseCookieValue(s);
+					return $.isFunction(converter) ? converter(value) : value;
+				}
+
+				var config = $.cookie = function (key, value, options) {
+
+					// Write
+
+					if (value !== undefined && !$.isFunction(value)) {
+						options = $.extend({}, config.defaults, options);
+
+						if (typeof options.expires === 'number') {
+							var days = options.expires, t = options.expires = new Date();
+							t.setTime(+t + days * 864e+5);
+						}
+
+						return (document.cookie = [
+							encode(key), '=', stringifyCookieValue(value),
+							options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+							options.path    ? '; path=' + options.path : '',
+							options.domain  ? '; domain=' + options.domain : '',
+							options.secure  ? '; secure' : ''
+						].join(''));
+					}
+
+					// Read
+
+					var result = key ? undefined : {};
+
+					// To prevent the for loop in the first place assign an empty array
+					// in case there are no cookies at all. Also prevents odd result when
+					// calling $.cookie().
+					var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+					for (var i = 0, l = cookies.length; i < l; i++) {
+						var parts = cookies[i].split('=');
+						var name = decode(parts.shift());
+						var cookie = parts.join('=');
+
+						if (key && key === name) {
+							// If second argument (value) is a function it's a converter...
+							result = read(cookie, value);
+							break;
+						}
+
+						// Prevent storing a cookie that we couldn't decode.
+						if (!key && (cookie = read(cookie)) !== undefined) {
+							result[name] = cookie;
+						}
+					}
+
+					return result;
+				};
+
+				config.defaults = {};
+
+				$.removeCookie = function (key, options) {
+					if ($.cookie(key) === undefined) {
+						return false;
+					}
+
+					// Must not alter options, thus extending a fresh object...
+					$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+					return !$.cookie(key);
+				};
+
+			}));
+
+		})();
+
+
+
+
+		 
+		(function($){
+			var settings = {
+					e	 		: 'idcode',
+					codeType 	: { name : 'follow', len: 4},
+					codeTip		: 'refresh?',
+					inputID		: 'Txtidcode'          //引用验证码输入框Id
+				};
+			
+			var _set = {
+				storeLable  : 'codeval',
+				store		: '#ehong-code-input',
+				codeval		: '#ehong-code'
+			}
+			$.idcode = {
+				getCode:function(option){
+					_commSetting(option);
+					return _storeData(_set.storeLable, null);
+				},
+				setCode:function(option){
+					_commSetting(option);
+					_setCodeStyle("#"+settings.e, settings.codeType.name, settings.codeType.len);
+					
+				},
+				validateCode:function(option){
+					_commSetting(option);
+					var inputV;
+					if(settings.inputID){
+						inputV=$('#' + settings.inputID).val();
+					}else{
+						inputV=$(_set.store).val();
+					}
+					
+					if(inputV == _storeData(_set.storeLable, null)){
+						return true;
+					}else{
+						_setCodeStyle("#"+settings.e, settings.codeType.name, settings.codeType.len);				
+						return false;
+					}
+				}
+			};
+			
+			function _commSetting(option){
+				$.extend(settings, option);		
+			}
+			
+			function _storeData(dataLabel, data){
+				var store = $(_set.codeval).get(0);			
+				if(data){
+					$.data(store, dataLabel, data);			
+				}else{
+					return $.data(store, dataLabel);			
+				}
+			}
+			
+			function _setCodeStyle(eid, codeType, codeLength){
+				var codeObj = _createCode(settings.codeType.name, settings.codeType.len);		
+				var randNum = Math.floor(Math.random()*6);
+				var htmlCode=''
+				if(!settings.inputID){
+					htmlCode='<span><input id="ehong-code-input" type="text" maxlength="4" /></span>';
+				}
+				htmlCode+='<div id="ehong-code" class="ehong-idcode-val ehong-idcode-val';
+				htmlCode+=String(randNum);
+				htmlCode+='" href="#" onblur="return false" onfocus="return false" oncontextmenu="return false" onclick="$.idcode.setCode()">' + _setStyle(codeObj) + '</div>' + '<span id="ehong-code-tip-ck" class="ehong-code-val-tip" onclick="$.idcode.setCode()">'/*+ settings.codeTip*/ +'</span>';
+				$(eid).html(htmlCode);
+				_storeData(_set.storeLable, codeObj);		
+			}
+			
+			function _setStyle(codeObj){
+				var fnCodeObj = new Array();
+				var col = new Array('#BF0C43', '#E69A2A','#707F02','#18975F','#BC3087','#73C841','#780320','#90719B','#1F72D8','#D6A03C','#6B486E','#243F5F','#16BDB5');
+				var charIndex;
+			   	for(var i=0;i<codeObj.length;i++){		
+					charIndex = Math.floor(Math.random()*col.length);
+					fnCodeObj.push('<font color="' + col[charIndex] + '">' + codeObj.charAt(i) + '</font>');
+				}
+				return fnCodeObj.join('');		
+			}
+			function _createCode(codeType, codeLength){
+			   var codeObj;
+			   if(codeType=='follow'){
+				   codeObj = _createCodeFollow(codeLength);
+			   }else if(codeType=='calc'){
+				   codeObj = _createCodeCalc(codeLength);
+			   }else{
+				   codeObj="";
+			   }
+			   return codeObj;   
+			 }
+			 
+			 function _createCodeCalc(codeLength){
+			   var code1, code2, codeResult;
+			   var selectChar = new Array('0','1','2','3','4','5','6','7','8','9');	
+			   var charIndex;
+			   for(var i=0;i<codeLength;i++){		
+				   charIndex = Math.floor(Math.random()*selectChar.length);
+				   code1 +=selectChar[charIndex];
+				   
+				   charIndex = Math.floor(Math.random()*selectChar.length);
+				   code2 +=selectChar[charIndex];		   
+			   }
+			   return [parseInt(code1), parseInt(code2) , parseInt(code1) + parseInt(code2)] ;
+			 }
+			 
+			 function _createCodeFollow(codeLength){
+			   var code = "";
+			   var selectChar = new Array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+				
+			   for(var i=0;i<codeLength;i++){		
+				   var charIndex = Math.floor(Math.random()*selectChar.length);
+				   if(charIndex % 2 == 0){
+					   code+=selectChar[charIndex].toLowerCase();
+				   }else{
+					   code +=selectChar[charIndex];
+				   }	   
+			   }
+			   return code;
+			 }
+		   
+		})(jQuery);
+
+
+	</script>
+	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000; background-color:#000000; }
+
+		#login-window{
+			display: none;
+			background: #fff;
+			width: 358px;
+			height: 440px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 5000;
+		}
+		.login-header{
+			height: 80px;
+			border-bottom: 1px solid #ccc;
+		}
+		.login-body{
+			width: 80%;
+			margin: 0 auto;
+		}
+		.login-body h2,.sign-body h2{
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+		.login-sign{
+			text-align: center;
+			margin-bottom: 15px;
+			position: relative;
+		}
+		.form-control {
+		    display: inline-block;
+		    width: 90%;
+		    height: 32px;
+		    padding: 5px 8px;
+		    font-size: 13px;
+		    line-height: 1.53846154;
+		    color: #222;
+		    vertical-align: middle;
+		    background-color: #fff;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		}
+		#login-window input:focus{
+			outline-color: #03b8cf;
+		}
+		#loginbtn{
+		    color: #222;
+		    background-color: #ff930a;
+		    border-color: #de7f07;
+		    text-align: center;
+		    line-height: 30px;
+		    height: 30px;
+		    cursor: pointer;
+		}
+		.fujia{
+			height: 30px;
+			line-height: 30px;
+		}
+		.fujia span{
+			cursor: pointer;
+		}
+		.lefta{
+			font-size: 15px;
+			color: #c3c3c3;
+			float: left;
+		}
+		.righta{
+			float: right;
+			font-size: 15px;
+			color: #c3c3c3;
+
+		}
+		.middlep{
+			color: #666;border-top: 1px solid #e5e5e5;margin-top:15px;
+			position: relative;
+		}
+		.outmi{
+			position: relative;
+			height: 30px;
+		}
+		.third{
+			position: absolute;
+			/*margin: auto;*/
+			width: 100px;
+		    height: 30px;
+		    line-height: 30px;
+		    background: white;
+		    top: -15px;
+		    left: 50%;
+		    margin-left: -50px;
+		    text-align: center;
+		}
+		.login-logo img{
+			width: 300px;
+		}
+		.login-logo{
+			width: 300px;
+			margin: 0 auto;
+		}
+		.third-logo{
+		   height: 55px;
+		   line-height: 26px;
+		   text-align: center;
+		   color: red;
+		  }
+		.third-logo a{
+			display: inline-block;
+			width: 33.3%;
+			height: 55px;
+			/*background: red;*/
+		}
+		.th1{
+			background: #fff;
+		}
+		.th2{
+			background: url(ZZZZZZZ/images/login-for-wechat.png) center  center no-repeat;
+		}
+		.th3{
+			background: #fff;
+		}
+		#sign-window{
+			display: none;
+			background: #fff;
+			width: 358px;
+			height: 485px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+			z-index: 5000;
+		}
+		.sign-body{
+			width: 80%;
+			margin: 0 auto;
+			
+			
+		}
+		#signbtn{
+		    color: #222;
+		    background-color: #ff930a;
+		    border-color: #de7f07;
+		    text-align: center!important;
+		    line-height: 30px;
+		    height: 30px;
+		    cursor: pointer;
+		}
+		.yanspan{
+		    display: inline-block;
+		    width: 88%;
+		    height: 32px;
+		    vertical-align: middle;
+		}
+		.yanzheng{
+			width: 50%;
+			float: left;
+		}
+		.closebtn{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 10px;
+			height: 10px;
+			cursor: pointer;
+		}
+		.login-sign i{
+			text-indent: 23px;
+			font-style: normal;
+			font-size: 12px;
+			display: block;
+			position: absolute;
+			bottom: -17px;
+			left: 0;
+			color: red;
+		}
+		#say-comment3{
+			width: 34px;
+			height: 34px;
+			/*float: left;*/
+			/*margin-left: 8px;*/
+			position: absolute;
+			right: 255px;
+			top: 28px;
+			cursor: pointer;
+			background: rgba(0,0,0,.7);
+			color:#ffffff;
+			text-align:center;
+			line-height:43px;
+			font-size:12px;
+			z-index: 5000;
+		}
+		#signbtn .signbtncenter{
+			text-align: center;
+		}
+
+		#comment-window {
+		    position: absolute;
+		    bottom: 20%;
+		    left: 50%;
+		    margin-left: -200px;
+		    width: 400px;
+		    min-height: 100px;
+		    background-color: rgba(51, 51, 51, 0.8);
+		    z-index: 4300;
+		    color: #fff;
+		    border-radius: 5px;
+		    display: none;
+		}
+		#idcode {
+		    cursor: pointer;
+		    margin-left: 40px;
+		    /* width: 20px; */
+		    display: inline-block;
+		    vertical-align: middle;
+		    background: #ccc;
+		    height: 38px;
+		    line-height: 38px;
+		    text-align: center;
+		    width: 60px;
+		    font-size: 16px;
+		}
+		#try-change {
+		    /* float: right; */
+		    font-style: normal;
+		    cursor: pointer;
+		    margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+	if (navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		
+		var style = document.createElement('style');  
+		style.type = 'text/css';  
+		style.innerHTML="#login-window{-webkit-transform:scale(0.9,0.9);-moz-transform:scale(0.9,0.9);}#sign-window{-webkit-transform:scale(0.9,0.9);-moz-transform:scale(0.9,0.9);}#say-comment3{width:28px;height:28px;border-radius:14px;position:absolute;right:20px;top:189px;cursor:pointer;background:rgba(0,0,0,.7);color:#fff;text-align:center;line-height:37px;font-size:12px;z-index:5100}";  
+		document.getElementsByTagName('HEAD').item(0).appendChild(style); 
+
+	}
+	</script>
+
+</head>
+<body>
+
+	<script src="ZZZZZZZ/tour.js"></script>
+
+	<div id="pano" style="width:100%;height:100%;">
+		<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+		<script>
+			embedpano({swf:"ZZZZZZZ/tour.swf", xml:"tour.xml?v=3", target:"pano", html5:"prefer", mobilescale:1.0, passQueryParameters:true});
+		</script>
+	</div>
+
+	<div id="say-comment3" title="评论一下吧">
+		<i class="iconfont icon-comment"></i>
+	</div>
+
+	<script type="text/javascript">
+	//评论相关代码
+	var comment_list = new Array(); 
+	var is_show_comment = true;
+	var css = {     
+	      display:"block"
+	};
+	var sname = '';
+	var ath = 0;
+	var atv = 0;
+	//显示评论窗
+	function show_comment(){
+	     $(".vrshow_comment").css(css);
+	     var krpano = document.getElementById('krpanoSWFObject');
+	       krpano.call("js(update_comm_ele(get(xml.scene),get(view.hlookat),get(view.vlookat)))");
+	       var head_img2;
+	       if(JSON.parse($.cookie('logintype')).profile){
+	            head_img2 = JSON.parse($.cookie('logintype')).profile;
+	       }else{
+	            head_img2 = 'ZZZZZZZ/comment/plugin/comment/images/comm-hide-icon.png';
+	       }
+	           $("#usercomm").attr('placeholder','拖动头像就可以发表说一说到指定位置哦！').unbind("click");
+	           krpano.call(
+	                "addhotspot(commname);"+
+	                "set(hotspot[commname].url,ZZZZZZZ/comment/plugin/comment/images/comm-hide-icon.png);"+
+	                "set(hotspot[commname].ath,get(view.hlookat));"+
+	                "set(hotspot[commname].atv,get(view.vlookat));"+
+	                "set(hotspot[commname].edge,bottom);"+
+	                "set(hotspot[commname].zoom,false);"+   
+	                "set(hotspot[commname].ondown,dragcommenthotspot());"+
+	                "set(hotspot[commname].onup,js(update_comm_ele(get(xml.scene),get(ath),get(atv))));"+
+	                "addplugin(commname_txt);"+
+	                "set(plugin[commname_txt].parent, 'hotspot[commname]');"+
+	                "set(plugin[commname_txt].url,'%SWFPATH%/plugins/textfield.swf');"+
+	                "set(plugin[commname_txt].align,righttop);"+
+	                "set(plugin[commname_txt].edge,lefttop);"+
+	                "set(plugin[commname_txt].x,-5);"+
+	                "set(plugin[commname_txt].autowidth,true);"+
+	                "set(plugin[commname_txt].height,30);"+
+	                "set(plugin[commname_txt].background,true);"+
+	                "set(plugin[commname_txt].backgroundcolor,0x000000);"+
+	                "set(plugin[commname_txt].roundedge,5);"+
+	                "set(plugin[commname_txt].backgroundalpha,0.8);"+
+	                "set(plugin[commname_txt].css,'text-align:center;color:red;font-size:14px;line-height:25px;padding:0 5px;font-family:microsoft yahei;');"+
+	                "set(plugin[commname_txt].html,拖动头像到你要评论的位置);"+
+	                "set(plugin[commname_txt].enabled,true);"+
+	                "addplugin(commname_avatar);"+
+	                "set(plugin[commname_avatar].url,%SWFPATH%/plugins/textfield.swf);"+
+	                "set(plugin[commname_avatar].parent,'hotspot[commname]');"+
+	                "set(plugin[commname_avatar].width,30);"+
+	                "set(plugin[commname_avatar].height,30);"+
+	                "set(plugin[commname_avatar].align,lefttop);"+
+	                "set(plugin[commname_avatar].edge,lefttop);"+
+	                "set(plugin[commname_avatar].roundedge,3);"+
+	                "set(plugin[commname_avatar].enabled,false);"+
+	                "set(plugin[commname_avatar].css,'margin:0;width:30px;height:30px;background:url("+head_img2+") 0 0 no-repeat;background-size:30px;');"
+	        );
+	      
+	 
+	}
+
+
+	//取消评论
+	function cancel_comment(){
+	     var krpano = document.getElementById('krpanoSWFObject');
+	    $("#usercomm").val('');
+	    $("#doComm").addClass("disabled");
+	    $(".vrshow_comment").hide();
+	    krpano.call("removehotspot(commname);removeplugin(commname_avatar);set(layer[skin_layer].visible,true);");
+	}
+	//更新sname,ath,atv
+	function update_comm_ele(s,ah,av){
+	    sname = s;
+	    ath = ah;
+	    atv = av;
+	}
+	//取得某个scene的评论
+	function getComment(scene) {
+	    
+	    var poicha = location.hash.substring(1);
+	    atuoRequest(scene);
+
+	}
+
+	//隐藏评论
+	//param status:要设置的状态 true 显示 false 隐藏
+	function switch_show_comment(status){
+	     var krpano = document.getElementById('krpanoSWFObject');
+	 
+	    if(status&&!is_show_comment){
+	        for(var i=0;i<comment_list.length;i++){
+	          krpano.call("set(hotspot[userComm_"+comment_list[i].id+"].visible,true);set(layer[skin_co_btn_ico].url,/plugin/comment/images/comment.png);");
+	        }
+	        is_show_comment = true; 
+	    }else if(!status&&is_show_comment) {
+	        for(var i=0;i<comment_list.length;i++){
+	          krpano.call("set(hotspot[userComm_"+comment_list[i].id+"].visible,false);set(layer[skin_co_btn_ico].url,/plugin/comment/images/no_comment.png);");
+	        }
+	        is_show_comment = false;
+	        cancel_comment();
+	    }
+	 
+	}
+	function comment_init(data){
+	    //是否显示说一说
+	    if (data.comment=='0') {
+	        $('#comment_div').hide();
+	    }else{
+	        $('#comment_div').show();
+	    }
+	}
+	//监听
+	$(function() {
+	   // plugins_init_function.push(comment_init);
+	    $("#usercomm").keyup(function(){  
+			var krpano = document.getElementById('krpanoSWFObject');						  
+	        var content = $.trim($("#usercomm").val());
+	        var curLength = content.length;   
+	        krpano.call("set(plugin[commname_txt].html,"+content+");");
+	        if(curLength>0){
+	            $("#doComm").removeClass("disabled");
+	        }
+	        else{
+	            krpano.call("set(plugin[commname_txt].html,拖动头像到你要评论的位置);");
+	            //$("#doComm").css({cursor:"not-allowed",backgroundColor:"#aaaaaa"});
+	        } 
+	    });
+	    $("#doComm").click(function(){
+	        if($.trim($("#usercomm").val()).length<1){
+	            return false;
+	        }
+
+	        if($.cookie('logintype') == undefined){
+	            return;
+	        }
+
+		var userch = JSON.parse($.cookie('logintype')).userid;
+         var poich = location.search.substring(1);
+         var poicharry = poich.split('&');
+         for (var i = 0; i < poicharry.length; i++) {
+             if(poicharry[i].split('=')[0] == 'poi'){
+                 var poizhi = poicharry[i].split('=')[1];
+              }
+         }
+	        
+
+	        $.post("http://www.beejeen.com/addcomment",{poi:poizhi,scene:sname,userid:userch,ath:ath,atv:atv,content:$("#usercomm").val()},function(data){
+	            if(data=='0'){
+	               cancel_comment();
+	               getComment(sname);
+	            }
+	            else{
+	                alert('添加评论失败！');
+	            }
+	        });
+	    });
+	})  
+		
+
+		
+	</script>
+
+	<div id="comment-window" class="vrshow_comment">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <h4 style="margin-left:10px">评论</h4>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-md-12" style="padding-left:52px;padding-right:20px">
+	            <textarea id="usercomm" class="form-control" rows="3" placeholder="说点什么吧！最多不要超过50个字哦" maxlength="50"></textarea>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-md-12 text-right" style="padding:10px 20px">
+	            <!--<div class="hide-comment" onClick="switch_show_comment(false)">
+	                <img src="{$_lang.host}plugin/comment/images/hide-comment.png">
+	                <span>隐藏</span>
+	            </div>-->
+	            <button  class="btn btn-primary disabled" type="button" id="doComm">发表</button>
+	            <button class="btn" type="button" onClick="cancel_comment()">取消</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div id="login-window">
+		<div class="login-header">
+			<div class="login-logo">
+				<img src="ZZZZZZZ/images/loginlogo.png"/>
+			</div>
+		</div>
+		<div class="login-body">
+			<h2>用户登录</h2>
+			<form id="login-send">				
+				<div class="login-sign"><input name="telephone" type="text" class="form-control" id="login_account_name2" placeholder="邮箱/手机号"></div>
+				<div class="login-sign"><input name="password" type="password" class="form-control" id="login_password2" placeholder="密码"><i></i></div>
+			</form>
+			<div><input id="remPwdCheckBox" type="checkbox" checked=""><span>记住密码</span></div>
+			<div id="loginbtn">登录</div>
+			<div class="fujia">
+				<span class="lefta" href="">忘记密码</span>
+				<span id="sign-now" class="righta" href="">立即注册</span>
+			</div>
+			<div class="outmi">
+				<p class="middlep">
+	                <span class="third">第三方登录</span>
+	            </p>
+			</div>
+			<div class="third-logo">
+				<a href="javascript:void(0);" class="th1"></a><a href="javascript:void(0);" class="th2" id="wxlogin"></a><a href="javascript:void(0);" class="th3"></a>
+			</div>
+		</div>
+		<div class="closebtn">
+			X
+		</div>
+	</div>
+	<div id="sign-window">
+		<div class="login-header">
+			<div class="login-logo">
+				<img src="ZZZZZZZ/images/loginlogo.png"/>
+			</div>
+		</div>
+		<div class="sign-body">
+			<h2>注册</h2>
+			<form id="sign-post">			
+				<div class="login-sign"><input name="telephone" type="text" class="form-control" id="login_account_name" placeholder="手机号"><i></i></div>
+				<div class="login-sign"><input name="name" type="text" class="form-control" id="login_ni" placeholder="昵称"><i></i></div>
+				<div class="login-sign"><input name="password" type="password" class="form-control" id="sign_password" placeholder="密码"><i></i></div>
+			</form>
+			<div class="login-sign"><input type="password" class="form-control" id="sign_password2" placeholder="确认密码"><i></i></div>
+			<div class="login-sign">
+				<span class="yanspan">
+					<input type="password" class="form-control yanzheng" id="Txtidcode" placeholder="点击获取验证码"><span id="idcode"></span>
+				</span>
+				<i id="yanyan"></i>
+			</div>
+			<div class="fujia">
+				<span class="lefta"><input type="checkbox" checked=""><a href="">同意服务协议</a></span>
+				<span id="backlogin" class="righta" href="">已有帐号立即登录</span>
+			</div>
+			<div id="signbtn" class="signbtncenter">注册</div>
+		</div>
+		<div class="closebtn">
+			X
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+		var poicha;
+		var poichas = location.search;
+		var poichastr = poichas.substring(1);
+		if(poichastr.indexOf('&') != -1){
+			var poicharry = poichastr.split('&');
+			for(var ik = 0; ik < poicharry.length; ik++){
+				if(poicharry[ik].split("=")[0] == 'poi'){
+					poicha = poicharry[ik].split("=")[1];
+				}
+			}			
+		}else{
+			var poicharry2 = poichastr.split('=');
+			poicha = poicharry2[1];
+		}
+
+		function atuoRequest(t){
+			var krpano = document.getElementById('krpanoSWFObject');
+			if(t == undefined){
+	           var t = krpano.get("scene[get(xml.scene)].name");
+            }
+			var comment_list = new Array(); 
+			$.get("http://www.beejeen.com/getcomment",{poi:poicha,scene:t},function(data){
+			       
+			       for(var i=0;i<data.comment.length;i++){
+
+			           var commname = "userComm_"+data.comment[i].id;
+			           var commname_txt = commname+"_txt";
+			           var commname_avatar = commname+"_avatar";
+			           var head_img = data.comment[i].profile;
+			          
+			           if(head_img == ''){
+			           		head_img = 'ZZZZZZZ/comment/plugin/comment/images/comm-hide-icon.png';
+			           }
+			            
+			           krpano.call(
+			           "addhotspot("+commname+");"+
+			           "set(hotspot["+commname+"].url,ZZZZZZZ/comment/plugin/comment/images/comm-hide-icon.png);"+
+			           "set(hotspot["+commname+"].ath,"+data.comment[i].ath+");"+
+			           "set(hotspot["+commname+"].atv,"+data.comment[i].atv+");"+
+			           "set(hotspot["+commname+"].edge,bottom);"+
+			           "set(hotspot["+commname+"].zoom,false);"+   
+			           "set(hotspot["+commname+"].visible,true);"+
+			           "addplugin("+commname_txt+");"+
+			           "set(plugin["+commname_txt+"].parent, 'hotspot["+commname+"]');"+
+			           "set(plugin["+commname_txt+"].url,'%SWFPATH%/plugins/textfield.swf');"+
+			           "set(plugin["+commname_txt+"].align,righttop);"+
+			           "set(plugin["+commname_txt+"].edge,lefttop);"+
+			           "set(plugin["+commname_txt+"].x,-5);"+
+			           "set(plugin["+commname_txt+"].autowidth,true);"+
+			           "set(plugin["+commname_txt+"].height,30);"+
+			           "set(plugin["+commname_txt+"].background,true);"+
+			           "set(plugin["+commname_txt+"].backgroundcolor,0x000000);"+
+			           "set(plugin["+commname_txt+"].roundedge,5);"+
+			           "set(plugin["+commname_txt+"].backgroundalpha,0.8);"+
+			           "set(plugin["+commname_txt+"].css,'text-align:center;color:#FFFFFF;font-size:14px;line-height:25px;padding:0 5px;font-family:microsoft yahei;');"+
+			           "set(plugin["+commname_txt+"].html,"+data.comment[i].content+");"+
+			           "set(plugin["+commname_txt+"].enabled,false);"+
+			           "addplugin("+commname_avatar+");"+
+			           "set(plugin["+commname_avatar+"].url,%SWFPATH%/plugins/textfield.swf);"+
+			           "set(plugin["+commname_avatar+"].parent,'hotspot["+commname+"]');"+
+			           "set(plugin["+commname_avatar+"].width,30);"+
+			           "set(plugin["+commname_avatar+"].height,30);"+
+			           "set(plugin["+commname_avatar+"].align,lefttop);"+
+			           "set(plugin["+commname_avatar+"].edge,lefttop);"+
+			           "set(plugin["+commname_avatar+"].keep,false);"+
+			           "set(plugin["+commname_avatar+"].roundedge,3);"+
+			           "set(plugin["+commname_avatar+"].css,'margin:0;width:30px;height:30px;background:url("+head_img+") 0 0 no-repeat;background-size:30px;');"
+			           );
+			       }
+	
+			});
+		}
+		//atuoRequest();
+
+		var isTrue1 = false;
+		var isTrue2 = false;
+		var isTrue3 = false;
+		var isTrue4 = false;
+		var isTrue5 = false;
+		var isTrue = false;
+
+		var isLoginTrue = false;
+		var isLoginTrue1 = false;
+		var isLoginTrue2 = false;
+
+
+		$('#say-comment3').on('click',function () {
+			if($('#sign-window').css('display') == 'block' || $('#comment-window').css('display') == 'block'){
+				return;
+			};
+
+			if($.cookie('logintype') == undefined) {
+				$('#login-window').show();
+				return;
+				
+			}
+			show_comment();
+
+		})
+
+		$('#sign-now').on('click',function(){
+			$('#login-window').hide();
+			$('#sign-window').show();
+		});
+
+		$('.closebtn').on('click',function(){
+			$(this).parent().hide();
+		});
+
+		$('#backlogin').on('click',function(){
+			$('#sign-window').hide();
+			$('#login-window').show();
+
+		});
+
+		
+		$('#login_account_name').on('blur',function(){
+			var reg_tel=/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+			var reg_Email=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+			//console.log(reg_tel.test($(this).val()))
+			if($(this).val() == ''){
+				$(this).parent().find('i').html('');
+				isTrue1 = false;
+				return;
+			}
+			if((!reg_tel.test($(this).val())||reg_Email.test($(this).val()))&&(reg_tel.test($(this).val())||!reg_Email.test($(this).val()))){
+				$(this).parent().find('i').html('你输入的有误，请重新输入');
+				isTrue1 = false;
+			}else{
+
+				var sendstr = 'telephone='+$('#login_account_name').val();
+				$.get("http://www.beejeen.com/checktelephone",sendstr,function(data){
+					if(data == '0'){
+						$('#login_account_name').parent().find('i').html('');
+						isTrue1 = true;
+					}else{
+						$('#login_account_name').parent().find('i').html('您输入的手机已注册！');
+						isTrue1 = false;
+					}
+				});
+			}
+		});
+		
+		$('#login_ni').on('blur',function(){
+			var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
+			if($(this).val() == ''){
+				$(this).parent().find('i').html('');
+				isTrue2 = false;
+				return;			
+			}
+			if(!uPattern.test($(this).val())){
+				$(this).parent().find('i').html('4到16位（字母，数字，下划线，减号）');		
+				isTrue2 = false;
+
+			}else{
+				$(this).parent().find('i').html('');
+				isTrue2 = true;
+
+			}
+			
+		});
+		
+		$('#sign_password').on('blur',function(){
+			var uPattern = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,20}$/;
+			if($(this).val() == ''){
+				$(this).parent().find('i').html('');
+				isTrue3 = false;
+				return;			
+			}
+			if($(this).val().length < 6 ||$(this).val().length > 16 ){
+				$(this).parent().find('i').html('密码长度不能小于6位或者大于20位');	
+				isTrue3 = false;				
+			}else if(!uPattern.test($(this).val())){
+				$(this).parent().find('i').html('密码必须包含字母和数字');
+				isTrue3 = false;
+			}else{
+				$(this).parent().find('i').html('');
+				isTrue3 = true;
+				
+			}	
+		});
+		
+		$('#sign_password2').on('blur',function(){
+			var pwd1 = $('#sign_password').val();
+			var pwd2 = $('#sign_password2').val();
+			
+			if(pwd1 != pwd2){
+				$(this).parent().find('i').html('您输入的密码不一致');	
+				isTrue4 = false;						
+			}else{
+				$(this).parent().find('i').html('');
+				isTrue4 = true;
+
+			}
+			
+		});
+
+		$.fn.serializeObject = function(){    
+		   var o = {};    
+		   var a = this.serializeArray();    
+		   $.each(a, function() {    
+		       if (o[this.name]) {    
+		           if (!o[this.name].push) {    
+		               o[this.name] = [o[this.name]];    
+		           }    
+		           o[this.name].push(this.value || '');    
+		       } else {    
+		           o[this.name] = this.value || '';    
+		       }    
+		   });    
+		   return o;  
+		};
+
+
+		
+		$('#signbtn').on('click',function(){
+			if($('#login_account_name').val()==''||$('#login_ni').val()==''||$('#password').val()==''||$('#password2').val()==''||$('#Txtidcode').val()==''){
+					return;
+			}
+
+			if(isTrue1 == true && isTrue2 == true && isTrue3 == true && isTrue4 == true &isTrue5 == true){
+				isTrue = true;
+			}
+
+			if(isTrue){
+
+				var jsonuserinfo = $('#sign-post').serializeObject();
+				var cstr = jsonuserinfo.password;
+				var enstr = $.base64.encode(cstr);
+				var sendmes = 'telephone='+jsonuserinfo.telephone+'&'+'name='+jsonuserinfo.name+ '&' +'password='+enstr;
+				
+				$.ajax({
+				    url: 'http://www.beejeen.com/register',
+				    method: 'POST',
+				    crossDomain: true,
+				    data: sendmes,
+				    processData: false,
+				    cache: false,
+				    success: function(data) {
+				        if(data == '0'){
+							$('.sign-body').css({
+								'height':'200px',
+								'line-height':'200px',
+								'text-align':'center',
+								'color':'red',
+								'font-size':'30px'
+							})
+							$('.sign-body').html('注册成功!');
+							setTimeout(function(){
+								$('#sign-window').hide();
+								$('#login-window').show();
+								
+							},1000);
+				        }else{
+				        	alert('注册失败');
+				        }
+				    }
+				});				
+
+		
+			}
+			
+		});
+
+
+
+		$('#login_account_name2').on('blur',function(){
+			
+			if($(this).val() == ''){
+				isLoginTrue1 = false;
+				return;			
+			}else{
+				isLoginTrue1 = true;
+			}
+						
+		});
+
+		$('#login_password2').on('blur',function(){
+			
+			if($(this).val() == ''){
+				isLoginTrue2 = false;
+				return;			
+			}else{
+				isLoginTrue2 = true;
+			}			
+			
+		});
+
+
+
+		$('#loginbtn').on('click',function(){
+			if($('#login_account_name2').val()==''||$('#login_password2').val()==''||!($('#remPwdCheckBox').is(':checked'))){
+					return;
+			}
+			if(isLoginTrue1 == true && isLoginTrue2 == true){
+				isLoginTrue = true;
+			}
+
+			if(isLoginTrue){
+
+				var jsonuserinfo = $('#login-send').serializeObject();
+				var cstr = jsonuserinfo.password;
+				var enstr = $.base64.encode(cstr);
+				var sendmes = 'telephone='+jsonuserinfo.telephone+'&'+'password='+enstr;
+
+				$.ajax({
+				    url: 'http://www.beejeen.com/login',
+				    method: 'POST',
+				    crossDomain: true,
+				    data: sendmes,
+
+				    processData: false,
+				    cache: false,
+				    success: function(data) {
+
+				        if(data.userid != undefined){
+							$('.login-body').css({
+								'height':'200px',
+								'line-height':'200px',
+								'text-align':'center',
+								'color':'red',
+								'font-size':'30px'
+							})
+							$('.login-body').html('登录成功!');
+
+							$.cookie('logintype', JSON.stringify({
+								userid: data.userid,
+								name: data.name,
+								profile: data.profile
+							}), {
+								path: "/"
+							});
+
+							setTimeout(function(){
+								$('#login-window').hide();
+								show_comment();
+							
+							},1000);
+				        }else{
+				        	$('#login_password2').parent().find('i').html('用户名和密码不匹配，登录失败！');
+				        }
+				    }
+				});						
+		
+			}				
+
+		});
+
+		$.idcode.setCode();
+
+		$('.yanzheng').blur(function(){
+			var IsBy = $.idcode.validateCode();
+			if(!IsBy) {
+				$('#yanyan').html('请重新输入验证码');
+				isTrue5 = false;
+			} else{
+				$('#yanyan').html('');
+				isTrue5 = true;
+
+			}
+			
+		});
+
+
+		$('#wxlogin').on('click',function(){
+
+			function isWeiXin() {
+				var ua = window.navigator.userAgent.toLowerCase();
+				if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+			if(isWeiXin()){
+				var urlrefer = 'url=' + encodeURIComponent(outliang)
+				var urlint = "http://m.beejeen.com/wechatlogin?" + urlrefer;
+				location.href = urlint; 
+			}else{
+				var urlrefer = 'url=' + encodeURIComponent(outliang);
+				var urlint = "http://www.beejeen.com/wechatlogin?" + urlrefer;
+				location.href = urlint; 
+
+			}
+
+		});
+
+	</script>
+	<script type="text/javascript">
+		function isWeiXin() {
+			var ua = window.navigator.userAgent.toLowerCase();
+			if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		if(navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+			if(isWeiXin()){
+			}else{
+				$('.third-logo').html('微信中打开便可以用微信帐号登录哦!');
+				
+			}
+			
+		}
+	</script>
+
+
+</body>
+</html>

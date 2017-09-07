@@ -1,0 +1,284 @@
+{
+    "content": [
+        {
+            "left": [
+                "D1",
+                "2017/06/29",
+                "香港-清迈"
+            ],
+            "middle": [
+                {
+                    "icon": "flight",
+                    "text": "香港-清迈"
+                },
+                {
+                    "icon": "restaurant",
+                    "text": "午餐（未包含）"
+                },
+                {
+                    "icon": "tips",
+                    "text": "15:00 清迈古城游览"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Wat Chedi Luang"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Wat Phra Singh"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Wat Chiang Man"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Warorot Market"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Three Kings Monuments"
+                },
+                {
+                    "icon": "restaurant",
+                    "text": "晚餐（未包含）"
+                },
+                {
+                    "icon": "hotel",
+                    "text": "Rachamankha a Member of Secret Retreats"
+                }
+            ],
+            "right": [
+                {
+                    "flight": {
+                        "duration": "2h50min",
+                        "from": "香港",
+                        "to_time": "12:25",
+                        "begin_time": "",
+                        "to": "清迈",
+                        "begin_place": "香港赤鱲角国际机场",
+                        "from_time": "10:35"
+                    }
+                },
+                {
+                    "text": {
+						"content": "舟车劳顿，建议您在酒店或者附近午餐，以便餐后适当休息。",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "text": {
+						"content": "包车游览清迈古城，契迪龙寺的门票为40泰铢，导游会带您购买。",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Wat Chedi Luang"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Wat Phra Sing"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Wat Chiang Man"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Warorot Market"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Three Kings Monuments"
+                    }
+                },
+                {
+                    "text": {
+						"content": "可以选择在古城内吃饭，也可以前往湄平河畔 The Riverside Bar&Restaurant。1984年开业，是清迈首间设有现场表演的美式酒吧餐厅，至今仍是河边最受外国人欢迎的餐厅。餐厅也自备船只，设有游船晚餐，每人只需150泰铢，即可出发一面享用美食，一面欣赏醉人夜景。这里有西餐牛排，汉堡等以及泰国菜，可以满足不同人的口味。预定电话：+66-53-243239",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Rachamankha a Member of Secret Retreats"
+                    }
+                }
+            ]
+        },
+        {
+            "left": [
+                "D2",
+                "2017/06/30",
+                "清迈"
+            ],
+            "middle": [
+                {
+                    "icon": "sight",
+                    "text": "9:50 公司拜访 "
+                },
+                {
+                    "icon": "sight",
+                    "text": "Nimmanahaeminda Road"
+                },
+                {
+                    "icon": "restaurant",
+                    "text": "晚餐（未包含）"
+                },
+                {
+                    "icon": "hotel",
+                    "text": "Rachamankha a Member of Secret Retreats"
+                }
+            ],
+            "right": [
+                {
+                    "text": {
+						"content": "10:30准时到达\nFullDomeLab\n地址为: 67/1 BaanPong, HangDong, ChiangMai",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Nimmanahaeminda Road"
+                    }
+                },
+                {
+                    "text": {
+						"content": "宁曼路，其说是路，不如说是交叉的几条街道，这里既安静又有趣。各种小店、咖啡馆聚集在这里，每家的招牌明艳又醒目，还有各种卡通玩偶作为店铺形象。这里聚集网红甜品店IBerry和Mango Tango,也有以创意菜文明的Mix Restaurant&Bar",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Rachamankha a Member of Secret Retreats"
+                    }
+                }
+            ]
+        },
+        {
+            "left": [
+                "D3",
+                "2017/07/1",
+                "清迈-丛林飞鼠"
+            ],
+            "middle": [
+                {
+                    "icon": "tips",
+                    "text": "10:00-10:30集合"
+                },
+                {
+                    "icon": "activity",
+                    "text": "Flying Squirrels"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Night Bazaar"
+                },
+                {
+                    "icon": "hotel",
+                    "text": "Rachamankha a Member of Secret Retreats"
+                }
+            ],
+            "right": [
+                {
+                    "text": {
+						"content": "丛林飞鼠一日游，出发时间：10:00-10:30，请在酒店大堂等候接送。全程需要6小时左右，含餐。",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Flying Squirrels"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Night Bazaar"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Rachamankha a Member of Secret Retreats"
+                    }
+                }
+            ]
+        },
+        {
+            "left": [
+                "D4",
+                "2017/07/02",
+                "清迈-素贴山-香港"
+            ],
+            "middle": [
+                {
+                    "icon": "tips",
+                    "text": "9:00 素贴山游览"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Doi Suthep"
+                },
+                {
+                    "icon": "sight",
+                    "text": "Wat Phra That Doi Suthep"
+                },
+                {
+                    "icon": "sight",
+                    "text": "The Bhubing Palace"
+                },
+                {
+                    "icon": "tips",
+                    "text": "15:30 前往机场"
+                },
+                {
+                    "icon": "flight",
+                    "text": "清迈-香港"
+                }
+            ],
+            "right": [
+                {
+                    "text": {
+						"content": "9:00准时出发\n请于出发前退房并把行李寄存在酒店。\n今天的行程不包含门票，分别为：\n素贴山 100泰铢\n双龙寺 30泰铢\n蒲屏皇宫 50泰铢",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "sight": {
+                        "name": "Doi Suthep"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "Wat Phra That Doi Suthep"
+                    }
+                },
+                {
+                    "sight": {
+                        "name": "The Bhubing Palace"
+					}
+                },
+				{
+                    "text": {
+						"content": "返回酒店后提取行李，于15:30准时出发从酒店前往机场。",
+						"title": "温馨提示"
+					}
+                },
+                {
+                    "flight": {
+                        "duration": "2h50min",
+                        "from": "清迈",
+                        "to_time": "22:10",
+                        "begin_time": "",
+                        "to": "香港",
+                        "begin_place": "清迈国际机场",
+                        "from_time": "18:20"
+                    }
+                }
+            ]
+        }
+    ]
+}

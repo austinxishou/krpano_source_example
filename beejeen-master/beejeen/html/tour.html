@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		if (navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://www.","http://m.") ;
+		}
+	</script>
+	<title></title>
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=a82da7253e">
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104">
+	<link rel="stylesheet" type="text/css" href="../css/tour.css?v=0bab72e415"/>
+</head>
+<body>
+	<iframe id="iframe" width="100%" height="100%" src="" frameborder="0"></iframe>
+
+	<a href="../index.html"><h1 class="logo">百见 VR</h1></a>
+
+	<div class="icon-box">
+		<!-- 音乐 -->
+		<div id="music"><div></div></div>
+		<!--分享-->
+		<div id="share">
+			<i class="iconfont icon-share"></i>
+		</div>
+	</div>
+
+	<div class="icon-box2">
+		<!-- 点赞 -->
+		<div id="like">
+			<i class="iconfont icon-like-click"></i>
+		</div>
+		<!-- 全屏 -->
+		<div id="full-screen">
+			<i class="iconfont icon-fullScreen"></i>
+		</div>
+
+		<p id="language"><i class="iconfont icon-cn"></i></p>
+	</div>
+
+	<audio id="mp3" autoplay="autoplay" loop="loop"></audio>
+
+	<!-- 介绍 -->
+	<div id="introduction">
+		<div id="introduction-icon"></div>
+		<div id="introduction-detail"></div>
+	</div>
+
+
+	<!--二维码-->
+	<div id="share-content">
+		<div id="share-content-text">使用手机扫描二维码分享</div>
+		<div id="share-content-close">X</div>
+		<div id="share-content-qrcode"></div>
+	</div>
+
+
+
+	<div id="login-window">
+		<div class="login-header">
+			<div class="login-logo">
+				<img src="../images/loginlogo.png"/>
+			</div>
+		</div>
+		<div class="login-body">
+			<h2>用户登录</h2>
+			<div class="login-sign"><input type="text" class="form-control" id="login_account_name2" placeholder="邮箱/手机号"></div>
+			<div class="login-sign"><input type="password" class="form-control" id="login_password2" placeholder="密码"></div>
+			<div><input id="remPwdCheckBox" type="checkbox" checked=""><a>记住密码</a></div>
+			<div id="loginbtn">登录</div>
+			<div class="fujia">
+				<span class="lefta" href="">忘记密码</span>
+				<span id="sign-now" class="righta" href="">立即注册</span>
+			</div>
+			<div class="outmi">
+				<p class="middlep">
+                    <a class="third">第三方登录</a>
+                </p>
+			</div>
+			<div class="third-logo">
+				<a href="" class="th1"></a><a href="" class="th2"></a><a href="" class="th3"></a>
+			</div>
+		</div>
+		<div class="closebtn">
+			X
+		</div>
+	</div>
+	<div id="sign-window">
+		<div class="login-header">
+			<div class="login-logo">
+				<img src="../images/loginlogo.png"/>
+			</div>
+		</div>
+		<div class="sign-body">
+			<h2>注册</h2>
+			<div class="login-sign"><input type="text" class="form-control" id="login_account_name" placeholder="邮箱/手机号"><i></i></div>
+			<div class="login-sign"><input type="text" class="form-control" id="login_ni" placeholder="昵称"><i></i></div>
+			<div class="login-sign"><input type="password" class="form-control" id="sign_password" placeholder="密码"><i></i></div>
+			<div class="login-sign"><input type="password" class="form-control" id="sign_password2" placeholder="确认密码"><i></i></div>
+			<div class="login-sign">
+				<span class="yanspan">
+					<input type="password" class="form-control yanzheng" id="login_password4" placeholder="点击获取验证码">
+				</span>
+			</div>
+			<div class="fujia">
+				<span class="lefta"><input type="checkbox" checked=""><a href="">同意服务协议</a></span>
+				<span id="backlogin" class="righta" href="">已有帐号立即登录</span>
+			</div>
+			<div id="signbtn">注册</div>
+		</div>
+		<div class="closebtn">
+			X
+		</div>
+		
+	</div>
+	<div id="comment-window" class="vrshow_comment">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 style="margin-left:10px">评论</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="padding-left:20px;padding-right:20px">
+                <textarea id="usercomm" class="form-control" rows="3" placeholder="说点什么吧！最多不要超过25个字哦" maxlength="25"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-right" style="padding:10px 20px">
+                <!--<div class="hide-comment" onClick="switch_show_comment(false)">
+                    <img src="{$_lang.host}plugin/comment/images/hide-comment.png">
+                    <span>隐藏</span>
+                </div>-->
+                <button  class="btn btn-primary disabled" type="button" id="doComm">发表</button>
+                <button class="btn" type="button" onClick="cancel_comment()">取消</button>
+            </div>
+        </div>
+	</div>
+</body>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.qrcode.min.js?v=05f0b1d7d4"></script>
+	<script src="../js/tour.js?v=36ba5ff445"></script>
+
+	<script type="text/javascript">
+
+		var urlding = location.href;
+		var iframesrc = $('#iframe').attr('src');
+
+		$('#iframe').on('load',function(){
+			var iframenode = document.getElementById('iframe').contentWindow;
+			iframenode.postMessage(urlding,'*'); 
+
+		});
+
+	　　window.addEventListener('message',function(e){
+	　　　　var color=e.data;
+	　　　　console.log(e);
+			if(e.data.act == 'backto'){
+	　　　　 	location.href= e.data.dizhi;
+			}
+	　　},false);		
+
+
+	</script>
+
+
+</html>

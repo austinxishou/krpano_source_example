@@ -1,0 +1,262 @@
+html{
+	height: 100%;
+	overflow-x: auto;
+	min-width: 800px;
+	font-family: 'Helvetica', 'STHeiti', 'Microsoft YaHei', Arial, sans-serif;
+}
+header{
+	position: absolute;
+	height: 36px;
+	width: 100%;
+	padding: 10px 0;
+	background-color: #262e3e;
+	z-index: 999;
+}
+header>h1{
+	font-size: 22px;
+	color: #fff;
+	line-height: 36px;
+	padding-left: 36px;
+	font-weight: normal;
+	float: left;
+}
+header>button{
+	width: 74px;
+	height: 36px;
+	float: right;
+	border-radius: 18px;
+	margin-right: 10px;
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+}
+header>a{
+	width: 74px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 18px;
+	color: #fff;
+	background: #FF2925;
+	float: right;
+	text-align: center;
+	margin-right: 18px;
+	cursor: pointer;
+}
+/*main*/
+main{
+	position: absolute;
+	top: 56px;
+	left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+/*nav*/
+nav{
+	width: 170px;
+	height: 100%;
+	box-shadow: 2px 0 8px rgba(0,0,0,.3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	overflow: hidden;
+}
+nav>h2{
+	width: 170px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	color: #686868;
+}
+nav>ul{
+	height: calc(100% - 60px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width .2s linear;
+}
+nav>ul>li{
+	width: 170px;
+	height: 100px;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+nav>ul>li:hover{
+	background-color: #f4f8f9;
+}
+nav>ul>li.current{
+	background-color: #ff6f00;
+}
+nav>ul>li.current>p{
+	color: #fff;
+}
+nav>ul>li>p{
+	width: 170px;
+	height: 100px;
+	font-size: 12px;
+	text-align: center;
+	color: #999;
+	border-bottom: 1px solid #ccc;
+	display: table-cell;
+	vertical-align: middle;
+}
+nav>ul>li>p>em{
+	font-size: 20px;
+}
+nav>ul>li>div{
+	width: 170px;
+	height: 100px;
+	font-size: 40px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color: #999;
+	cursor: pointer;
+}
+/*dayEdit*/
+section.dayEdit{
+	width: 280px;
+	height: 100%;
+	box-shadow: 2px 0 8px rgba(0,0,0,.3);
+	position: absolute;
+	top: 0;
+	left: 170px;
+	z-index: 9;
+}
+.dayEdit>div{
+	width: 280px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	color: #686868;
+}
+.dayEdit>div>i.iconfont{
+	font-size: 16px;
+	display: block;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	float: left;
+}
+.dayEdit>div>input{
+	border: none;
+    padding: 0;
+    width: 220px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #4f5a61;
+    outline: none;
+}
+.dayEdit>h3{
+	font-size: 20px;
+	color: #4f5a62;
+	height: 55px;
+	padding-left: 24px;
+	padding-top: 8px;
+	box-sizing: border-box;
+}
+.dayEdit>ul{
+	box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - 160px);
+}
+.dayEdit>ul>li{
+	height: 38px;
+	line-height: 38px;
+	font-size: 14px;
+	color: #4f5a62;
+	cursor: pointer;
+}
+.dayEdit>ul>li>img{
+	width: 22px;
+    height: 14px;
+    margin-right: 8px;
+    border: 1px solid #f7f7f7;
+    border-radius: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.dayEdit>ul>li:hover{
+	background-color: #f4f8f9;
+}
+.dayEdit>ul>li>i{
+	float: right;
+	font-size: 26px;
+	color: #fff;
+	margin-right: 10px;
+}
+.dayEdit>.city-list>li>i{
+	font-size: 16px;
+}
+.dayEdit>.city-list>li>i.icon-true{
+	font-size: 20px;
+}
+.dayEdit>.city-list>li>span{
+	margin-left: 20px;
+}
+.dayEdit>ul>li:hover>i{
+	color: #9aaab0;
+}
+.dayEdit>ul>li.current>i,.dayEdit>ul>li.current>span{
+	color: #ff6f00;
+}
+.dayEdit>ul>li.selected>i,.dayEdit>ul>li.selected>span{
+	color: #ff6f00;
+}
+.dayEdit>p{
+	width: 280px;
+	height: 42px;
+	text-align: center;
+	line-height: 42px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #4a4a4a;
+	cursor: pointer;
+}
+/*aside*/
+aside{
+	width: 70px;
+	height: 210px;
+	background: #2f2f2f;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -105px;
+	z-index: 99;
+}
+aside>p{
+	width: 100%;
+	height: 70px;
+	text-align: center;
+	cursor: pointer;
+}
+aside>p:hover{
+	background-color: #00a4a8;
+}
+aside>p:hover>i.iconfont{
+	color: #fff;
+}
+aside>p>i.iconfont{
+	line-height: 70px;
+	font-size: 22px;
+	color: #989898;
+}
+/*googleMap*/
+#googleMap{
+	position: absolute;
+	left: 450px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}

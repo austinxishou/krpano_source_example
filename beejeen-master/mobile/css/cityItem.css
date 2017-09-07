@@ -1,0 +1,21 @@
+main{
+	width: 100%;
+	box-sizing: border-box;
+}
+main>a>div{
+	width: 7.5rem;
+    height: 3.6rem;
+    margin-bottom: .1rem;
+    float: left;
+    background-size: cover;
+    position: relative;
+}
+main>a>div>h3{
+	position: absolute;
+	font-size: .3rem;
+	color: #fff;
+	text-align: center;
+    width: 100%;
+    bottom: .2rem;
+    text-shadow: 0 0 4px rgba(0,0,0,.8);
+}

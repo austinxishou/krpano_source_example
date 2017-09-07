@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<script type="text/javascript">
+		if ( !navigator.userAgent.match(/(iPhone|iPod|Android|Backerry|WebOS|Symbian|Windows Phone|Phone)/i)){
+		    location.href = location.href.replace("http://m.","http://www.") ;
+		}
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="keywords" content="百见科技，全景虚拟现实,全景摄影,全景视频,360度全景拍摄,VR,全景旅游,全景图片,虚拟漫游,VR视频,VR航拍">
+  	<meta name="description" content="百见科技信息有限公司，志在打造一个海外旅行吃喝玩乐住行VR视觉化内容，用VR全景把海外更好的呈现给的国内出行的朋友们，便于国人出行更好的做行前决策。">
+	<title>百见</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script type="text/javascript">
+		!(function(doc, win) {
+		    var docEle = doc.documentElement,
+		        evt = "onorientationchange" in window ? "orientationchange" : "resize",
+		        fn = function() {
+		            var width = docEle.clientWidth;
+		            width && (docEle.style.fontSize = 100 * (width / 750) + "px");
+		        };
+		     
+		    win.addEventListener(evt, fn, false);
+		    doc.addEventListener("DOMContentLoaded", fn, false);
+		 
+		}(document, window));
+	</script>
+	<link rel="stylesheet" type="text/css" href="../css/common/reset.css?v=ecfadb6a82">
+	<link rel="stylesheet" type="text/css" href="../css/common/swiper-3.4.2.min.css?v=6af34d0737">
+	<link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css?v=823ff7e104">
+	<link rel="stylesheet" type="text/css" href="../css/look.css?v=dd4e53eb09">
+</head>
+<body>
+	
+</body>
+	<script type="text/html" id="body_tpl">
+
+		<header>
+			<div class="logo"><img src="../images/BeejeenVR.png"/></div>
+			<p class="language">中</p>
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			    	{{each header val i}}
+			    	<div class="swiper-slide">
+			        	<a href="{{val['a-href']}}">
+			            	<img src="{{val.img_mobile}}" alt="First slide">
+			            	<div class="carousel-caption">{{val.title}}<br /><span>{{val.text}}</span></div>
+			        	</a>
+			        </div>
+			        {{/each}}
+			    </div>
+			    
+			    <div class="swiper-pagination"></div>
+			    
+			    <div class="icon">
+					<i class="iconfont icon-up"></i>
+				</div>
+			</div>
+		</header>
+	
+		<main>
+			
+			<section class="search">
+				<i class="iconfont icon-search"></i> 
+				<input type="search" id="input-text"/>  
+			</section>
+			
+			<h2>百闻不如一见</h2>
+			
+			<section class="main">
+				{{ each country val i }}
+				<a href="country-en.html?{{val.name}}">
+					<div style="background-image: url({{val.img}});{{if i == 0 }}width: 7.1rem;height: 2.8rem;{{/if}}">
+						<h3>{{val.name}}</h3>
+					</div>
+				</a>
+				{{/each}}
+				<section style="clear: both;"></section>
+			</section>
+		</main>
+		
+		<section class="itinerary">
+			<h2>行程推荐</h2>
+			{{ each itinerary val i }}
+			<a href="{{val['a-href']}}">
+				<img src="{{val.img}}"/>
+				<h3>{{val.title}}</h3>
+				<div>COST :  <em>{{val.cost}}</em> +</div>
+				<p>{{@val.content}}</p>
+			</a>
+			{{/each}}
+		</section>
+		
+		<section class="service-content">
+			<div>
+				<img src="../images/pc.png" alt="" />
+				<p>PC</p>
+			</div>
+			<div>
+				<img src="../images/phone.png" alt="" />
+				<p>Mobile</p>
+			</div>
+			<div>
+				<img src="../images/cardboard.png" alt="" />
+				<p>Cardboard</p>
+			</div>
+			<div>
+				<img src="../images/MHD.png" alt="" />
+				<p>MHD</p>
+			</div>
+			<div>
+				<img src="../images/vr.png" alt="" />
+				<p>PC-VR</p>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="logo"></div>
+			<p>LinkedIN：Beejeen <br />
+				Facebook：Beejeen VR Travel<br />
+				Instagram: Beejeen<br /> 
+				Youtube：Beejeen</p>
+			<p class="copy-right">Copyright©2017&nbsp;beejeen.com </p>
+		</footer>
+	</script>
+	<script src="../js/plugins/jquery-3.2.1.min.js?v=c9f5aeeca3"></script>
+	<script src="../js/plugins/swiper-3.4.2.min.js?v=fb13ef3e87"></script>
+	<script src="../js/plugins/template-web.js?v=942783db05"></script>
+	<script src="../js/common/common-cn.js?v=556f386932"></script>
+	<script src="../js/look-en.js?v=2875a2a869"></script>
+</html>

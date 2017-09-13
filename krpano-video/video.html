@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Krpano可编辑平面视频示例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <script src="./jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="./bootstrap-slider.min.css">
+    <script type="text/javascript" src="./bootstrap-slider.min.js"></script>
+    <style>
+        body { position: relative; }
+        .sind { position: absolute; z-index: 9999; }
+        html { height: 100%; }
+        body { height: 100%; overflow: hidden; margin: 0; padding: 0; font-family: Arial,Helvetica,sans-serif; font-size: 16px; color: #FFFFFF; background-color: #000000; }
+    </style>
+</head>
+<body>
+    <div class="sind">
+        <ul>
+            <li><span>缩放</span>0<input id="scale" type="text" class="span2" value="" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="1" />10</li>
+            <li><span>垂直旋转</span> -180<input id="rx" type="text" class="span2" value="" data-slider-min="-180" data-slider-max="180" data-slider-step="1" data-slider-value="0" />180</li>
+            <li> <span>水平旋转</span>-180<input id="ry" type="text" class="span2" value="" data-slider-min="-180" data-slider-max="180" data-slider-step="1" data-slider-value="0" />180</li>
+            <li> <span>旋转</span>-180<input id="rz" type="text" class="span2" value="" data-slider-min="-180" data-slider-max="180" data-slider-step="1" data-slider-value="0" />180</li>
+            <li> <span>宽度</span>10<input id="width" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="1" data-slider-value="300" />1000</li>
+            <li> <span>高度</span>10<input id="height" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="1" data-slider-value="200" />1000</li>
+        </ul>
+    </div>
+    <script src="./tour.js"></script>
+    <div id="pano" style="width: 100%; height: 100%;">
+        <noscript>
+            <table style="width: 100%; height: 100%;">
+                <tr style="vertical-align: middle;">
+                    <td>
+                        <div style="text-align: center;">
+                            ERROR:<br />
+                            <br />
+                            Javascript not activated<br />
+                            <br />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </noscript>
+    </div>
+    <script>
+        alert("左上角可以配置视频哦...")
+        embedpano({ swf: "tour.swf", id: "krpanoSWFObject", xml: "tour.xml", target: "pano", html5: "prefer", passQueryParameters: true });
+    </script>
+</body>
+</html>
+
+<script src="new720.js"></script>

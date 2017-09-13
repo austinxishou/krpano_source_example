@@ -1,0 +1,60 @@
+﻿<krpano version="1.19" title="Virtual Tour"  debugmode="false" logkey="false" showerrors="false">
+
+  <action name="startup" autorun="onstart">
+    if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );  loadscene(get(startscene), null, MERGE); if(startactions !== null, startactions() );
+  </action>
+
+  <scene name="scene_326"
+         title="C32"
+         thumburl="http://www.720ku.com/new/upload/img/2017-06-14/45dfbddb-f46c-4ddb-a233-08994beaa7d2/panos/thumb.jpg"
+         lat="" lng="" heading="" onstart="activatespot(90)">
+    <view name="view_326" title="" hlookat="-49.29919323951609" fovtype="MFOV" fov="120" fovmin="5" fovmax="120" vlookat="3.7375024409552524" vlookatmin="-90" vlookatmax="90" limitview="auto" />
+    <preview url="http://www.720ku.com/new/upload/img/2017-06-14/45dfbddb-f46c-4ddb-a233-08994beaa7d2/panos/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled AND device.desktop">
+      <level tiledimagewidth="1792" tiledimageheight="1792">
+        <cube url="http://www.720ku.com/new/upload/img/2017-06-14/45dfbddb-f46c-4ddb-a233-08994beaa7d2/panos/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="http://www.720ku.com/new/upload/img/2017-06-14/45dfbddb-f46c-4ddb-a233-08994beaa7d2/panos/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled OR !device.desktop">
+      <cube url="http://www.720ku.com/new/upload/img/2017-06-14/45dfbddb-f46c-4ddb-a233-08994beaa7d2/panos/vr/pano_%s.jpg" />
+    </image>
+    <hotspot name="hotspot1" url="./logo.png"  onclick="js(Getinfo())"  ath="-50.019500788665255" atv="-27.269526271860826" height="50"  width="prop" ondown="draghotspot();" />
+    <hotspot name="video"
+         url.flash="videoplayer.swf"
+         url.html5="videoplayer.js"
+         videourl="http://www.qihan.cn/upload/video/video.mp4"
+         posterurl="http://www.qihan.cn/images/newqh50.jpg"
+         scale="1"  rx="-1" ry="0" width="336" height="200" ath="-49.1920428555303"  atv="-3.0629467081484933"
+         distorted="true"
+         rz="0.0"
+         pausedonstart="false"
+         loop="false"
+         volume="1.0"
+         playbackrate="2.0"
+         html5controls="true"
+         directionalsound="true"
+         range="90.0"
+         rangefalloff="1.0"
+         outofrangevolume="0.0"
+         onvideoready=""
+         onvideoplay=""
+         onvideopaused=""
+         onvideocomplete=""
+         onerror=""
+         ondown="draghotspot();"
+         onclick="togglepause()"
+         />
+  </scene>
+
+
+  <action name="draghotspot">
+    spheretoscreen(ath, atv, hotspotcenterx, hotspotcentery, 'l'); sub(drag_adjustx,
+    mouse.stagex, hotspotcenterx); sub(drag_adjusty, mouse.stagey, hotspotcentery); asyncloop(pressed, sub(dx,
+    mouse.stagex, drag_adjustx); sub(dy, mouse.stagey, drag_adjusty); screentosphere(dx, dy, ath, atv); );
+  </action>
+
+
+</krpano>

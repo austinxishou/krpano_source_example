@@ -1,0 +1,692 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>苏宁易购-1111嗨购星球</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+		.modal {
+			position: absolute;
+			top: 0;
+			left: 0px;
+			z-index: 5003;
+			height: 100%;
+			background: #000;
+			overflow: hidden;
+		}
+
+		* {
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+		}
+
+		.home {
+			position: absolute;
+			top: 0;
+			z-index: 555;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.join-btn {
+			position: absolute;
+			bottom: 15%;
+			display: block;
+			left: 0;right: 0;
+			margin: 0 auto;
+		}
+
+		.load-text {
+			text-align: center;
+			position: absolute;
+			top: 55%;
+			left: 0;right: 0;
+			margin: 0 auto;
+			width: 160px;
+			z-index: 2;
+			font-size: 25px;
+			color: #fff;
+		}
+
+
+		.button {
+			position: absolute;
+			background: none;
+			top: 18%;
+			width: 14%;
+			height: 15%;
+			border: none;
+			right: 8%;
+			margin: 0 auto;
+			outline: none;
+			z-index: 9;
+		}
+
+		.menu-cover {
+			width: 90%;
+			right: 0;
+			height: 20%;
+			position: absolute;
+			z-index: 2;
+			bottom: 0px;
+		}
+
+		.scene3-modal .product{
+			top: 8%;
+		}
+
+		.scene3-modal .button {
+			width: 10%;
+			top: 20%;
+		}
+
+		.scene2-modal .button {
+			width: 26%;
+			right: 3%;
+		}
+
+		.scene2-modal .product{
+			top: 8%;
+		}
+
+		.scene1-modal .button {
+			width: 12%;
+		}
+
+		.modal .link {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 36%;
+			top: 80%;
+		}
+
+		.info {
+			position: absolute;
+			left: 0%;
+			top: 0%;
+			width: 100%;
+			height: 100%;
+			z-index: 5000;
+			display: none;
+		}
+
+		.info img {
+			position: absolute;
+			left: 10%;
+			top: 8%;
+		}
+
+		.info .info-btn {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			top: 72.5%;
+		}
+
+		.info-box {
+			position: absolute;
+			left: 12px;
+			top: 20px;
+			z-index: 2;
+		}
+
+
+
+		.product {
+			position: absolute;
+			left: 0;
+			top: 7%;
+		}
+
+		.lottery-box {
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			position: absolute;
+			top: 0;
+			display: none;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		.lottery-box img{
+			position: absolute;
+			left: 12px;
+			top: 50px;
+			z-index: 2;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+		.lottery-box.active{
+			display: block;
+		}
+
+		.button-link {
+			position: absolute;
+			top: 70%;
+			display: block;
+			width: 30%;
+			height: 20%;
+			left: 19%;
+			z-index: 3;
+		}
+
+		.button-return {
+			position: absolute;
+			top: 70%;
+			display: block;
+			width: 30%;
+			height: 20%;
+			left: 52%;
+			z-index: 3;
+		}
+
+		.music-btn {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			z-index: 999999;
+		}
+
+		.music-btn.active{
+			animation: xuanz 30s linear infinite;
+		}
+
+
+		/*base code*/
+		.animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		.animated.infinite {
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+		.animated.hinge {
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+		}
+		/*the animation definition*/
+		@-webkit-keyframes bounce {
+			0%, 100%, 20%, 53%, 80% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0)
+			}
+			40%,
+			43% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate3d(0, -30px, 0);
+				transform: translate3d(0, -30px, 0)
+			}
+			70% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate3d(0, -15px, 0);
+				transform: translate3d(0, -15px, 0)
+			}
+			90% {
+				-webkit-transform: translate3d(0, -4px, 0);
+				transform: translate3d(0, -4px, 0)
+			}
+		}
+		@keyframes bounce {
+			0%, 100%, 20%, 53%, 80% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				-webkit-transform: translate3d(0, 0, 0);
+				-ms-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0)
+			}
+			40%,
+			43% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate3d(0, -30px, 0);
+				-ms-transform: translate3d(0, -30px, 0);
+				transform: translate3d(0, -30px, 0)
+			}
+			70% {
+				-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+				-webkit-transform: translate3d(0, -15px, 0);
+				-ms-transform: translate3d(0, -15px, 0);
+				transform: translate3d(0, -15px, 0)
+			}
+			90% {
+				-webkit-transform: translate3d(0, -4px, 0);
+				-ms-transform: translate3d(0, -4px, 0);
+				transform: translate3d(0, -4px, 0)
+			}
+		}
+		.bounce {
+			-webkit-animation-name: bounce;
+			animation-name: bounce;
+			-webkit-transform-origin: center bottom;
+			-ms-transform-origin: center bottom;
+			transform-origin: center bottom;
+
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+
+		.animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		.animated.infinite {
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+		.animated.hinge {
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+		}
+		/*the animation definition*/
+		@-webkit-keyframes bounceIn {
+			0%, 100%, 20%, 40%, 60%, 80% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+			}
+			0% {
+				opacity: 0;
+				-webkit-transform: scale3d(.3, .3, .3);
+				transform: scale3d(.3, .3, .3)
+			}
+			20% {
+				-webkit-transform: scale3d(1.1, 1.1, 1.1);
+				transform: scale3d(1.1, 1.1, 1.1)
+			}
+			40% {
+				-webkit-transform: scale3d(.9, .9, .9);
+				transform: scale3d(.9, .9, .9)
+			}
+			60% {
+				opacity: 1;
+				-webkit-transform: scale3d(1.03, 1.03, 1.03);
+				transform: scale3d(1.03, 1.03, 1.03)
+			}
+			80% {
+				-webkit-transform: scale3d(.97, .97, .97);
+				transform: scale3d(.97, .97, .97)
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: scale3d(1, 1, 1);
+				transform: scale3d(1, 1, 1)
+			}
+		}
+
+		@keyframes bounceIn {
+			0%, 100%, 20%, 40%, 60%, 80% {
+				-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+				transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+			}
+			0% {
+				opacity: 0;
+				-webkit-transform: scale3d(.3, .3, .3);
+				-ms-transform: scale3d(.3, .3, .3);
+				transform: scale3d(.3, .3, .3)
+			}
+			20% {
+				-webkit-transform: scale3d(1.1, 1.1, 1.1);
+				-ms-transform: scale3d(1.1, 1.1, 1.1);
+				transform: scale3d(1.1, 1.1, 1.1)
+			}
+			40% {
+				-webkit-transform: scale3d(.9, .9, .9);
+				-ms-transform: scale3d(.9, .9, .9);
+				transform: scale3d(.9, .9, .9)
+			}
+			60% {
+				opacity: 1;
+				-webkit-transform: scale3d(1.03, 1.03, 1.03);
+				-ms-transform: scale3d(1.03, 1.03, 1.03);
+				transform: scale3d(1.03, 1.03, 1.03)
+			}
+			80% {
+				-webkit-transform: scale3d(.97, .97, .97);
+				-ms-transform: scale3d(.97, .97, .97);
+				transform: scale3d(.97, .97, .97)
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: scale3d(1, 1, 1);
+				-ms-transform: scale3d(1, 1, 1);
+				transform: scale3d(1, 1, 1)
+			}
+		}
+
+		.bounceIn {
+			-webkit-animation-name: bounceIn;
+			animation-name: bounceIn;
+
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			display: block;
+		}
+
+
+		@keyframes xuanz {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+
+<div class="home" style="display: block;">
+	<img src="./panos/home.jpg" width="100%" alt=""/>
+	<img src="./panos/join.png" class="join-btn" width="40%" alt=""/>
+	<p class="load-text">加载: <span>0%</span></p>
+</div>
+
+<div class="info-box" >
+	<img src="./panos/info-button.png" width="38" alt=""/>
+</div>
+
+<div class="info">
+	<img src="./panos/info.jpg" width="80%" alt=""/>
+	<img class="info-btn" src="./panos/button.png" width="40%" alt=""/>
+</div>
+
+<div class="scene4-modal modal" style="display: none">
+	<img src="./panos/scene4/modal/modal_bg.jpg" width="100%" alt=""/>
+	<div class="button">
+		<img src="./panos/scene4/modal/button.png" width="100%" alt=""/>
+	</div>
+	<img src="./panos/scene4/modal/asd.png" class="product" width="100%" alt=""/>
+	<a href="#"><img class="link" src="./panos/btn-4.png"  alt=""/></a>
+</div>
+
+<div class="scene3-modal modal" style="display: none">
+	<img src="./panos/scene3/modal/modal_bg.jpg" width="100%" alt=""/>
+	<div class="button">
+		<img src="./panos/scene3/modal/button.png" width="100%" alt=""/>
+	</div>
+	<img src="./panos/scene3/modal/suxiansheng.png" class="product" width="100%" alt=""/>
+	<a href="#"><img class="link" src="./panos/btn-3.png"  alt=""/></a>
+</div>
+
+<div class="scene2-modal modal" style="display: none">
+	<img src="./panos/scene2/modal/modal_bg.jpg" width="100%" alt=""/>
+	<div class="button">
+		<img src="./panos/scene2/modal/button.png" width="100%" alt=""/>
+	</div>
+	<img src="./panos/scene2/modal/dajiang.png" class="product" width="100%" alt=""/>
+	<a href="#"><img class="link" src="./panos/btn-2.png"  alt=""/></a>
+</div>
+
+<div class="scene1-modal modal" style="display: none">
+	<img src="./panos/scene1/modal/modal_bg.jpg" width="100%" alt=""/>
+	<div class="button">
+		<img src="./panos/scene1/modal/button.png" width="100%" alt=""/>
+	</div>
+	<img src="./panos/scene1/modal/meidi.png" class="product" width="100%" alt=""/>
+	<a href="#"><img class="link" src="./panos/btn-1.png"  alt=""/></a>
+</div>
+
+<div class="lottery-box">
+	<div style="
+	opacity: 0.5;
+	background:#000; height: 100%;
+	width: 100%; position: absolute">&nbsp;</div>
+	<img src="./panos/lottery.jpg" width="82%" alt=""/>
+	<a href="#抽奖链接在这边修改" class="button-link">&nbsp;</a>
+	<a class="button-return">&nbsp;</a>
+</div>
+
+<!-- menu button 遮罩 -->
+<div class="menu-cover"></div>
+
+<img src="./panos/music.png" width="45" class="music-btn active" alt=""/>
+
+<audio id="audio1" class="audio" loop src="./panos/video/scene1.mp3"></audio>
+<audio id="audio2" class="audio" loop src="./panos/video/scene2.mp3"></audio>
+<audio id="audio3" class="audio" loop src="./panos/video/scene3.mp3"></audio>
+<audio id="audio4" class="audio" loop src="./panos/video/scene4.mp3"></audio>
+
+
+<script src="tour.js"></script>
+<script>
+	var globalIndex = 0;
+
+	$('.button').on('touchend', function() {
+		$('.modal').fadeOut();
+	})
+
+	$('.modal img').on('touchend', function() {
+		$('.modal').fadeOut();
+	})
+
+	$('.info-box').on('touchend', function() {
+		$('.info').addClass('bounceIn')
+	})
+
+
+	var sceneState = false;
+	$('.info').on('touchend', function() {
+		$('.info').removeClass('bounceIn');
+	})
+
+	$('.button-return').on('click', function() {
+		$('.lottery-box').removeClass('bounceIn');
+	})
+
+	$('.music-btn').on('click', function() {
+		var myAudio = $('.audio')[globalIndex];
+		if( myAudio.paused ) {
+			myAudio.play();
+		} else {
+			myAudio.pause();
+		}
+
+		$(this).toggleClass('active');
+	})
+
+	// 预加载场景
+	var imgloaded = 0;
+	function first(){
+		var imgs = [
+			"./panos/scene1.tiles/pano_b.jpg",
+			"./panos/scene1.tiles/pano_d.jpg",
+			"./panos/scene1.tiles/pano_f.jpg",
+			"./panos/scene1.tiles/pano_l.jpg",
+			"./panos/scene1.tiles/pano_r.jpg",
+			"./panos/scene1.tiles/pano_u.jpg",
+		];
+
+		for( var i= 0; i < imgs.length; i++ ) {
+			var img = new Image();
+			img.src = imgs[i];
+			img.onload = function() {
+				imgloaded++;
+
+				$('.load-text span').html(parseInt(imgloaded/6 * 100) + '%');
+
+				if(imgloaded == 6) {
+					$('.load-text').hide();
+					$('.join-btn').fadeIn()
+				}
+			}
+		}
+	}
+
+	first();
+
+	function toggleScene(index) {
+
+		console.log(index)
+		globalIndex = index;
+
+		var myAudio = $('.audio')[index];
+		$('.audio').each(function(index, item) {
+			item.pause();
+		})
+
+		if( myAudio.paused ) {
+			$('.audio')[index].play();
+		} else {
+			$('.audio')[index].pause();
+		}
+	}
+
+	function click(index) {
+		if(index === 0 && !index) return;
+
+		var arguments = index.split('-');
+		var scene = index.split('-')[0];
+
+		lottery(index);
+
+		var imgPath = 'panos/' + arguments[0] + '/modal/';
+		var img = imgPath + arguments[1] + '.png';
+		var modal = '.'+ scene + '-modal';
+
+		$('.product').attr('src', img);
+		$(modal).fadeIn();
+
+		$(modal).find('a').attr('href', linkArray[scene][arguments[1]]);
+		$('.product').addClass('bounce');
+	}
+
+
+
+	var lotteryConunt = 0;
+
+	function lottery(index) {
+		var length = lotteryConunt.length;
+		lotteryConunt++;
+
+		if( lotteryConunt%5 == 0 ) {
+			$('.lottery-box').addClass('bounceIn');
+		}
+	}
+
+	function loading(progress) {
+		progress = parseInt(progress * 100);
+		$('.load-text span').html(progress + '%')
+
+		if( progress === 100 ) {
+//			$('.load-text').hide();
+//			$('.join-btn').fadeIn()
+		}
+	}
+
+	$('.join-btn').on('touchend', function() {
+		$('.home').fadeOut();
+		var myAudio = $('.audio')[0];
+		myAudio.play();
+
+		embedpano({swf:"tour.swf",consolelog: true, xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+	})
+
+//	动画结束
+	function animationOver(active) {
+		if(active == 'true') {
+			$('.menu-cover').hide();
+		} else {
+			$('.menu-cover').show();
+		}
+	}
+</script>
+
+<script>
+	var linkArray= {
+		'scene1': {
+			"xiaotiane": "http://shop.m.suning.com/30000061.html",
+			"aux": "http://shop.m.suning.com/30000031.html",
+			"meidi": "http://shop.m.suning.com/30000061.html",
+			"tcl": "http://shop.m.suning.com/30000051.html",
+			"lg": "http://shop.m.suning.com/sale/30001357_10005248.html",
+			"haier": "http://shop.suning.com/30000162/index.html",
+			"meiling": "http://shop.m.suning.com/30000345.html",
+			"sanxing": "http://c.m.suning.com/channel/wapheidian00008.html",
+			"changhong": "http://cuxiao.m.suning.com/chlh.html",
+			"xiaomi": "http://sale.suning.com/hd/xm51/index.html",
+			"pptv": "http://shop.m.suning.com/30000936.html"
+		},
+
+		'scene2': {
+			"meifu": "http://shop.m.suning.com/30001435.html",
+			"jianeng" :"http://c.m.suning.com/wapshuma1751.html?adtype=cpm",
+			"xiaomi" :"https://sale.suning.com/tx/xiaomiYD/index.html",
+			"iPhone8" :"http://sale.suning.com/tx/appleyd912/index.html",
+			"rongyao" :"http://shop.m.suning.com/sale/70086258_10001125.html",
+			"vivo" :"https://sale.suning.com/tx/vivox7yd/index.html",
+			"nikon" :"https://c.m.suning.com/channel/wapshuma1767.html",
+			"yibukeji" :"https://shop.m.suning.com/30001393.html",
+			"dajiang" :"http://shop.m.suning.com/sale/30000191_10005136.html",
+			"yataitianneng" :"http://shop.m.suning.com/30001257.html"
+		},
+
+		'scene3': {
+			"meizanchen": "http://shop.m.suning.com/30000238.html",
+			"jiumu": "http://shop.m.suning.com/70150213.html",
+			"weida": "http://shop.m.suning.com/30000467.html",
+			"jinlongyu": "http://shop.m.suning.com/30000544.html",
+			"nongfushanquan": "http://shop.m.suning.com/30001175.html",
+			"balishui": "https://c.m.suning.com/hwg00170602.html",
+			"swisse": "https://c.m.suning.com/hwg00974.html",
+			"xinxiangyin": "http://shop.m.suning.com/30000489.html",
+			"lanyueliang": "http://shop.m.suning.com/30000485.html",
+			"toto": "http://shop.m.suning.com/70079078.html",
+			"suxiansheng": "https://c.m.suning.com/newsxs_huadong.html?adTypeCode=1184",
+			"meidihuier": "http://cuxiao.m.suning.com/hwg090801.html",
+			"haiwaigou": "http://cuxiao.m.suning.com/hwgshyapp.html",
+			"whoo": "http://cuxiao.m.suning.com/hwg090601.html"
+		},
+
+		'scene4': {
+			"asd": "http://shop.m.suning.com/30000414.html",
+			"eco":"http://shop.m.suning.com/30000037.html",
+			"royalstar":"http://shop.m.suning.com/30000158.html",
+			"liren":"http://shop.m.suning.com/30000447.html",
+			"roram":"https://shop.m.suning.com/30000021.html",
+			"midea2":"https://shop.m.suning.com/30001083.html",
+			"aupu":"https://c.m.suning.com/channel/wapchuwei00245.html",
+			"wp": "https://shop.m.suning.com/30000337.html"
+		}
+
+	}
+</script>
+
+<div id="pano" style="width:100%;height:100%;">
+	<noscript>
+		<table style="width:100%;height:100%;"><tr style="vertical-align:middle;">
+			<td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr>
+		</table>
+	</noscript>
+</div>
+
+</body>
+</html>

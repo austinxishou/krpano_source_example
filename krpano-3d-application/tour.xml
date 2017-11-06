@@ -1,0 +1,728 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+	<include url="loadingpercenttext.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="false"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="60" thumbs_height="76.5" thumbs_padding="10" thumbs_crop="0"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="加载..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="100"
+	               controlbar_offset="0"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="0"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="menu.png"
+	               design_bgcolor="0xFFFFFF"
+	               design_bgalpha="0"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0"
+	               design_thumbborder_bgborder="1 0xFFFFFF 0.6"
+	               design_thumbborder_padding="1"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(0, null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+	<!-- 场景4 -->
+	<scene name="scene4" title="苏州河蚌2" onstart="" thumburl="panos/scene4.png" lat="" lng="" heading="">
+
+		<view hlookat="-20.0" vlookat="0.0" fovtype="MFOV" fov="90" maxpixelzoom="2.0" fovmin="90" fovmax="140" limitview="auto" />
+
+		<preview url="panos/scene4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/scene4.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- front -->
+		<hotspot name="dr1" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.3'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation(true, 101, 'left')" tag = "hs" alpha="0" ath="0" atv="0"
+				 edge="lefttop" ox="-0" oy="-250" zorder="10"  enabled="false"/>
+
+		<hotspot name="dr2" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.7'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation(true, -91, 'right'))" tag = "hs" alpha="1" ath="0" atv="0.5"
+				 edge="lefttop" ox="-110" oy="-270" zorder="10"  enabled="false"/>
+
+		<hotspot name="front_logo_3" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.4'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1.6,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="0" atv="0.5"
+				 edge="lefttop" ox="-550" oy="-160" zorder="10"  enabled="false"/>
+
+		<hotspot name="front_logo_6" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1.9,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="0" atv="0.5"
+				 edge="lefttop" ox="-510"  oy="-180" zorder="10"  enabled="false"/>
+
+		<hotspot name="front_logo_4" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(0.5,animation_alpha(true, -191, 'top'))" tag = "hs" alpha="1" ath="0" atv="0.5"
+				 edge="lefttop" ox="-230" oy="-150" zorder="10"  enabled="false"/>
+
+		<hotspot name="front_logo_5" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="0" atv="0.5"
+				 edge="lefttop" ox="250" rz="-10" ry="10" oy="-230" zorder="10"  enabled="false"/>
+
+		<!-- right -->
+		<hotspot name="dr3" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation(true, 101, 'left')" tag = "hs" alpha="1" ath="90" atv="0"
+				 edge="lefttop" ox="-0" oy="-200" zorder="10"  enabled="false"/>
+
+		<hotspot name="dr4" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.4'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation(true, -91, 'right'))" tag = "hs" alpha="1" ath="90" atv="0"
+				 edge="lefttop" ox="-110" oy="-30" zorder="10"  enabled="false"/>
+
+		<hotspot name="right_logo_3" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="90" atv="0"
+				 edge="lefttop" ox="250" oy="-230" zorder="10"  enabled="false"/>
+
+		<hotspot name="right_logo_3" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(0,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="90" atv="0"
+				 edge="lefttop" ox="-350" oy="-280" rz="12" ry="-22" zorder="10"  enabled="false"/>
+
+		<!-- left -->
+		<hotspot name="dr5" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation(true, 101, 'left')" tag = "hs" alpha="1" ath="-90" atv="0"
+				 edge="lefttop" ox="-0" oy="-360" zorder="10"  enabled="false"/>
+
+		<hotspot name="dr6" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation(true, -91, 'right'))" tag = "hs" alpha="1" ath="-90" atv="0"
+				 edge="lefttop" ox="-110" oy="-360" zorder="10"  enabled="false"/>
+
+		<!-- back -->
+		<hotspot name="logo_back_1" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='1'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation(true, 101, 'top')" tag = "hs" alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="30" oy="-0" zorder="10"  enabled="false"/>
+
+		<hotspot name="logo_back_2" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.4'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation(true, -91, 'top'))" tag = "hs" alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="-210" oy="-0" zorder="10"  enabled="false"/>
+
+		<hotspot name="logo_back_3" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(2,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="210" oy="-320" zorder="10"  enabled="false"/>
+
+		<hotspot name="logo_back_4" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(0.1,animation_alpha(true, -91, 'top'))" tag = "hs" alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="-310" oy="-220" zorder="10"  enabled="false"/>
+
+		<hotspot name="logo_back_5" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.5'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); delayedcall(1,animation_alpha(true, -121, top))" tag = "hs" alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="-10" oy="-220" zorder="10"  enabled="false"/>
+
+		<!-- up -->
+		<hotspot name="dr7" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.7'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation_alpha(true, 101, 'top')" tag = "hs" alpha="1" ath="0" atv="-90"
+				 edge="lefttop" ox="-0" oy="200" zorder="10"  enabled="false"/>
+
+		<hotspot name="dr8" url="panos/scene4/lantern.png" width="146" height="176" distorted="true" scale ='0.6'
+				 onloaded="tween(hotspot[get(name)].alpha , 1, 2); animation_alpha(1.3,animation(true, 191, 'top'))" tag = "hs" alpha="1" ath="0" atv="-90"
+				 edge="lefttop" ox="0" oy="440" zorder="10"   enabled="false"/>
+
+		<!-- 产品 -->
+		<hotspot name="eco-p" url="panos/scene4/product/eco.png" width="55"
+				 height="62" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.2 ,animation_xy_time(true, -8,0, 0.7))"
+				 onclick="js(click(scene4-eco))"  alpha="1" ath="0" atv="0"
+				 edge="lefttop" ox="37.95" oy="-83.15"  enabled="true"/>
+
+		<hotspot name="wp-p" url="panos/scene4/product/wp.png"
+				 width="66" height="77" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.2 ,animation_scale(true))"
+				 onclick="js(click(scene4-wp))"  alpha="1" ath="0" atv="0"
+				 edge="lefttop" ox="275.95" oy="-28.55"  enabled="true"/>
+
+		<!-- left -->
+		<hotspot name="roram-p" url="panos/scene4/product/roram.png"
+				 width="64" height="47" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.2 ,animation_scale(true))"
+				 onclick="js(click(scene4-roram))"  alpha="1" ath="-90" atv="0"
+				 edge="lefttop" ox="-69.5" oy="0.85"  enabled="true"/>
+
+		<hotspot name="asd-p" url="panos/scene4/product/asd.png"
+				 width="57" height="58" distorted="true" scale ='1.05'
+				 onclick="js(click(scene4-asd))"  alpha="1" ath="-90" atv="0"
+				 onloaded="delayedcall(0.2 ,animation_xy_time(true, 0, 18, 0.7))"
+				 edge="lefttop" ox="178.5" oy="-48.5"  enabled="true"/>
+
+		<hotspot name="royalstar-p" url="panos/scene4/product/royalstar.png"
+				 width="53" height="53" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.2 ,animation_scale(true))"
+				 onclick="js(click(scene4-royalstar))"  alpha="1" ath="-90" atv="0"
+				 edge="lefttop" ox="408.25" oy="-69.5"  enabled="true"/>
+
+		<!-- right -->
+		<hotspot name="aupu-p" url="panos/scene4/product/aupu.png"
+				 width="169" height="169" distorted="true" scale ='0.45'
+				 onclick="js(click(scene4-aupu))"  alpha="1" ath="180" atv="0"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, -36, 0, 1))"
+				 edge="lefttop" ox="-367.75" oy="-138.85"  enabled="true"/>
+
+		<hotspot name="liren-p" url="panos/scene4/product/liren.png"
+				 width="53" height="60" distorted="true" scale ='1.05'
+				 onclick="js(click(scene4-liren))"  alpha="1" ath="180" atv="0"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, 0, 20, 1))"
+				 edge="lefttop" ox="-89.45" oy="-133.85"  enabled="true"/>
+
+		<hotspot name="midea2-p" url="panos/scene4/product/midea2.png"
+				 width="103" height="82" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 onclick="js(click(scene4-midea2))"  alpha="1" ath="180" atv="0"
+				 edge="lefttop" ox="207.45" oy="-5.45"  enabled="true"/>
+
+
+
+		<!-- 结束 产品 -->
+
+
+		<!--&lt;!&ndash;  添加螺旋 &ndash;&gt;-->
+		<plugin name="gyro" devices="html5"
+				url="%SWFPATH%/plugins/gyro2.js"
+				enabled="false"
+				onavailable="gyro_available_info();"
+				/>
+
+		<action name="gyro_available_info">
+			<!--set(layer[gyrobutton].visible, true);-->
+			<!--switch(plugin[gyro].enabled);-->
+		</action>
+
+		<!--<layer name="gyrobutton" align="right|top"-->
+		<!--alpha=".9"-->
+		<!--autoheight="auto"-->
+		<!--autowidth="auto"-->
+		<!--background="true"-->
+		<!--backgroundcolor="0xc83737"-->
+		<!--border="false"-->
+		<!--html="陀螺仪"-->
+		<!--url="%SWFPATH%/plugins/textfield.swf"-->
+		<!--css="font-family:Arial; font-size:14px; color:0xFFFFFF; text-align:center;"-->
+		<!--width="140" height="40" scale="1" x="80" y="10" visible="true"-->
+		<!--onclick="switch(plugin[gyro].enabled);"-->
+		<!--/>-->
+	</scene>
+
+
+	<!-- 场景1 -->
+	<scene name="scene1" title="酷爽冰洗城" onstart="" thumburl="panos/scene1.png" lat="" lng="" heading="">
+		<view hlookat="13" vlookat="-10.0" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="70" fovmax="110" limitview="auto" />
+		<preview url="panos/scene1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/scene1.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- product front -->
+		<hotspot name="s1_p_pptv" url="panos/scene1/product/pptv.png"
+				 width="97" height="73" distorted="true" scale ='1.1'
+				 onloaded="animation_shans(true);"
+				 alpha="0" ath="0" atv="0" onclick="js(click(scene1-pptv))"
+				 edge="lefttop" ox="161.76" oy="-146" enabled="true" />
+
+		<hotspot name="s1_p_meidi" url="panos/scene1/product/meidi.png"
+				 width="191" height="78" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.4 ,animation_shans_time(true, 0.8)); animation_xy(true, 0, 20)"
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene1-meidi))"
+				 edge="lefttop" ox="423.5" oy="-274.95" enabled="true" />
+
+		<hotspot name="s1_p_aux" url="panos/scene1/product/aux.png"
+				 width="192" height="165" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, 0, 60))"
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene1-aux))"
+				 edge="lefttop" ox="-484.2" oy="-335.85" enabled="true" />
+
+		<!-- product right -->
+		<hotspot name="s1_p_sanxing" url="panos/scene1/product/sanxing.png"
+				 width="243" height="261" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, -0, -60))"
+				 alpha="0.8" ath="90" atv="0" onclick="js(click(scene1-sanxing))"
+				 edge="lefttop" ox="-206" oy="-408.55" enabled="true" />
+
+		<hotspot name="s1_p_changhong" url="panos/scene1/product/changhong.png"
+				 width="253" height="198" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, -0, 100))"
+				 alpha="1" ath="90" atv="0" onclick="js(click(scene1-changhong))"
+				 edge="lefttop" ox="130.4" rz="-3" oy="-344.35" enabled="true" />
+
+		<!-- product back -->
+		<hotspot name="s1_p_meiling" url="panos/scene1/product/meiling.png"
+				 width="64" height="101" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, -20, 0)) )"
+				 alpha="1" ath="180" atv="0" onclick="js(click(scene1-meiling))"
+				 edge="lefttop" ox="-303.65" oy="-124.35" enabled="true" />
+
+		<hotspot name="s1_p_haier" url="panos/scene1/product/haier.png"
+				 width="41" height="79" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.2 ,animation_scale(true))"
+				 alpha="1" ath="180" atv="0" onclick="js(click(scene1-haier))"
+				 edge="lefttop" ox="-75.8" oy="-183.55" enabled="true" />
+
+		<hotspot name="s1_p_lg" url="panos/scene1/product/lg.png"
+				 width="71" height="74" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.3 ,animation_scale(true))"
+				 alpha="1" ath="180" atv="0" onclick="js(click(scene1-lg))"
+				 edge="lefttop" ox="154.15" oy="-269" enabled="true" />
+
+		<!-- product left -->
+		<hotspot name="s1_p_xiaomi" url="panos/scene1/product/xiaomi.png"
+				 width="180" height="188" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, 0, 90))"
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene1-xiaomi))"
+				 edge="lefttop" ox="-519" oy="-332" enabled="true" />
+
+		<hotspot name="s1_p_xiaotiane" url="panos/scene1/product/xiaotiane.png"
+				 width="130" height="185" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene1-xiaotiane))"
+				 edge="lefttop" ox="-234.85" oy="-292.1" enabled="true" />
+
+		<hotspot name="s1_p_tcl" url="panos/scene1/product/tcl.png"
+				 width="209" height="131" distorted="true" scale ='1.05'
+				 onloaded="delayedcall(0.8 ,animation_xy_time(true, 0, 120, 2))"
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene1-tcl))"
+				 edge="lefttop" ox="172" oy="-421.3" enabled="true" />
+
+		<!-- 飞碟 -->
+		<hotspot name="s1_p_feidie7" url="panos/scene1/feidie7.png"
+				 width="500" height="710" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.8 ,animation_xy_time(true, 0, 50, 4))"
+				 alpha="1" ath="0" atv="0"
+				 edge="lefttop" ox="-172" oy="-921.3" rx="20" enabled="false" />
+
+		<hotspot name="s1_p_feidie4" url="panos/scene1/feidie4.png"
+				 width="124" height="53" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.8 ,animation_xy_time(true, -330, 0, 20))"
+				 alpha="1" ath="0" atv="0" zorder="10"
+				 edge="lefttop" ox="-172" oy="-921.3" rx="20" enabled="false" />
+
+		<hotspot name="s1_p_feidie1" url="panos/scene1/feidie1.png"
+				 width="110" height="70" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, 330, 0, 20))"
+				 alpha="1" ath="0" atv="0" zorder="10"
+				 edge="lefttop" ox="102" oy="-321.3" rx="20" enabled="false" />
+
+		<hotspot name="s1_p_feidie2" url="panos/scene1/feidie2.png"
+				 width="156" height="135" distorted="true" scale ='0.4'
+				 onloaded="delayedcall(1 ,animation_xy_time(true, 630, -300, 30))"
+				 alpha="1" ath="0" atv="0" zorder="10"
+				 edge="lefttop" ox="202" oy="-621.3" rx="20" enabled="false" />
+
+		<hotspot name="s1_p_feidie3" url="panos/scene1/feidie3.png"
+				 width="106" height="71" distorted="true" scale ='0.4'
+				 onloaded="delayedcall(2 ,animation_xy_time(true, -630, -300, 30))"
+				 alpha="1" ath="0" atv="0" zorder="10"
+				 edge="lefttop" ox="-202" oy="-421.3"  enabled="false" />
+
+		<hotspot name="s1_p_feidie6" url="panos/scene1/feidie6.png"
+				 width="144" height="92" distorted="true" scale ='1'
+				 onloaded="delayedcall(2 ,animation_xy_time(true, -110, 0, 10))"
+				 alpha="1" ath="0" atv="0" zorder="0"
+				 edge="lefttop" ox="122" oy="-1021.3" rx="80" enabled="false" />
+
+		<hotspot name="s1_p_feidie5" url="panos/scene1/feidie5.png"
+				 width="99" height="44" distorted="true" scale ='1'
+				 onloaded="delayedcall(2 ,animation_xy_time(true, 410, 0, 30))"
+				 alpha="1" ath="0" atv="0" zorder="0"
+				 edge="lefttop" ox="122" oy="-1021.3" rx="80" enabled="false" />
+	</scene>
+
+	<!-- 场景2 -->
+	<scene name="scene2" title="科技霓虹城" onstart="" thumburl="panos/scene2.png" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0.0" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="70" fovmax="110" limitview="auto" />
+		<preview url="panos/scene2.tiles/preview.jpg" />
+
+		<!-- product -->
+			<!-- front -->
+			<hotspot name="s2_p_rongyao" url="panos/scene2/product/rongyao.png"
+					 width="84" height="201" distorted="true" scale ='1.2'
+					 onloaded="delayedcall(0.1 ,animation_xy(true, -81, -80));"
+					 alpha="1" ath="0" atv="0" onclick="js(click(scene2-rongyao))"
+					 edge="lefttop" ox="-486.4" oy="295.68" enabled="true" />
+
+			<hotspot name="s2_p_iphone8" url="panos/scene2/product/iPhone8.png"
+					 width="35" height="63" distorted="true" scale ='1'
+					 onloaded="delayedcall(0.3 ,animation_xy(true, -51, 0))"
+					 alpha="1" ath="0" atv="0" onclick="js(click(scene2-iPhone8))"
+					 edge="lefttop" ox="-265.4" oy="-180.4" enabled="true" />
+
+			<hotspot name="s2_p_xiaomi" url="panos/scene2/product/xiaomi.png"
+					 width="39" height="62" distorted="true" scale ='1'
+					 onloaded="delayedcall(0.1 ,animation_xy(true, -61, 0))"
+					 alpha="1" ath="0" atv="0" onclick="js(click(scene2-xiaomi))"
+					 edge="lefttop" ox="-33.6" oy="-20.15" enabled="true" />
+
+			<hotspot name="s2_p_jianeng" url="panos/scene2/product/jianeng.png"
+					 width="157" height="153" distorted="true" scale ='1'
+					 onloaded="delayedcall(0.1 ,animation_scale(true))"
+					 alpha="1" ath="0" atv="0" onclick="js(click(scene2-jianeng))"
+					 edge="lefttop" ox="342.43" oy="-143.9" enabled="true" />
+
+			<hotspot name="s2_p_feiji1" url="panos/scene2/product/feiji1.png"
+				 width="710" height="424" distorted="true" scale ='0.7'
+				 onloaded="do_crop_animation(710, 424, 30); animation_xy_time(true, 261, 0, 25)"
+				 alpha="1" ath="0" atv="0" zorder="11"
+				 onclick="js(click(scene2-jianeng))"
+				 edge="lefttop" ox="-202.43" oy="-663.9" enabled="true" />
+
+			<!-- right -->
+			<hotspot name="s2_p_meifu" url="panos/scene2/product/meifu.png"
+				 	width="337" height="109" distorted="true" scale ='1'
+				 	onloaded="delayedcall(0.1 ,animation_shans(true))"
+				 	alpha="1" ath="90" atv="0" onclick="js(click(scene2-meifu))"
+				 	edge="lefttop" ox="-420.7" oy="-10.9" enabled="true" />
+
+			<hotspot name="s2_p_yibukeji" url="panos/scene2/product/yibukeji.png"
+				 	width="161" height="99" distorted="true" scale ='1'
+				 	onloaded="delayedcall(0.1 ,animation_shans(true))"
+				 	alpha="1" ath="90" atv="0" onclick="js(click(scene2-yibukeji))"
+				 	edge="lefttop" ox="332.32" rz="-3" oy="-200.7" enabled="true" />
+
+			<hotspot name="s2_p_feiji2" url="panos/scene2/product/feiji2.png"
+				 width="708" height="412" distorted="true" scale ='0.7'
+				 onloaded="do_crop_animation(708, 412, 30);animation_xy_time(true, 0, -240, 30)"
+				 alpha="1" ath="90" atv="0" onclick="js(click(scene2-meifu))"
+				 edge="lefttop" ox="-402.43" oy="-463.9" enabled="true" />
+
+			<!-- back -->
+			<hotspot name="s2_p_dajiang" url="panos/scene2/product/dajiang.png"
+				 width="212" height="133" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, -0, 90))"
+				 alpha="1" ath="180" atv="0" onclick="js(click(scene2-dajiang))"
+				 edge="lefttop" ox="372.32" oy="-190.7" enabled="true" />
+
+
+			<!-- left -->
+			<hotspot name="s2_p_yataitianneng" url="panos/scene2/product/yataitianneng.png"
+				 width="39" height="119" distorted="true" scale ='0.8'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, -30, 30))"
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene2-yataitianneng))"
+				 edge="lefttop" ox="-273.15" oy="-209" enabled="true" />
+
+			<!-- down -->
+			<hotspot name="s2_p_vivo" url="panos/scene2/product/vivo.png"
+				 width="281" height="256" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_shans(true))"
+				 alpha="1" ath="0" atv="90" onclick="js(click(scene2-vivo))"
+				 edge="lefttop" ox="-485.5" oy="-141.8" enabled="true" />
+
+			<!-- up -->
+			<hotspot name="s2_p_nikon" url="panos/scene2/product/nikon.png"
+				 width="135" height="152" distorted="true" scale ='1'
+				 onloaded="delayedcall(0.1 ,animation_xy(true, 0, -220))"
+				 alpha="1" ath="0" atv="-90" onclick="js(click(scene2-nikon))"
+				 edge="lefttop" ox="-516.8" ry="-60" oy="185" enabled="true" />
+
+		<image>
+			<cube url="panos/scene2.tiles/pano_%s.jpg" />
+		</image>
+	</scene>
+
+	<!-- 场景3 -->
+	<scene name="scene3" title="粉红萌萌城" onstart="" thumburl="panos/scene3.png" lat="" lng="" heading="">
+
+		<view hlookat="-3" vlookat="-10.0" fovtype="MFOV" fov="100" maxpixelzoom="2.0" fovmin="70" fovmax="110" limitview="auto" />
+
+		<preview url="panos/scene3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/scene3.tiles/pano_%s.jpg" />
+		</image>
+
+		<!-- product front -->
+		<hotspot name="s3_p_jiumu" url="panos/scene3/product/jiumu.png"
+				 width="63" height="142" distorted="true" scale ='1.04'
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene3-jiumu))"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, -90, 0, 3))"
+				 edge="lefttop" ox="-275" oy="-271.2" enabled="true" />
+
+		<hotspot name="s3_p_jiumu_qiqiu" url="panos/scene3/jiumu.png"
+				 width="131" height="230" distorted="true" scale ='1.04'
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene3-jiumu))"
+				 onloaded="delayedcall(0 ,animation_xy_time(true, -160, 0, 9))"
+				 edge="lefttop" ox="-75" oy="-461.2" enabled="true" />
+
+
+		<hotspot name="s3_p_jinlongyu" url="panos/scene3/product/jinlongyu.png"
+				 width="83" height="115" distorted="true" scale ='1.3'
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene3-jinlongyu))"
+				 onloaded="delayedcall(0.2 ,animation_xy_time(true, -90, 0, 3))"
+				 edge="lefttop" ox="442.24" oy="20.16" enabled="true" />
+
+		<hotspot name="s3_p_jinlongyu_qiqiu" url="panos/scene3/jly.png"
+				 width="104" height="183" distorted="true" scale ='1.3'
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene3-jinlongyu))"
+				 onloaded="delayedcall(0.2 ,animation_xy_time(true, 0, -90, 3))"
+				 edge="lefttop" ox="442.24" ry="30" oy="-420.16" enabled="true" />
+
+		<hotspot name="s3_p_haiwaigou" url="panos/scene3/product/haiwaigou.png"
+				 width="53" height="80" distorted="true" scale ='1.04'
+				 alpha="1" ath="0" atv="0" onclick="js(click(scene3-haiwaigou))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-443.84" oy="-16.4" enabled="true" />
+
+		<!-- product right -->
+		<hotspot name="s3_p_swisse" url="panos/scene3/product/swisse.png"
+				 width="100" height="71" distorted="true" scale ='1.04'
+				 alpha="1" ath="90" atv="0" onclick="js(click(scene3-swisse))"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, -50, 0, 3))"
+				 edge="lefttop" ox="-56.96" oy="-22.64" enabled="true" />
+
+		<hotspot name="s3_p_swisse_qiqiu" url="panos/scene3/swisse.png"
+				 width="137" height="240" distorted="true" scale ='1.04'
+				 alpha="1" ath="90" atv="0" onclick="js(click(scene3-swisse))"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, -200, 0, 10))"
+				 edge="lefttop" ox="-240" oy="-532.64" enabled="true" />
+
+		<!-- product left -->
+		<hotspot name="s3_p_xinxiangyin" url="panos/scene3/product/xinxiangyin.png"
+				 width="100" height="96" distorted="true" scale ='0.8'
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene3-xinxiangyin))"
+				 onloaded="delayedcall(0.2 ,animation_scale(true))"
+				 edge="lefttop" ox="-410.16" oy="-141.44" enabled="true" />
+
+		<hotspot name="s3_p_lanyueliang" url="panos/scene3/product/lanyueliang.png"
+				 width="60" height="67" distorted="true" scale ='1.04'
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene3-lanyueliang))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-222.72" oy="-102.72" enabled="true" />
+
+		<hotspot name="s3_p_whoo" url="panos/scene3/product/whoo.png"
+				 width="35" height="73" distorted="true" scale ='1.04'
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene3-whoo))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-90.24" oy="-90.72" enabled="true" />
+
+		<hotspot name="s3_p_nongfushanquan" url="panos/scene3/product/nongfushanquan.png"
+				 width="36" height="59" distorted="true" scale ='1.04'
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene3-nongfushanquan))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="237.36" oy="-30.72" enabled="true" />
+
+		<hotspot name="s3_p_balishui" url="panos/scene3/product/balishui.png"
+				 width="31" height="74" distorted="true" scale ='1.04'
+				 alpha="1" ath="-90" atv="0" onclick="js(click(scene3-balishui))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="379.84" oy="-30.72" enabled="true" />
+
+		<!-- back -->
+		<hotspot name="s3_p_suxiansheng" url="panos/scene3/product/suxiansheng.png"
+				 width="80" height="83" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="0" onclick="js(click(scene3-suxiansheng))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-500" oy="-155.76" enabled="true" />
+
+		<hotspot name="s3_p_meizanchen" url="panos/scene3/product/meizanchen.png"
+				 width="107" height="103" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="0" onclick="js(click(scene3-meizanchen))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-320.88" oy="-150.76" enabled="true" />
+
+		<hotspot name="s3_p_meidihuier" url="panos/scene3/product/meidihuier.png"
+				 width="72" height="76" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="0" onclick="js(click(scene3-meidihuier))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-152.24" oy="-144.76" enabled="true" />
+
+		<hotspot name="s3_p_toto" url="panos/scene3/product/toto.png"
+				 width="80" height="90" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="0" onclick="js(click(scene3-toto))"
+				 onloaded="delayedcall(0.1 ,animation_scale(true))"
+				 edge="lefttop" ox="-28.28" oy="-155.76" enabled="true" />
+
+		<hotspot name="s3_p_weida" url="panos/scene3/product/weida.png"
+				 width="131" height="124" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="0" onclick="js(click(scene3-weida))"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, -80, 0, 3))"
+				 edge="lefttop" ox="249.44" oy="-395.76" enabled="true" />
+
+		<hotspot name="s3_p_weida_qiqiu" url="panos/scene3/weida.png"
+				 width="116" height="200" distorted="true" scale ='1.04'
+				 alpha="1" ath="178" atv="-20" onclick="js(click(scene3-weida))"
+				 onloaded="delayedcall(0.1 ,animation_xy_time(true, 0, -100, 4))"
+				 edge="lefttop" ox="49.44" oy="-495.76" enabled="true" />
+
+	</scene>
+
+
+
+
+
+
+
+	<!-- animation  -->
+	<action name="animation_scale">
+		if(
+			%1 == true,
+			tween(hotspot[get(name)].scale , 0.8, 1, easeInOutCirc, animation_scale(false) ),
+			tween(hotspot[get(name)].scale , 1, 1, easeInOutCirc, animation_scale(true))
+		)
+	</action>
+
+	<!-- animation  -->
+	<action name="animation_shans">
+		if(
+		%1 == true,
+		tween(hotspot[get(name)].alpha , 0.2, 1, easeInOutCirc, animation_shans(false) ),
+		tween(hotspot[get(name)].alpha , 1, 1, easeInOutCirc, animation_shans(true))
+		)
+	</action>
+
+	<!-- animation  -->
+	<action name="animation_shans_time">
+		if(
+		%1 == true,
+		tween(hotspot[get(name)].alpha , 0.1, %2, easeInOutCirc, animation_shans_time(false, %2) ),
+		tween(hotspot[get(name)].alpha , 1, %2, easeInOutCirc, animation_shans_time(true, %2))
+		)
+	</action>
+
+	<!-- animation  -->
+	<action name="animation">
+		if(
+			%1 == true,
+			if (
+				%3 == top,
+				tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy + %2), 6, easeInOutCirc, animation( false, %2, %3, %4))
+				,
+				tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox + %2), 6, easeInOutCirc, animation( false, %2, %3, %4));
+				);
+			,
+			if (
+				%3 == top,
+				tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy - %2), 6, easeInOutCirc, animation( true, %2, %3, %4));
+				,
+				tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox - %2), 6, easeInOutCirc, animation( true, %2, %3, %4 ));
+				);
+		)
+
+	</action>
+
+	<action name="animation_alpha">
+		<!-- 有消失 -->
+		if(
+		%1 == true,
+			set(hotspot[get(name)].alpha, 1);
+			if (
+			%3 == top,
+				tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy + %2), 4, linear, animation_alpha( false, %2, %3, %4))
+				,
+				tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox + %2), 6, linear, animation_alpha( false, %2, %3, %4));
+			);
+
+			tween(hotspot[get(name)].alpha , 0 , 6 )
+		,
+			if (
+			%3 == top,
+				tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy - %2), 6, linear, animation_alpha( true, %2, %3, %4));
+				,
+				tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox - %2), 6, linear, animation_alpha( true, %2, %3, %4 ));
+			);
+
+		)
+	</action>
+	<!-- and animation -->
+
+
+	<!-- 序列帧 -->
+	<action name="do_crop_animation">
+		<!-- add attributes to the hotspot -->
+		registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+		registerattribute(yframes, calc((imageheight / %2) BOR 0));
+		registerattribute(frames, calc(xframes * yframes));
+		registerattribute(frame, 0);
+
+		set(crop, '0|0|%1|%2');
+
+		setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+		if(loaded,
+		inc(frame);
+		if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+		mod(xpos, frame, xframes);
+		div(ypos, frame, xframes);
+		Math.floor(ypos);
+		mul(xpos, %1);
+		mul(ypos, %2);
+		calc(crop, xpos + '|' + ypos + '|%1|%2');
+		,
+		clearinterval(calc('crop_anim_' + name));
+		);
+		);
+	</action>
+
+	<!-- 倾斜移动 -->
+	<action name="animation_xy">
+		if(
+		%1 == true,
+		tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy + %3), 3, linear);
+		tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox - %2), 3, linear, animation_xy( false, %2, %3));
+		,
+		tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy - %3), 3, linear);
+		tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox + %2), 3, linear, animation_xy( true, %2, %3));
+
+		)
+	</action>
+
+	<!-- 倾斜移动 -->
+	<action name="animation_xy_time">
+		if(
+		%1 == true,
+		tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy + %3), %4, linear, animation_xy_time( false, %2, %3, %4));
+		tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox - %2), %4, linear);
+		,
+		tween(hotspot[get(name)].oy ,calc(hotspot[get(name)].oy - %3), %4, linear, animation_xy_time( true, %2, %3, %4));
+		tween(hotspot[get(name)].ox , calc(hotspot[get(name)].ox + %2), %4, linear);
+
+		)
+	</action>
+
+
+
+</krpano>

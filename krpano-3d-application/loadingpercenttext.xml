@@ -1,0 +1,86 @@
+﻿<!--
+	show the loading progress as percent text
+	- just include once this xml
+-->
+<krpano>
+
+	<!-- loading percent events -->
+	<events name="loadingpercent" keep="true"
+	        onxmlcomplete="loadingpercent_startloading();"
+	        onloadcomplete="delayedcall(0.25, loadingpercent_stoploading() );"
+	        />
+
+	<!-- loading percent text -->
+	<layer name="loadingpercent_text" keep="true"
+	       url="%SWFPATH%/plugins/textfield.swf"
+	       align="center"
+	       y="10%"
+	       background="false"
+	       css="color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:22px; font-style:italic;" textshadow="2"
+	       html=""
+	       />
+
+	<!-- loading percent actions -->
+	<action name="loadingpercent_startloading">
+		js( animationOver( false ) );
+		skin_setup_littleplanetintro();
+
+		set(loadingpercent_isloading, true);
+		set(layer[loadingpercent_text].visible, true);
+
+		asyncloop(loadingpercent_isloading,
+			mul(pv, progress.progress, 100);
+			js( loading( calc(progress.progress) ) );
+			roundval(pv,0);
+			txtadd(layer[loadingpercent_text].html, '加载', get(pv), '%');
+		  );
+	</action>
+
+	<action name="loadingpercent_stoploading">
+		skin_showthumbs(true);
+		set(loadingpercent_isloading, false);
+		set(layer[loadingpercent_text].visible, false);
+
+	</action>
+
+
+	<action name="skin_setup_littleplanetintro">
+
+		trace(view.hlookat, view.vlookat, view.fov);
+
+		copy(lp_scene, xml.scene);
+		copy(lp_hlookat, view.hlookat);
+		copy(lp_vlookat, view.vlookat);
+		copy(lp_fov, view.fov);
+		copy(lp_fovmax, view.fovmax);
+		copy(lp_limitview, view.limitview);
+		set(view.fovmax, 270);
+		set(view.limitview, lookto);
+		set(view.vlookatmin, 90);
+		set(view.vlookatmax, 90);
+		lookat(calc(lp_hlookat - 180), 90, 160, 1, 0, 0);
+		set(events[lp_events].onloadcomplete,
+		delayedcall(0.5,
+		if(lp_scene === xml.scene,
+		set(control.usercontrol, off);
+		copy(view.limitview, lp_limitview);
+		set(view.vlookatmin, null);
+		set(view.vlookatmax, null);
+
+		<!--trace(lp_hlookat, lp_vlookat, view.fov);-->
+
+		if(lp_hlookat == -200, set(lp_hlookat, -30); set(lp_vlookat, 0); set(lp_fov,100); );
+		<!--trace(lp_hlookat, lp_vlookat, view.fov);-->
+
+		tween(view.hlookat|view.vlookat|view.fov|view.distortion, calc('' + lp_hlookat + '|' + lp_vlookat + '|' + lp_fov + '|' + 0.0),
+		3.5, easeOutQuad,
+		set(control.usercontrol, all);
+		js( animationOver( true ) );
+		tween(view.fovmax, get(lp_fovmax));
+		);
+		);
+		);
+		);
+	</action>
+
+</krpano>

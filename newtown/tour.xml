@@ -1,0 +1,160 @@
+﻿<krpano version="1.19" title="New Town-Decorado" idletime="0.5" debugmode="true">
+	<include url="skin/vtourskin.xml" />
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings webvr_prev_next_hotspots="false"
+		tooltips_hotspots="true" tooltips_mapspots="false"
+		loadingtext="carregando..." deeplinking="false"
+	/>
+	<include url="skin/PIPE-vtourskin_design_flat_light-pr13.xml" />
+	<include url="map/map.xml" />
+	<include url="data.xml" />
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(ambiente === null OR !scene[get(ambiente)], copy(ambiente,scene[6].name); );
+		loadscene(get(ambiente), null, MERGE);
+		if(startactions !== null, startactions() );
+		if(stagewidth GT 1200, sidebar_open());
+	</action>
+
+	<scene name="Banheiro_suite" title="Banheiro suíte" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Banheiro_suite.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="14.331" vlookat="16.530" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Banheiro_suite.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Banheiro_suite.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Banheiro_suite.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="155.796" atv="7.779" linkedscene="suite" rz="90" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="118.494" atv="6.374" linkedscene="sala" rz="-90" />
+	</scene>
+	<scene name="Banheiro" title="Banheiro" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Banheiro.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="-13.110" vlookat="6.392" fovtype="MFOV" fov="140.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Banheiro.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Banheiro.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Banheiro.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="-138.303" atv="6.020" linkedscene="quarto2"/>
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="-122.246" atv="9.116" linkedscene="suite" rz="90"/>
+		<hotspot name="spot3" style="skin_hotspotstyle_vr" ath="-154.423" atv="11.490" linkedscene="sala" rz="-45"/>
+		<hotspot name="spot4" style="skin_hotspotstyle_vr" ath="-160.054" atv="22.983" linkedscene="quarto1" rz="-90"/>
+	</scene>
+
+	<scene name="Cozinha" title="Cozinha" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Cozinha.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="-31.940" vlookat="2.584" fovtype="MFOV" fov="127.033" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Cozinha.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Cozinha.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Cozinha.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" linkedscene="sacada" atv="10.010" ath="-151.092" style="skin_hotspotstyle_vr"/>
+		<hotspot name="spot2" linkedscene="sala" atv="11.725" ath="136.085" style="skin_hotspotstyle_vr"/>
+		<hotspot name="spot3" linkedscene="suite" atv="-4.784" ath="179.251" style="skin_hotspotstyle_vr"/>
+		<hotspot name="spot4" rz="-90" linkedscene="quarto2" atv="4.300" ath="170.599" style="skin_hotspotstyle_vr"/>
+		<hotspot name="spot5" rz="90" linkedscene="quarto1" atv="4.508" ath="-172.948" style="skin_hotspotstyle_vr"/>
+		<hotspot name="spot6" rz="90" linkedscene="banheiro" atv="10.529" ath="-176.880" style="skin_hotspotstyle_vr"/>
+	</scene>
+
+	<scene name="Quarto1" title="Quarto1" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Quarto1.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Quarto1.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Quarto1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Quarto1.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="-95.475" atv="4.156" linkedscene="suite" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="-83.355" atv="14.964" linkedscene="banheiro" rz="90" />
+		<hotspot name="spot3" style="skin_hotspotstyle_vr" ath="-105.297" atv="13.294" linkedscene="quarto2" rz="-90" />
+		<hotspot name="spot4" style="skin_hotspotstyle_vr" ath="-105.239" atv="26.465" linkedscene="sala" rz="-135"/>
+	</scene>
+
+	<scene name="Quarto2" title="Quarto2" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Quarto2.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Quarto2.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Quarto2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Quarto2.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="93.660" atv="-0.222" linkedscene="banheiro" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="99.250" atv="6.936" linkedscene="quarto1" rz="90" />
+		<hotspot name="spot3" style="skin_hotspotstyle_vr" ath="99.465" atv="17.318" linkedscene="sala" rz="135" />
+		<hotspot name="spot4" style="skin_hotspotstyle_vr" ath="78.352" atv="8.099" linkedscene="suite" rz="-90" />
+	</scene>
+
+	<scene name="Sacada" title="Sacada" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Sacada.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Sacada.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Sacada.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Sacada.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="162.267" atv="13.505" linkedscene="cozinha" rz="-90" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="-148.906" atv="11.276" linkedscene="sala" />
+	</scene>
+
+	<scene name="Sala" title="Sala" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Sala.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Sala.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Sala.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Sala.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="40.459" atv="1.987" linkedscene="sacada" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="87.357" atv="5.192" linkedscene="cozinha" />
+		<hotspot name="spot3" style="skin_hotspotstyle_vr" ath="-32.334" atv="-3.601" linkedscene="suite" />
+		<hotspot name="spot4" style="skin_hotspotstyle_vr" ath="-21.974" atv="0.266" linkedscene="banheiro" rz="90" />
+		<hotspot name="spot5" style="skin_hotspotstyle_vr" ath="-22.927" atv="10.513" linkedscene="quarto1" rz="135" />
+		<hotspot name="spot6" style="skin_hotspotstyle_vr" ath="-36.380" atv="7.448" linkedscene="quarto2" rz="-90" />
+	</scene>
+
+	<scene name="Suite" title="Suíte" onstart="on_scene_loaded();" havevrimage="true" thumburl="panos/Suite.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<preview url="panos/Suite.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/Suite.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/Suite.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle_vr" ath="98.403" atv="12.566" linkedscene="banheiro_suite" rz="-90" />
+		<hotspot name="spot2" style="skin_hotspotstyle_vr" ath="124.508" atv="1.058" linkedscene="quarto1" />
+		<hotspot name="spot3" style="skin_hotspotstyle_vr" ath="123.724" atv="11.048" linkedscene="banheiro" rz="-90"/>
+		<hotspot name="spot4" style="skin_hotspotstyle_vr" ath="136.712" atv="1.510" linkedscene="sala" />
+		<hotspot name="spot5" style="skin_hotspotstyle_vr" ath="136.300" atv="10.890" linkedscene="quarto2" rz="90" />
+	</scene>
+</krpano>

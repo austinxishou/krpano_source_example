@@ -1,0 +1,332 @@
+<krpano debugmode="true" strict="true">
+<!--sidebar elements, events and actions-->
+  <events name="sibebar_events" keep="true"
+    onresize="sidebar-adjust"
+  />
+  <action name="sidebar-adjust">
+    if(stageheight LT 480,
+      set(layer[logo].crop, 0|0|320|64);
+      set(layer[map].y, 64);
+    ,
+      set(layer[logo].crop, 0|64|320|200 );
+      set(layer[map].y, 200);
+    );
+  </action>  
+
+  <layer name="menu" 
+    type="image"
+    url="map-sprite.png"
+    crop="144|0|48|48"
+    onclick="sidebar_open"
+    keep="true"
+    visible="true"
+    x="8"
+    y="8"
+    zorder="10"
+  />
+  <action name="sidebar_open">
+    set(layer[menu].visible, false);
+    set(layer[skin_layer].visible, false);
+    set(layer[sidebar].visible, true);
+    tween(layer[sidebar].x, 0, 0.3, default);
+  </action>
+
+  <layer name="sidebar"
+    type="container"
+    height="100%"
+    width="320"
+    keep="true"
+    bgcolor="0x333333"
+    bgalpha="0.5"
+    x="-320"
+    zorder="2"
+    visible="false"
+    bgshadow="6 0 5 black 0.4"
+     
+  />
+  <layer name="logo"
+     type="image"
+     url="drawer.png"
+     crop="0|64|320|200"
+     keep="true"
+     visible="true"
+     parent="sidebar"
+     handcursor="false"
+     capture="false"
+     
+   
+  />
+  <layer name="close"
+     type="image"
+     url="map-sprite.png"
+    crop="192|0|48|48" 
+     keep="true"
+     visible="true"
+     parent="sidebar"
+     x="8"
+     y="8"
+     onclick="sidebar_close"
+     zorder="15"
+  />
+
+ <action name="sidebar_close">
+  set(layer[skin_layer].visible, true);
+  tween(layer[sidebar].x, -320, 0.3, default,
+    set(layer[menu].visible, true);
+    set(layer[sidebar].visible, false);
+  );
+ </action>
+<!--map layers, events and actions -->
+  <layer name="map"
+    url="drawer.png"
+    crop="0|264|320|296"
+    keep="true"
+    handcursor="false"
+    capture="false"
+    align="lefttop"
+    x="0"
+    y="200"
+    scale="1"
+    scalechildren="true"
+	  maskchildren="false"
+    visible="true"
+    parent="sidebar"
+    zorder="3"
+  />
+  <style name="mapspot"
+    scale="1"
+    url="map-sprite.png"
+    crop="48|0|48|48"
+    parent="map"
+    align="lefttop"
+    edge="center"
+    alpha="1"
+    zorder="7"
+    onclick="mapspot_loadscene(get(linkedscene));scenechange();"
+    keep="true"
+  />
+  <style name="mapspot-visited"
+    keep="true"
+    scale="1"
+    url="map-sprite.png"
+    crop="0|0|48|48"
+    parent="map"
+    align="lefttop"
+    edge="center"
+    alpha="1"
+    zorder="7"
+    onclick="mapspot_loadscene(get(linkedscene));scenechange();"
+  />
+
+  <action name="mapspot_loadscene">
+      loadscene(%1, null, MERGE, BLEND(1));
+  </action>
+
+  <layer name="activespot"
+    scale="1"
+    url="map-sprite.png"
+    crop="96|0|48|48"
+    keep="true"
+    alpha="1"
+    align="lefttop"
+    zorder="10" 
+    visible="false"
+  />      
+
+  <layer name="radar" keep="true"
+    url="%HTMLPATH%/plugins/radar.js"
+    align="lefttop" zorder="1" edge="center"
+    fillalpha="0.5" fillcolor="0xFF5F3F"
+    linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5"
+    editmode="false" enabled="true" parent="map"
+    headingoffset="0"
+           
+	/>  
+  <!--nadir hotspots, events and actions -->
+  <hotspot name="nadir-map"
+    url="planta-tour.png"
+    width="270" height="prop"
+    keep="true" 
+    zorder="1" 
+    distorted="true" 
+    enabled="false" 
+    alpha="0.8"
+    depth="750"
+    atv="90"
+    visible="false"
+    vronly="true"
+  />
+  <style name="nadirspot"
+      keep="true"
+      zorder="5"
+      depth="500"
+      distorted="true"
+      enabled="true"
+      url="map-sprite.png" crop="48|0|48|48"
+      width="24" height="24" alpha="1"
+      atv="90"
+      onclick="mapspot_loadscene(get(linkedscene));scenechange();"
+      vronly="true"
+      visible="false"
+  />
+  <style name="nadirspot-visited"
+      keep="true"
+      zorder="5"
+      depth="500"
+      distorted="true"
+      enabled="true"
+      url="map-sprite.png" crop="0|0|48|48"
+      width="24" height="24" alpha="1"
+      atv="90"
+      onclick="mapspot_loadscene(get(linkedscene));scenechange();"
+      vronly="true"
+      visible="false"
+  />
+  <hotspot name="nadirspot-active"
+      keep="true"
+      zorder="6"
+      depth="500"
+      distorted="true"
+      enabled="false"
+      url="map-sprite.png" crop="96|0|48|48"
+      width="24" height="24" alpha="1"
+      atv="90"
+      ox="0"
+      oy="0"
+      vronly="true"
+      visible="false"
+      
+  />
+  <hotspot name="arc-direction" keep="true"
+    url="arc-direction.png"
+    zorder="4" 
+    scale="0.5"
+    depth="500"
+    edge="bottom"
+    enabled="false"
+    distorted="true"
+    atv="90"
+    alpha="1.0"
+    rz="0" 
+    vronly="true"
+    visible="false"
+	/>
+  <events name="arc-direction-rotation" keep="true"
+    onviewchange="sub(rz, view.hlookat, data[get(xml.scene)].heading);set(hotspot[arc-direction].rz, get(rz));"
+  />
+<!--VR hotspot tooltip--> 
+  <hotspot name="vr_tooltip"
+    type="text"
+    ath="0" atv="0" edge="bottom" ty="-50"
+    distorted="true" renderer="webgl"
+    html="" keep="true" css="font-family:Roboto; font-size:24px; color:#FFFFFF;"
+    bg="false"
+    txtshadow="2 2 2 0x000000 1.0"
+    enabled="false"
+    vr_timeout="2000"
+    visible="false"
+    devices="html5.and.webgl"
+    zorder="2"
+  />
+
+  <style name="skin_hotspotstyle_vr"
+    url="vtourskin_hotspot.png" scale="0.4" edge="center" distorted="true"
+    tooltip=""
+    linkedscene=""
+    linkedscene_lookat=""
+    onclick="skin_hotspotstyle_click();scenechange();"
+    onover="tween(scale,0.55);"
+    onout="tween(scale,0.5);"
+    onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(vr_tooltips); );"
+  />
+
+<style name="vr_tooltips" 
+  onover="tween(scale,0.55);
+    copy(hotspot[vr_tooltip].html, tooltip);
+    copy(hotspot[vr_tooltip].ath, ath);
+    copy(hotspot[vr_tooltip].atv, atv);
+    set(hotspot[vr_tooltip].visible, true);
+    tween(hotspot[vr_tooltip].alpha, 1.0, 0.2);"
+  onout="tween(scale,0.5);
+    tween(hotspot[vr_tooltip].alpha, 0.0, 0.2, default, set(hotspot[vr_tooltip].visible,false); );"
+/>
+
+
+<!--general events and actions--> 
+  <action name="scenechange" scope="local">
+    js(krp_pushState(get(caller.linkedscene), get(caller.style)));
+  </action>
+  
+  <events name="tag_events" keep="true"
+    onidle="viewchange();"
+    
+   />
+  <action name="viewchange">
+    if(!webvr OR webvr.isenabled === false,
+      trace(mudança de vista);
+      def(obj, object);
+      def(obj.hlookat, number, get(view.hlookat));
+      def(obj.vlookat, number, get(view.vlookat));
+      def(obj.fov, number, get(view.fov));
+      js(krp_replaceState(get(scene[get(xml.scene)].name), get(obj)));
+    );
+  </action>
+  <action name="on_scene_loaded"> 
+  jscall(calc('document.title="'+ title + '-' + scene[get(xml.scene)].title + '"'));
+  <!--update mapspot state to visited, position radar and active mapspot at current position-->
+    def(mapspotname, string, calc('mapspot-'+ scene[get(xml.scene)].name));
+    if(layer[get(mapspotname)],
+      layer[get(mapspotname)].loadstyle(mapspot-visited);
+      copy(layer[radar].x, layer[get(mapspotname)].x);
+      copy(layer[radar].y, layer[get(mapspotname)].y);
+      set(layer[activespot].parent, get(mapspotname));
+      set(layer[activespot].visible, true);
+    ,
+      trace(calc('mapspot não encontrado: '+ mapspotname))
+    );
+  <!--update nadirspot state to visited, position active nadirspot at current position-->
+    def(nadirspotname, string, calc('nadirspot-'+ scene[get(xml.scene)].name));
+    if(hotspot[get(nadirspotname)],
+      hotspot[get(nadirspotname)].loadstyle(nadirspot-visited);
+      set(hotspot[nadirspot-active].ox, get(data[get(xml.scene)].ox));
+      set(hotspot[nadirspot-active].oy, get(data[get(xml.scene)].oy));
+      set(hotspot[nadirspot-active].ath, get(data[get(xml.scene)].heading));
+    );
+  <!--position the nadir arc direction hotspot-->
+	  set(hotspot[arc-direction].ox, get(data[get(xml.scene)].ox));
+	  set(hotspot[arc-direction].oy, get(data[get(xml.scene)].oy));
+  <!--get proper ath of elements using heading-->
+	  set(layer[radar].heading, calc(-1.0*data[get(xml.scene)].heading));
+	  set(hotspot[nadir-map].ath, get(data[get(xml.scene)].heading));
+	  set(hotspot[arc-direction].ath, get(data[get(xml.scene)].heading));
+    for(set(i,0), i LT scene.count, inc(i),
+      set(hotspot[calc('nadirspot-' + scene[get(i)].name)].ath, get(data[get(xml.scene)].heading))
+    );
+  </action>
+  <action name="create-mapspots" autorun="preinit">
+		for(set(i,0), i LT scene.count, inc(i),
+			def(mapspotname, string, calc('mapspot-'+scene[get(i)].name));
+			addlayer(get(mapspotname));
+				layer[get(mapspotname)].loadstyle(mapspot);
+				set(layer[get(mapspotname)].linkedscene, get(scene[get(i)].name));
+
+			def(nadirspotname, string, calc('nadirspot-'+scene[get(i)].name));
+			addhotspot(get(nadirspotname));
+				hotspot[get(nadirspotname)].loadstyle(nadirspot);
+				set(hotspot[get(nadirspotname)].linkedscene, get(scene[get(i)].name));
+
+			if(data[get(scene[get(i)].name)], 
+				set(layer[get(mapspotname)].x, get(data[get(scene[get(i)].name)].x));
+				set(layer[get(mapspotname)].y, get(data[get(scene[get(i)].name)].y));
+
+				set(hotspot[get(nadirspotname)].ox, get(data[get(scene[get(i)].name)].ox));
+				set(hotspot[get(nadirspotname)].oy, get(data[get(scene[get(i)].name)].oy));
+				,
+				warning(calc('Parâmetros data da cena ' + scene[get(i)].name + ' não encontrados. Verificque o arquivo data.xml.'))
+				);
+		);
+	</action>
+
+</krpano>
+
+
